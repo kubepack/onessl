@@ -1,0 +1,3 @@
+package: github.com/appscode/cloud-id
+import:
+- package: github.com/appscode/go
