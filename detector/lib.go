@@ -6,8 +6,9 @@ func Detect() string {
 	go detectGCE(done)
 	go detectDigitalOcean(done)
 	go detectAzure(done)
+	go detectVultr(done)
 
-	n := 4 // total number of go routines
+	n := 5 // total number of go routines
 	i := 0
 	provider := ""
 	for ; i < n; i++ {
