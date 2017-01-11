@@ -52,7 +52,7 @@ func detectDigitalOcean(done chan<- string) {
 	hc := httpclient.Default()
 	resp, err := hc.Call(http.MethodGet, "http://169.254.169.254/metadata/v1.json", nil, &md, false)
 	if err == nil && resp.StatusCode == http.StatusOK && md.DropletID > 0 {
-		done <- "DigitalOcean"
+		done <- "digitalOcean"
 	}
 	done <- ""
 }

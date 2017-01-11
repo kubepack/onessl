@@ -14,7 +14,7 @@ func detectGCE(done chan<- string) {
 	}, nil)
 	resp, err := hc.Call(http.MethodGet, "http://metadata.google.internal/computeMetadata/v1/instance/tags", nil, nil, false)
 	if err == nil && resp.StatusCode == http.StatusOK {
-		done <- "GCE"
+		done <- "gce"
 	}
 	done <- ""
 }

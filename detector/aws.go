@@ -29,7 +29,7 @@ func detectAWS(done chan<- string) {
 		resp.StatusCode == http.StatusOK &&
 		strings.HasPrefix(md.ImageID, "ami-") &&
 		strings.HasPrefix(md.InstanceID, "i-") {
-		done <- "AWS"
+		done <- "aws"
 	}
 	done <- ""
 }
