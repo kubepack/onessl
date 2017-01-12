@@ -1,4 +1,4 @@
-package detector
+package internal
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 )
 
 // https://www.vultr.com/metadata/
-func detectScaleway(done chan<- string) {
+func DetectScaleway(done chan<- string) {
 	for port := 1; port <= 1024; port++ {
 		hc := &http.Client{
 			Transport: &http.Transport{

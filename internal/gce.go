@@ -1,4 +1,4 @@
-package detector
+package internal
 
 import (
 	"net/http"
@@ -8,7 +8,7 @@ import (
 
 // https://cloud.google.com/compute/docs/storing-retrieving-metadata#endpoints
 // curl "http://metadata.google.internal/computeMetadata/v1/instance/tags" -H "Metadata-Flavor: Google"
-func detectGCE(done chan<- string) {
+func DetectGCE(done chan<- string) {
 	hc := httpclient.New(nil, map[string]string{
 		"Metadata-Flavor": "Google",
 	}, nil)

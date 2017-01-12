@@ -41,10 +41,10 @@ from collections import OrderedDict
 from os.path import expandvars
 
 
-libbuild.REPO_ROOT = expandvars('$GOPATH') + '/src/github.com/appscode/cloud-id'
+libbuild.REPO_ROOT = expandvars('$GOPATH') + '/src/github.com/appscode/cloudid'
 BUILD_METADATA = libbuild.metadata(libbuild.REPO_ROOT)
 libbuild.BIN_MATRIX = {
-    'cloud-id': {
+    'cloudid': {
         'type': 'go',
         'go_version': True,
         'use_cgo': True,
@@ -77,17 +77,17 @@ def version():
 
 
 def fmt():
-    libbuild.ungroup_go_imports('detector', 'main.go')
-    die(call('goimports -w detector main.go'))
-    call('gofmt -s -w detector main.go')
+    libbuild.ungroup_go_imports('internal', 'cmd')
+    die(call('goimports -w internal cmd'))
+    call('gofmt -s -w internal cmd')
 
 
 def lint():
-    call('golint detector min.go')
+    call('golint internal cmd')
 
 
 def vet():
-    call('go vet detector main.go')
+    call('go vet internal cmd')
 
 
 def build_cmd(name):
@@ -96,9 +96,9 @@ def build_cmd(name):
         if 'distro' in cfg:
             for goos, archs in cfg['distro'].items():
                 for goarch in archs:
-                    libbuild.go_build(name, goos, goarch, main='main.go')
+                    libbuild.go_build(name, goos, goarch, main='cmd/main.go')
         else:
-            libbuild.go_build(name, libbuild.GOHOSTOS, libbuild.GOHOSTARCH, main='main.go')
+            libbuild.go_build(name, libbuild.GOHOSTOS, libbuild.GOHOSTARCH, main='cmd/main.go')
 
 
 def build_cmds():
@@ -135,12 +135,12 @@ def update_registry():
 
 
 def install():
-    die(call('GO15VENDOREXPERIMENT=1 ' + libbuild.GOC + ' install .'))
+    die(call('GO15VENDOREXPERIMENT=1 ' + libbuild.GOC + ' install ./cmd/...'))
 
 
 def default():
     fmt()
-    die(call('GO15VENDOREXPERIMENT=1 ' + libbuild.GOC + ' install .'))
+    die(call('GO15VENDOREXPERIMENT=1 ' + libbuild.GOC + ' install ./cmd/...'))
 
 
 if __name__ == "__main__":

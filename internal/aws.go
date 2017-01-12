@@ -1,4 +1,4 @@
-package detector
+package internal
 
 import (
 	"net/http"
@@ -9,7 +9,7 @@ import (
 )
 
 // http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html
-func detectAWS(done chan<- string) {
+func DetectAWS(done chan<- string) {
 	md := struct {
 		PrivateIP        string    `json:"privateIp"`
 		AvailabilityZone string    `json:"availabilityZone"`

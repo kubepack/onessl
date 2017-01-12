@@ -1,4 +1,4 @@
-package detector
+package internal
 
 import (
 	"net/http"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://developers.digitalocean.com/documentation/metadata/#metadata-in-json
-func detectDigitalOcean(done chan<- string) {
+func DetectDigitalOcean(done chan<- string) {
 	md := struct {
 		DropletID  int      `json:"droplet_id"`
 		Hostname   string   `json:"hostname"`

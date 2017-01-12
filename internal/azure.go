@@ -1,4 +1,4 @@
-package detector
+package internal
 
 import (
 	"net/http"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://azure.microsoft.com/en-us/blog/what-just-happened-to-my-vm-in-vm-metadata-service/
-func detectAzure(done chan<- string) {
+func DetectAzure(done chan<- string) {
 	md := struct {
 		ID string `json:"ID"`
 		UD string `json:"UD"`

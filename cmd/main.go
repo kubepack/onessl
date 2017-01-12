@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/appscode/cloud-id/detector"
+	"github.com/appscode/cloudid"
 	v "github.com/appscode/go/version"
 )
 
@@ -38,5 +38,5 @@ func init() {
 }
 
 func main() {
-	fmt.Println("Cloud Provider:", detector.Detect())
+	fmt.Println("Cloud Provider:", cloudid.Detect())
 }

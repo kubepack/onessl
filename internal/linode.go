@@ -1,4 +1,4 @@
-package detector
+package internal
 
 import (
 	"net"
@@ -8,7 +8,7 @@ import (
 )
 
 // https://www.vultr.com/metadata/
-func detectLinode(done chan<- string) {
+func DetectLinode(done chan<- string) {
 	for _, ip := range net2.GetExternalIPs() {
 		names, err := net.LookupAddr(ip)
 		if err == nil {

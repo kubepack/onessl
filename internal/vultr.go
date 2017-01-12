@@ -1,4 +1,4 @@
-package detector
+package internal
 
 import (
 	"net/http"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://www.vultr.com/metadata/
-func detectVultr(done chan<- string) {
+func DetectVultr(done chan<- string) {
 	md := struct {
 		Bgp struct {
 			Ipv4 struct {
