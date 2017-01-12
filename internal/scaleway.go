@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// https://www.vultr.com/metadata/
+// https://github.com/scaleway/initrd/issues/84
 func DetectScaleway(done chan<- string) {
 	for port := 1; port <= 1024; port++ {
 		hc := &http.Client{

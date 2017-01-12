@@ -7,7 +7,6 @@ import (
 	net2 "github.com/appscode/go/net"
 )
 
-// https://www.vultr.com/metadata/
 func DetectLinode(done chan<- string) {
 	for _, ip := range net2.GetExternalIPs() {
 		names, err := net.LookupAddr(ip)
