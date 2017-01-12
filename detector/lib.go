@@ -9,8 +9,9 @@ func Detect() string {
 	go detectVultr(done)
 	go detectLinode(done)
 	go detectSoftlayer(done)
+	go detectScaleway(done)
 
-	n := 7 // total number of go routines
+	n := 8 // total number of go routines
 	i := 0
 	provider := ""
 	for ; i < n; i++ {
