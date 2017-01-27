@@ -1,9 +1,10 @@
-hash: 374e2da909263cc3ef26b72e64ceb442eda3fc674a127b00c42b0978df61f684
-updated: 2017-01-11T10:44:03.845417554-08:00
+hash: 8ec59bbd36e227c2d2feaf7365bddfe82ae21e451e47a43bdf4876134eacafa6
+updated: 2017-01-27T02:40:54.576985349-08:00
 imports:
 - name: github.com/appscode/go
-  version: c69e23742f9631e337197faa35c6d7ee1a93ee6c
+  version: 2b10f748f0201d9d077ef7dedaf39669c0029fc9
   subpackages:
+  - net
   - net/httpclient
   - version
 - name: github.com/cenkalti/backoff
@@ -15,7 +16,7 @@ imports:
 - name: github.com/inconshreveable/mousetrap
   version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 - name: github.com/spf13/cobra
-  version: f62e98d28ab7ad31d707ba837a966378465c7b57
+  version: 9c28e4bbd74e5c3ed7aacbc552b2cab7cfdfe744
 - name: github.com/spf13/pflag
-  version: 5ccb023bc27df288a957c5e994cd44fd19619465
+  version: c7e63cf4530bcd3ba943729cee0efeff2ebea63f
 testImports: []
