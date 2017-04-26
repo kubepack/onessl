@@ -1,4 +1,4 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/appscode/kloader)](https://goreportcard.com/report/github.com/appscode/kloader)
+[![Go Report Card](https://goreportcard.com/badge/github.com/appscode/cloudid)](https://goreportcard.com/report/github.com/appscode/cloudid)
 
 [Website](https://appscode.com) • [Slack](https://slack.appscode.com) • [Forum](https://discuss.appscode.com) • [Twitter](https://twitter.com/AppsCodeHQ)
 
