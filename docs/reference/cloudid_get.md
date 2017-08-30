@@ -20,7 +20,7 @@ Get stuff
 ```
 
 ### SEE ALSO
-* [cloudid](cloudid.md)	 - CloudID by AppsCode - ID your cloud
+* [cloudid](cloudid.md)	 - Cloudid by AppsCode - Utilities for your cloud
 * [cloudid get cacert](cloudid_get_cacert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
 * [cloudid get node-ip](cloudid_get_node-ip.md)	 - Prints a IPv4 address for current host
 * [cloudid get private-ips](cloudid_get_private-ips.md)	 - Prints private ip(s) for current host

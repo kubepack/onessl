@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/appscode/cloudid/cmds"
-	logs "github.com/appscode/log/golog"
+	logs "github.com/appscode/go/log/golog"
 )
 
 func main() {

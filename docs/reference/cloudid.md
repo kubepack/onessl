@@ -1,11 +1,11 @@
 ## cloudid
 
-CloudID by AppsCode - ID your cloud
+Cloudid by AppsCode - Utilities for your cloud
 
 ### Synopsis
 
 
-CloudID by AppsCode - ID your cloud
+Cloudid by AppsCode - Utilities for your cloud
 
 ### Options
 

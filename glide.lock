@@ -1,17 +1,17 @@
-hash: 0fed6ba47abd4a03746e1bf6680236ac9df3e1bc1c577ff0ce745da56c6a3125
-updated: 2017-08-29T18:25:54.543032458-07:00
+hash: 4132a82d20972ac25f0d38d62e82b68157657d72dc94fddc8edf1fefb6b6fd07
+updated: 2017-08-29T19:23:58.544279618-07:00
 imports:
 - name: github.com/appscode/go
   version: d1fbd14e5c6e78557c12f6d2c9c282b3c0d0c612
   subpackages:
+  - log
+  - log/golog
   - net
   - net/httpclient
   - runtime
   - version
 - name: github.com/appscode/log
   version: 68e0e42e42c01371f3950571fc87c2298a51dd8f
-  subpackages:
-  - golog
 - name: github.com/cenkalti/backoff
   version: 32cd0c5b3aef12c76ed64aaf678f6c79736be7dc
 - name: github.com/cpuguy83/go-md2man

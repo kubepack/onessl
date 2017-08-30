@@ -21,7 +21,7 @@ func NewRootCmd(version string) *cobra.Command {
 	)
 	cmd := &cobra.Command{
 		Use:               "cloudid [command]",
-		Short:             `CloudID by AppsCode - ID your cloud`,
+		Short:             `Cloudid by AppsCode - Utilities for your cloud`,
 		DisableAutoGenTag: true,
 		PersistentPreRun: func(c *cobra.Command, args []string) {
 			c.Flags().VisitAll(func(flag *pflag.Flag) {
