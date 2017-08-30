@@ -24,5 +24,5 @@ cloudid version [flags]
 ```
 
 ### SEE ALSO
-* [cloudid](cloudid.md)	 - cloudid by AppsCode - ID your cloud
+* [cloudid](cloudid.md)	 - CloudID by AppsCode - ID your cloud
 

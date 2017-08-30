@@ -13,7 +13,7 @@ func NewCmdWhoAmI() *cobra.Command {
 		Short:             "Detect cloud provider",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println(Detect())
+			fmt.Print(Detect())
 		},
 	}
 

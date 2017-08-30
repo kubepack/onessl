@@ -1,11 +1,11 @@
 ## cloudid
 
-cloudid by AppsCode - ID your cloud
+CloudID by AppsCode - ID your cloud
 
 ### Synopsis
 
 
-cloudid by AppsCode - ID your cloud
+CloudID by AppsCode - ID your cloud
 
 ### Options
 
@@ -15,6 +15,7 @@ cloudid by AppsCode - ID your cloud
 ```
 
 ### SEE ALSO
+* [cloudid get-cacert](cloudid_get-cacert.md)	 - Get self-sgned CA certificate from PEM encoded RSA private key
 * [cloudid version](cloudid_version.md)	 - Prints binary version number.
 * [cloudid whoami](cloudid_whoami.md)	 - Detect cloud provider
 

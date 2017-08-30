@@ -1,5 +1,5 @@
-hash: 8ec59bbd36e227c2d2feaf7365bddfe82ae21e451e47a43bdf4876134eacafa6
-updated: 2017-08-29T16:49:39.316622797-07:00
+hash: 0fed6ba47abd4a03746e1bf6680236ac9df3e1bc1c577ff0ce745da56c6a3125
+updated: 2017-08-29T17:34:58.293341507-07:00
 imports:
 - name: github.com/appscode/go
   version: a6256fcfa308eb6aa22fe292930fec3dba84ba6a
@@ -18,6 +18,10 @@ imports:
   version: 71acacd42f85e5e82f70a55327789582a5200a90
   subpackages:
   - md2man
+- name: github.com/gogo/protobuf
+  version: c0656edd0d9eab7c66d1eb0c568f9039345796f7
+  subpackages:
+  - proto
 - name: github.com/golang/glog
   version: 44145f04b68cf362d9c4df2182967c2275eaefed
 - name: github.com/google/go-querystring
@@ -40,4 +44,10 @@ imports:
   version: e57e3eeb33f795204c1ca35f56c44f83227c6e66
 - name: gopkg.in/yaml.v2
   version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
+- name: k8s.io/apimachinery
+  version: 1fd2e63a9a370677308a42f24fd40c86438afddf
+- name: k8s.io/client-go
+  version: d92e8497f71b7b4e0494e5bd204b48d34bd6f254
+  subpackages:
+  - util/cert
 testImports: []

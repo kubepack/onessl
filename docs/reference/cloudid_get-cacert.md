@@ -1,20 +1,20 @@
-## cloudid whoami
+## cloudid get-cacert
 
-Detect cloud provider
+Get self-sgned CA certificate from PEM encoded RSA private key
 
 ### Synopsis
 
 
-Detect cloud provider
+Get self-sgned CA certificate from PEM encoded RSA private key
 
 ```
-cloudid whoami [flags]
+cloudid get-cacert [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for whoami
+  -h, --help   help for get-cacert
 ```
 
 ### Options inherited from parent commands
