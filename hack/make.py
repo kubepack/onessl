@@ -33,6 +33,7 @@ import os
 import os.path
 import subprocess
 import sys
+import time
 import yaml
 from os.path import expandvars, join, dirname
 
@@ -42,6 +43,7 @@ libbuild.BIN_MATRIX = {
     'cloudid': {
         'type': 'go',
         'go_version': True,
+        'release': True,
         'distro': {
             'linux': ['amd64']
         }
