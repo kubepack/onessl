@@ -14,8 +14,8 @@ import (
 
 func NewCmdGetCACert() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:               "get-cacert",
-		Short:             "Get self-sgned CA certificate from PEM encoded RSA private key",
+		Use:               "cacert",
+		Short:             "Prints self-sgned CA certificate from PEM encoded RSA private key",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
 			reader := bufio.NewReader(os.Stdin)

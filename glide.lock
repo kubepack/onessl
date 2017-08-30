@@ -1,8 +1,8 @@
 hash: 0fed6ba47abd4a03746e1bf6680236ac9df3e1bc1c577ff0ce745da56c6a3125
-updated: 2017-08-29T17:34:58.293341507-07:00
+updated: 2017-08-29T18:25:54.543032458-07:00
 imports:
 - name: github.com/appscode/go
-  version: a6256fcfa308eb6aa22fe292930fec3dba84ba6a
+  version: d1fbd14e5c6e78557c12f6d2c9c282b3c0d0c612
   subpackages:
   - net
   - net/httpclient
@@ -46,6 +46,8 @@ imports:
   version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
 - name: k8s.io/apimachinery
   version: 1fd2e63a9a370677308a42f24fd40c86438afddf
+  subpackages:
+  - pkg/util/sets
 - name: k8s.io/client-go
   version: d92e8497f71b7b4e0494e5bd204b48d34bd6f254
   subpackages:

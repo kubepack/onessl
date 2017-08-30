@@ -15,7 +15,7 @@ CloudID by AppsCode - ID your cloud
 ```
 
 ### SEE ALSO
-* [cloudid get-cacert](cloudid_get-cacert.md)	 - Get self-sgned CA certificate from PEM encoded RSA private key
+* [cloudid get](cloudid_get.md)	 - Get stuff
 * [cloudid version](cloudid_version.md)	 - Prints binary version number.
 * [cloudid whoami](cloudid_whoami.md)	 - Detect cloud provider
 

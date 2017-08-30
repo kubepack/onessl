@@ -2,11 +2,12 @@ package net
 
 import (
 	"bytes"
-	"encoding/json"
 	"errors"
+	"io/ioutil"
 	"net"
 	"net/http"
 	"regexp"
+	"strings"
 )
 
 type IPRange struct {
@@ -176,14 +177,10 @@ func detectIPs(routable bool) ([]net.IP, []net.IP, error) {
 	}
 	// If host is not assigned public IP directly, detect IP based on client ip
 	if len(externalIPs) == 0 && routable {
-		resp, err := http.Get("https://my-ip.space/index.json")
-		if err == nil {
+		if resp, err := http.Get("https://ipinfo.io/ip"); err == nil {
 			defer resp.Body.Close()
-			decoder := json.NewDecoder(resp.Body)
-			var data map[string]string
-			err = decoder.Decode(data)
-			if err == nil {
-				ip := net.ParseIP(data["ip"])
+			if bytes, err := ioutil.ReadAll(resp.Body); err == nil {
+				ip := net.ParseIP(strings.TrimSpace(string(bytes)))
 				if ip != nil {
 					ip = ip.To4()
 				}
@@ -200,7 +197,7 @@ func detectIPs(routable bool) ([]net.IP, []net.IP, error) {
 }
 
 // RoutableIPs returns routable public and private IPs associated with current host.
-// It will also use https://my-ip.space/index.json to detect public IP, if no public IP is assigned to a host interface.
+// It will also use https://ipinfo.io/ip to detect public IP, if no public IP is assigned to a host interface.
 func RoutableIPs() ([]net.IP, []net.IP, error) {
 	return detectIPs(true)
 }
