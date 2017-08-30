@@ -1,9 +1,6 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/appscode/cloudid"
 	v "github.com/appscode/go/version"
 )
 
@@ -35,8 +32,4 @@ func init() {
 	v.Version.BuildHost = BuildHost
 	v.Version.BuildHostOs = BuildHostOs
 	v.Version.BuildHostArch = BuildHostArch
-}
-
-func main() {
-	fmt.Println("Cloud Provider:", cloudid.Detect())
 }

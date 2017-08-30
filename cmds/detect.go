@@ -1,6 +1,24 @@
-package cloudid
+package cmds
 
-import "github.com/appscode/cloudid/internal"
+import (
+	"fmt"
+
+	"github.com/appscode/cloudid/internal"
+	"github.com/spf13/cobra"
+)
+
+func NewCmdWhoAmI() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:               "whoami",
+		Short:             "Detect cloud provider",
+		DisableAutoGenTag: true,
+		Run: func(cmd *cobra.Command, args []string) {
+			fmt.Println(Detect())
+		},
+	}
+
+	return cmd
+}
 
 func Detect() string {
 	done := make(chan string)

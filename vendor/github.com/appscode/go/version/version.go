@@ -7,18 +7,18 @@ import (
 )
 
 type version struct {
-	Version         string
-	VersionStrategy string
-	Os              string
-	Arch            string
-	CommitHash      string
-	GitBranch       string
-	GitTag          string
-	CommitTimestamp string
-	BuildTimestamp  string
-	BuildHost       string
-	BuildHostOs     string
-	BuildHostArch   string
+	Version         string `json:"version,omitempty"`
+	VersionStrategy string `json:"versionStrategy,omitempty"`
+	Os              string `json:"os,omitempty"`
+	Arch            string `json:"arch,omitempty"`
+	CommitHash      string `json:"commitHash,omitempty"`
+	GitBranch       string `json:"gitBranch,omitempty"`
+	GitTag          string `json:"gitTag,omitempty"`
+	CommitTimestamp string `json:"commitTimestamp,omitempty"`
+	BuildTimestamp  string `json:"buildTimestamp,omitempty"`
+	BuildHost       string `json:"buildHost,omitempty"`
+	BuildHostOs     string `json:"buildHostOs,omitempty"`
+	BuildHostArch   string `json:"buildHostArch,omitempty"`
 }
 
 func (v *version) Print() {
@@ -32,10 +32,18 @@ func (v *version) Print() {
 	fmt.Printf("GitTag = %v\n", v.GitTag)
 	fmt.Printf("CommitTimestamp = %v\n", v.CommitTimestamp)
 
-	fmt.Printf("BuildTimestamp = %v\n", v.BuildTimestamp)
-	fmt.Printf("BuildHost = %v\n", v.BuildHost)
-	fmt.Printf("BuildHostOs = %v\n", v.BuildHostOs)
-	fmt.Printf("BuildHostArch = %v\n", v.BuildHostArch)
+	if v.BuildTimestamp != "" {
+		fmt.Printf("BuildTimestamp = %v\n", v.BuildTimestamp)
+	}
+	if v.BuildHost != "" {
+		fmt.Printf("BuildHost = %v\n", v.BuildHost)
+	}
+	if v.BuildHostOs != "" {
+		fmt.Printf("BuildHostOs = %v\n", v.BuildHostOs)
+	}
+	if v.BuildHostArch != "" {
+		fmt.Printf("BuildHostArch = %v\n", v.BuildHostArch)
+	}
 }
 
 var Version version
@@ -44,6 +52,7 @@ func NewCmdVersion() *cobra.Command {
 	versionCmd := &cobra.Command{
 		Use:   "version",
 		Short: "Prints binary version number.",
+		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
 			Version.Print()
 		},
