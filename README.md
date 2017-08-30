@@ -1,6 +1,6 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/appscode/cloudid)](https://goreportcard.com/report/github.com/appscode/cloudid)
 
-[Website](https://appscode.com) • [Slack](https://slack.appscode.com) • [Forum](https://discuss.appscode.com) • [Twitter](https://twitter.com/AppsCodeHQ)
+[Website](https://appscode.com) • [Slack](https://slack.appscode.com) • [Twitter](https://twitter.com/AppsCodeHQ)
 
 # CloudID
 Detect Cloud Provider from Instance Metadata
@@ -23,21 +23,3 @@ This library can be used to identify cloud provider based on various instance me
 |vultr        | Vultr                 | [Instance metadata](https://www.vultr.com/metadata/) |
 
 Please file an issue if you would have ideas to improve detection technique or add support for additional cloud providers. Pull requests are welcome.
-
-## Documentation
-https://godoc.org/github.com/appscode/cloudid
-
-## Example
-```go
-package main
-
-import (
-	"fmt"
-
-	"github.com/appscode/cloudid"
-)
-
-func main() {
-	fmt.Println("Cloud Provider:", cloudid.Detect())
-}
-```
