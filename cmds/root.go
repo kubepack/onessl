@@ -19,7 +19,7 @@ func NewRootCmd(version string) *cobra.Command {
 	var (
 		enableAnalytics = true
 	)
-	cmd := &cobra.Command{
+	rootCmd := &cobra.Command{
 		Use:               "cloudid [command]",
 		Short:             `Cloudid by AppsCode - Utilities for your cloud`,
 		DisableAutoGenTag: true,
@@ -35,13 +35,13 @@ func NewRootCmd(version string) *cobra.Command {
 			}
 		},
 	}
-	cmd.PersistentFlags().AddGoFlagSet(flag.CommandLine)
+	rootCmd.PersistentFlags().BoolVar(&enableAnalytics, "analytics", enableAnalytics, "Send analytical events to Google Guard")
+	rootCmd.PersistentFlags().AddGoFlagSet(flag.CommandLine)
 	// ref: https://github.com/kubernetes/kubernetes/issues/17162#issuecomment-225596212
 	flag.CommandLine.Parse([]string{})
-	cmd.PersistentFlags().BoolVar(&enableAnalytics, "analytics", enableAnalytics, "Send analytical events to Google Guard")
 
-	cmd.AddCommand(NewCmdWhoAmI())
-	cmd.AddCommand(NewCmdGet())
-	cmd.AddCommand(v.NewCmdVersion())
-	return cmd
+	rootCmd.AddCommand(NewCmdWhoAmI())
+	rootCmd.AddCommand(NewCmdGet())
+	rootCmd.AddCommand(v.NewCmdVersion())
+	return rootCmd
 }
