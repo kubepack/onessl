@@ -120,6 +120,47 @@ def build(name=None):
         build_cmds()
 
 
+def push_bin(bindir):
+    call('rm -f *.md5', cwd=bindir)
+    call('rm -f *.sha1', cwd=bindir)
+    for f in os.listdir(bindir):
+        if os.path.isfile(bindir + '/' + f):
+            libbuild.upload_to_cloud(bindir, f, BUILD_METADATA['version'])
+
+
+def push(name=None):
+    if name:
+        bindir = libbuild.REPO_ROOT + '/dist/' + name
+        push_bin(bindir)
+    else:
+        dist = libbuild.REPO_ROOT + '/dist'
+        for name in os.listdir(dist):
+            d = dist + '/' + name
+            if os.path.isdir(d):
+                push_bin(d)
+
+
+def update_registry():
+    vf = libbuild.REPO_ROOT + '/dist/cloudid/versions.json'
+    bucket = libbuild.BUCKET_MATRIX.get(libbuild.ENV, libbuild.BUCKET_MATRIX['dev'])
+    call('gsutil cp {0}/binaries/cloudid/versions.json {1}'.format(bucket, vf))
+    vj = {}
+    if os.path.isfile(vf):
+        vj = libbuild.read_json(vf)
+    vj[BUILD_METADATA['version']] = {
+        'changesets': [],
+        'release_date': int(time.time())
+    }
+    libbuild.write_json(vj, vf)
+    call("gsutil cp {1} {0}/binaries/cloudid/versions.json".format(bucket, vf))
+    call('gsutil acl ch -u AllUsers:R -r {0}/binaries/cloudid/versions.json'.format(bucket))
+
+    lf = libbuild.REPO_ROOT + '/dist/cloudid/latest.txt'
+    libbuild.write_file(lf, BUILD_METADATA['version'])
+    call("gsutil cp {1} {0}/binaries/cloudid/latest.txt".format(bucket, lf))
+    call('gsutil acl ch -u AllUsers:R -r {0}/binaries/cloudid/latest.txt'.format(bucket))
+
+
 def install():
     die(call('GO15VENDOREXPERIMENT=1 ' + libbuild.GOC + ' install ./...'))
 
