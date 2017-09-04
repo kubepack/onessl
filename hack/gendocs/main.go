@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/appscode/go/runtime"
 	"github.com/appscode/cloudid/cmds"
+	"github.com/appscode/go/runtime"
 	"github.com/spf13/cobra/doc"
 )
 

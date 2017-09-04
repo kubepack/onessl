@@ -14,7 +14,8 @@ cloudid get cacert [flags]
 ### Options
 
 ```
-  -h, --help   help for cacert
+      --common-name string   Common Name used in CA certificate.
+  -h, --help                 help for cacert
 ```
 
 ### Options inherited from parent commands

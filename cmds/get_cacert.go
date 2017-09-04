@@ -13,6 +13,7 @@ import (
 )
 
 func NewCmdGetCACert() *cobra.Command {
+	var cn string
 	cmd := &cobra.Command{
 		Use:               "cacert",
 		Short:             "Prints self-sgned CA certificate from PEM encoded RSA private key",
@@ -31,7 +32,7 @@ func NewCmdGetCACert() *cobra.Command {
 			if !ok {
 				Fatal(fmt.Errorf("Only supports rsa private key. Found %v", reflect.ValueOf(key).Kind().String()))
 			}
-			crt, err := cert.NewSelfSignedCACert(cert.Config{CommonName: "ca"}, rsaKey)
+			crt, err := cert.NewSelfSignedCACert(cert.Config{CommonName: cn}, rsaKey)
 			if err != nil {
 				Fatal(fmt.Errorf("Failed to generate self-signed certificate. Reason: %v.", err))
 			}
@@ -39,6 +40,6 @@ func NewCmdGetCACert() *cobra.Command {
 			os.Exit(0)
 		},
 	}
-
+	cmd.Flags().StringVar(&cn, "common-name", cn, "Common Name used in CA certificate.")
 	return cmd
 }
