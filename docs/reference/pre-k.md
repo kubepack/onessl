@@ -1,28 +1,18 @@
-## cloudid get private-ips
+## pre-k
 
-Prints private ip(s) for current host
+Pre-k by AppsCode - Utilities for your cloud
 
 ### Synopsis
 
 
-Prints private ip(s) for current host
-
-```
-cloudid get private-ips [flags]
-```
+Pre-k by AppsCode - Utilities for your cloud
 
 ### Options
 
 ```
-      --all    If true, returns all private ips. (default true)
-  -h, --help   help for private-ips
-```
-
-### Options inherited from parent commands
-
-```
       --alsologtostderr                  log to standard error as well as files
       --analytics                        Send analytical events to Google Guard (default true)
+  -h, --help                             help for pre-k
       --log_backtrace_at traceLocation   when logging hits line file:N, emit a stack trace (default :0)
       --log_dir string                   If non-empty, write log files in this directory
       --logtostderr                      log to standard error instead of files
@@ -32,5 +22,8 @@ cloudid get private-ips [flags]
 ```
 
 ### SEE ALSO
-* [cloudid get](cloudid_get.md)	 - Get stuff
+* [pre-k get](pre-k_get.md)	 - Get stuff
+* [pre-k merge](pre-k_merge.md)	 - Merge Kubeadm config
+* [pre-k version](pre-k_version.md)	 - Prints binary version number.
+* [pre-k whoami](pre-k_whoami.md)	 - Detect cloud provider
 

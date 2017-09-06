@@ -1,4 +1,4 @@
-## cloudid merge master-config
+## pre-k merge master-config
 
 Merge Kubeadm master configuration
 
@@ -8,7 +8,7 @@ Merge Kubeadm master configuration
 Merge Kubeadm master configuration
 
 ```
-cloudid merge master-config [flags]
+pre-k merge master-config [flags]
 ```
 
 ### Options
@@ -45,5 +45,5 @@ cloudid merge master-config [flags]
 ```
 
 ### SEE ALSO
-* [cloudid merge](cloudid_merge.md)	 - Merge Kubeadm config
+* [pre-k merge](pre-k_merge.md)	 - Merge Kubeadm config
 

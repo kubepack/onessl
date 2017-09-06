@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/appscode/cloudid/cmds"
 	logs "github.com/appscode/go/log/golog"
+	"github.com/appscode/pre-k/cmds"
 )
 
 func main() {

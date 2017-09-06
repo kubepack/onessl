@@ -37,10 +37,10 @@ import time
 import yaml
 from os.path import expandvars, join, dirname
 
-libbuild.REPO_ROOT = expandvars('$GOPATH') + '/src/github.com/appscode/cloudid'
+libbuild.REPO_ROOT = expandvars('$GOPATH') + '/src/github.com/appscode/pre-k'
 BUILD_METADATA = libbuild.metadata(libbuild.REPO_ROOT)
 libbuild.BIN_MATRIX = {
-    'cloudid': {
+    'pre-k': {
         'type': 'go',
         'go_version': True,
         'release': True,
@@ -143,9 +143,9 @@ def push(name=None):
 
 
 def update_registry():
-    vf = libbuild.REPO_ROOT + '/dist/cloudid/versions.json'
+    vf = libbuild.REPO_ROOT + '/dist/pre-k/versions.json'
     bucket = libbuild.BUCKET_MATRIX.get(libbuild.ENV, libbuild.BUCKET_MATRIX['dev'])
-    call('gsutil cp {0}/binaries/cloudid/versions.json {1}'.format(bucket, vf))
+    call('gsutil cp {0}/binaries/pre-k/versions.json {1}'.format(bucket, vf))
     vj = {}
     if os.path.isfile(vf):
         vj = libbuild.read_json(vf)
@@ -154,13 +154,13 @@ def update_registry():
         'release_date': int(time.time())
     }
     libbuild.write_json(vj, vf)
-    call("gsutil cp {1} {0}/binaries/cloudid/versions.json".format(bucket, vf))
-    call('gsutil acl ch -u AllUsers:R -r {0}/binaries/cloudid/versions.json'.format(bucket))
+    call("gsutil cp {1} {0}/binaries/pre-k/versions.json".format(bucket, vf))
+    call('gsutil acl ch -u AllUsers:R -r {0}/binaries/pre-k/versions.json'.format(bucket))
 
-    lf = libbuild.REPO_ROOT + '/dist/cloudid/latest.txt'
+    lf = libbuild.REPO_ROOT + '/dist/pre-k/latest.txt'
     libbuild.write_file(lf, BUILD_METADATA['version'])
-    call("gsutil cp {1} {0}/binaries/cloudid/latest.txt".format(bucket, lf))
-    call('gsutil acl ch -u AllUsers:R -r {0}/binaries/cloudid/latest.txt'.format(bucket))
+    call("gsutil cp {1} {0}/binaries/pre-k/latest.txt".format(bucket, lf))
+    call('gsutil acl ch -u AllUsers:R -r {0}/binaries/pre-k/latest.txt'.format(bucket))
 
 
 def install():

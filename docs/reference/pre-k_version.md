@@ -1,22 +1,20 @@
-## cloudid get node-ip
+## pre-k version
 
-Prints a IPv4 address for current host
+Prints binary version number.
 
 ### Synopsis
 
 
-Prints a IPv4 address for current host for a given set of interface names. It always prefers a private IP over a public IP.
-If no interface name is given, all interfaces are checked.
+Prints binary version number.
 
 ```
-cloudid get node-ip [flags]
+pre-k version [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help                 help for node-ip
-      --ifaces stringSlice   Comma separated list of interface names. If empty, all interfaces are checked.
+  -h, --help   help for version
 ```
 
 ### Options inherited from parent commands
@@ -33,5 +31,5 @@ cloudid get node-ip [flags]
 ```
 
 ### SEE ALSO
-* [cloudid get](cloudid_get.md)	 - Get stuff
+* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
 

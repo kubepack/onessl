@@ -3,7 +3,7 @@ package cmds
 import (
 	"fmt"
 
-	"github.com/appscode/cloudid/internal"
+	"github.com/appscode/pre-k/internal"
 	"github.com/spf13/cobra"
 )
 

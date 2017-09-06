@@ -1,16 +1,16 @@
-## cloudid get
+## pre-k merge
 
-Get stuff
+Merge Kubeadm config
 
 ### Synopsis
 
 
-Get stuff
+Merge Kubeadm config
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for merge
 ```
 
 ### Options inherited from parent commands
@@ -27,9 +27,7 @@ Get stuff
 ```
 
 ### SEE ALSO
-* [cloudid](cloudid.md)	 - Cloudid by AppsCode - Utilities for your cloud
-* [cloudid get cacert](cloudid_get_cacert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
-* [cloudid get node-ip](cloudid_get_node-ip.md)	 - Prints a IPv4 address for current host
-* [cloudid get private-ips](cloudid_get_private-ips.md)	 - Prints private ip(s) for current host
-* [cloudid get public-ips](cloudid_get_public-ips.md)	 - Prints public ip(s) for current host
+* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
+* [pre-k merge master-config](pre-k_merge_master-config.md)	 - Merge Kubeadm master configuration
+* [pre-k merge node-config](pre-k_merge_node-config.md)	 - Merge Kubeadm node configuration
 

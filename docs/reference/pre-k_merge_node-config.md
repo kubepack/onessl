@@ -1,4 +1,4 @@
-## cloudid merge node-config
+## pre-k merge node-config
 
 Merge Kubeadm node configuration
 
@@ -8,7 +8,7 @@ Merge Kubeadm node configuration
 Merge Kubeadm node configuration
 
 ```
-cloudid merge node-config [flags]
+pre-k merge node-config [flags]
 ```
 
 ### Options
@@ -38,5 +38,5 @@ cloudid merge node-config [flags]
 ```
 
 ### SEE ALSO
-* [cloudid merge](cloudid_merge.md)	 - Merge Kubeadm config
+* [pre-k merge](pre-k_merge.md)	 - Merge Kubeadm config
 

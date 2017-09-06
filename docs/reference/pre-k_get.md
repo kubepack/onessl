@@ -1,20 +1,16 @@
-## cloudid version
+## pre-k get
 
-Prints binary version number.
+Get stuff
 
 ### Synopsis
 
 
-Prints binary version number.
-
-```
-cloudid version [flags]
-```
+Get stuff
 
 ### Options
 
 ```
-  -h, --help   help for version
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -31,5 +27,9 @@ cloudid version [flags]
 ```
 
 ### SEE ALSO
-* [cloudid](cloudid.md)	 - Cloudid by AppsCode - Utilities for your cloud
+* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
+* [pre-k get cacert](pre-k_get_cacert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
+* [pre-k get node-ip](pre-k_get_node-ip.md)	 - Prints a IPv4 address for current host
+* [pre-k get private-ips](pre-k_get_private-ips.md)	 - Prints private ip(s) for current host
+* [pre-k get public-ips](pre-k_get_public-ips.md)	 - Prints public ip(s) for current host
 

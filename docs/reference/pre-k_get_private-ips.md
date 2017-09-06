@@ -1,20 +1,21 @@
-## cloudid whoami
+## pre-k get private-ips
 
-Detect cloud provider
+Prints private ip(s) for current host
 
 ### Synopsis
 
 
-Detect cloud provider
+Prints private ip(s) for current host
 
 ```
-cloudid whoami [flags]
+pre-k get private-ips [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for whoami
+      --all    If true, returns all private ips. (default true)
+  -h, --help   help for private-ips
 ```
 
 ### Options inherited from parent commands
@@ -31,5 +32,5 @@ cloudid whoami [flags]
 ```
 
 ### SEE ALSO
-* [cloudid](cloudid.md)	 - Cloudid by AppsCode - Utilities for your cloud
+* [pre-k get](pre-k_get.md)	 - Get stuff
 

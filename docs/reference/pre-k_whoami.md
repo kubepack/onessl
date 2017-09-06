@@ -1,21 +1,20 @@
-## cloudid get cacert
+## pre-k whoami
 
-Prints self-sgned CA certificate from PEM encoded RSA private key
+Detect cloud provider
 
 ### Synopsis
 
 
-Prints self-sgned CA certificate from PEM encoded RSA private key
+Detect cloud provider
 
 ```
-cloudid get cacert [flags]
+pre-k whoami [flags]
 ```
 
 ### Options
 
 ```
-      --common-name string   Common Name used in CA certificate.
-  -h, --help                 help for cacert
+  -h, --help   help for whoami
 ```
 
 ### Options inherited from parent commands
@@ -32,5 +31,5 @@ cloudid get cacert [flags]
 ```
 
 ### SEE ALSO
-* [cloudid get](cloudid_get.md)	 - Get stuff
+* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
 

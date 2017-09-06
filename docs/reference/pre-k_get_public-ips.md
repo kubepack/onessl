@@ -1,18 +1,29 @@
-## cloudid
+## pre-k get public-ips
 
-Cloudid by AppsCode - Utilities for your cloud
+Prints public ip(s) for current host
 
 ### Synopsis
 
 
-Cloudid by AppsCode - Utilities for your cloud
+Prints public ip(s) for current host
+
+```
+pre-k get public-ips [flags]
+```
 
 ### Options
 
 ```
+      --all        If true, returns all private ips. (default true)
+  -h, --help       help for public-ips
+      --routable   If true, uses https://ipinfo.io/ip to detect ip in case host interfaces are missing public ips.
+```
+
+### Options inherited from parent commands
+
+```
       --alsologtostderr                  log to standard error as well as files
       --analytics                        Send analytical events to Google Guard (default true)
-  -h, --help                             help for cloudid
       --log_backtrace_at traceLocation   when logging hits line file:N, emit a stack trace (default :0)
       --log_dir string                   If non-empty, write log files in this directory
       --logtostderr                      log to standard error instead of files
@@ -22,8 +33,5 @@ Cloudid by AppsCode - Utilities for your cloud
 ```
 
 ### SEE ALSO
-* [cloudid get](cloudid_get.md)	 - Get stuff
-* [cloudid merge](cloudid_merge.md)	 - Merge Kubeadm config
-* [cloudid version](cloudid_version.md)	 - Prints binary version number.
-* [cloudid whoami](cloudid_whoami.md)	 - Detect cloud provider
+* [pre-k get](pre-k_get.md)	 - Get stuff
 

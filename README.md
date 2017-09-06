@@ -1,9 +1,7 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/appscode/cloudid)](https://goreportcard.com/report/github.com/appscode/cloudid)
+[![Go Report Card](https://goreportcard.com/badge/github.com/appscode/pre-k)](https://goreportcard.com/report/github.com/appscode/pre-k)
 
-[Website](https://appscode.com) • [Slack](https://slack.appscode.com) • [Twitter](https://twitter.com/AppsCodeHQ)
-
-# CloudID
-Detect Cloud Provider from Instance Metadata
+# Pre-k
+Pre Kubeadm
 
 ## Motivation
 Kubernetes has the concept of a [Cloud Provider](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider),
@@ -23,3 +21,17 @@ This library can be used to identify cloud provider based on various instance me
 |vultr        | Vultr                 | [Instance metadata](https://www.vultr.com/metadata/) |
 
 Please file an issue if you would have ideas to improve detection technique or add support for additional cloud providers. Pull requests are welcome.
+
+## Contribution guidelines
+Want to help improve Guard? Please start [here](/CONTRIBUTING.md).
+
+---
+
+**The pre-k binary collects anonymous usage statistics to help us learn how the software is being used and how we can improve it. To disable stats collection, run the operator with the flag** `--analytics=false`.
+
+---
+
+## Support
+If you have any questions, you can reach out to us.
+* [Slack](https://slack.appscode.com)
+* [Twitter](https://twitter.com/AppsCodeHQ)

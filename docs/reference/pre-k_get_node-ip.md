@@ -1,16 +1,22 @@
-## cloudid merge
+## pre-k get node-ip
 
-Merge Kubeadm config
+Prints a IPv4 address for current host
 
 ### Synopsis
 
 
-Merge Kubeadm config
+Prints a IPv4 address for current host for a given set of interface names. It always prefers a private IP over a public IP.
+If no interface name is given, all interfaces are checked.
+
+```
+pre-k get node-ip [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for merge
+  -h, --help                 help for node-ip
+      --ifaces stringSlice   Comma separated list of interface names. If empty, all interfaces are checked.
 ```
 
 ### Options inherited from parent commands
@@ -27,7 +33,5 @@ Merge Kubeadm config
 ```
 
 ### SEE ALSO
-* [cloudid](cloudid.md)	 - Cloudid by AppsCode - Utilities for your cloud
-* [cloudid merge master-config](cloudid_merge_master-config.md)	 - Merge Kubeadm master configuration
-* [cloudid merge node-config](cloudid_merge_node-config.md)	 - Merge Kubeadm node configuration
+* [pre-k get](pre-k_get.md)	 - Get stuff
 

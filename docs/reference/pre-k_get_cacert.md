@@ -1,22 +1,21 @@
-## cloudid get public-ips
+## pre-k get cacert
 
-Prints public ip(s) for current host
+Prints self-sgned CA certificate from PEM encoded RSA private key
 
 ### Synopsis
 
 
-Prints public ip(s) for current host
+Prints self-sgned CA certificate from PEM encoded RSA private key
 
 ```
-cloudid get public-ips [flags]
+pre-k get cacert [flags]
 ```
 
 ### Options
 
 ```
-      --all        If true, returns all private ips. (default true)
-  -h, --help       help for public-ips
-      --routable   If true, uses https://ipinfo.io/ip to detect ip in case host interfaces are missing public ips.
+      --common-name string   Common Name used in CA certificate.
+  -h, --help                 help for cacert
 ```
 
 ### Options inherited from parent commands
@@ -33,5 +32,5 @@ cloudid get public-ips [flags]
 ```
 
 ### SEE ALSO
-* [cloudid get](cloudid_get.md)	 - Get stuff
+* [pre-k get](pre-k_get.md)	 - Get stuff
 
