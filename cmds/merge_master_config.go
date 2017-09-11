@@ -44,7 +44,7 @@ func NewCmdMergeMasterConfig() *cobra.Command {
 				}
 			}
 
-			cfg.APIVersion = "v1alpha1"
+			cfg.APIVersion = "kubeadm.k8s.io/v1alpha1"
 			cfg.Kind = "MasterConfiguration"
 			data, err := yaml.Marshal(cfg)
 			if err != nil {

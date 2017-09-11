@@ -43,7 +43,7 @@ func NewCmdMergeNodeConfig() *cobra.Command {
 				}
 			}
 
-			cfg.APIVersion = "v1alpha1"
+			cfg.APIVersion = "kubeadm.k8s.io/v1alpha1"
 			cfg.Kind = "NodeConfiguration"
 			data, err := yaml.Marshal(cfg)
 			if err != nil {
