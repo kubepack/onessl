@@ -15,7 +15,6 @@ import (
 func NewCmdMergeNodeConfig() *cobra.Command {
 	cfg := &kubeadmapi.NodeConfiguration{}
 	var cfgPath string
-	var skipPreFlight bool
 	cmd := &cobra.Command{
 		Use:               "node-config",
 		Short:             `Merge Kubeadm node configuration`,
@@ -53,7 +52,7 @@ func NewCmdMergeNodeConfig() *cobra.Command {
 			os.Exit(0)
 		},
 	}
-
+	// ref: https://github.com/kubernetes/kubernetes/blob/0b9efaeb34a2fc51ff8e4d34ad9bc6375459c4a4/cmd/kubeadm/app/cmd/join.go#L122
 	cmd.PersistentFlags().StringVar(
 		&cfgPath, "config", cfgPath,
 		"Path to kubeadm config file")
@@ -70,14 +69,16 @@ func NewCmdMergeNodeConfig() *cobra.Command {
 	cmd.PersistentFlags().StringVar(
 		&cfg.TLSBootstrapToken, "tls-bootstrap-token", "",
 		"A token used for TLS bootstrapping")
+	cmd.PersistentFlags().StringSliceVar(
+		&cfg.DiscoveryTokenCACertHashes, "discovery-token-ca-cert-hash", []string{},
+		"For token-based discovery, validate that the root CA public key matches this hash (format: \"<type>:<value>\").")
+	cmd.PersistentFlags().BoolVar(
+		&cfg.DiscoveryTokenUnsafeSkipCAVerification, "discovery-token-unsafe-skip-ca-verification", false,
+		"For token-based discovery, allow joining without --discovery-token-ca-cert-hash pinning.")
+
 	cmd.PersistentFlags().StringVar(
 		&cfg.Token, "token", "",
 		"Use this token for both discovery-token and tls-bootstrap-token")
-
-	cmd.PersistentFlags().BoolVar(
-		&skipPreFlight, "skip-preflight-checks", false,
-		"Skip preflight checks normally run before modifying the system",
-	)
 
 	return cmd
 }
