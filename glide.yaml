@@ -10,9 +10,11 @@ import:
   version: v1.0.0
 - package: github.com/gogo/protobuf/proto
   version: c0656edd0d9eab7c66d1eb0c568f9039345796f7
+- package: k8s.io/api
+  version: fe29995db37613b9c5b2a647544cf627bfa8d299
 - package: k8s.io/apimachinery
-  version: 9d38e20d609d27e00d4ec18f7b9db67105a2bde0
+  version: 019ae5ada31de202164b118aee88ee2d14075c31
 - package: k8s.io/client-go
-  version: release-5.0
+  version: v5.0.0
 - package: k8s.io/kubernetes
-  version: ~1.8.0
+  version: v1.8.0
