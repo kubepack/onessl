@@ -1,7 +1,6 @@
 package: github.com/appscode/pre-k
 import:
 - package: github.com/appscode/go
-- package: github.com/appscode/go/log
 - package: github.com/appscode/mergo
   version: master
 - package: github.com/jpillora/go-ogle-analytics

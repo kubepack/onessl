@@ -1,5 +1,5 @@
-hash: b440f66c58c8099804d2f8c4da86cb26eafcb1629772e9392add61d7861684ec
-updated: 2017-10-22T19:23:50.82045834-07:00
+hash: 6ac53143dc5974b291185b94298d31e4217f76c6b57fdb4949bb4397ca6194cd
+updated: 2017-10-30T16:38:00.689267887-07:00
 imports:
 - name: github.com/appscode/go
   version: c01120782e8b487d1c86ab4299241edfe36a3ca2
@@ -67,7 +67,7 @@ imports:
 - name: github.com/shurcooL/sanitized_anchor_name
   version: 10ef21a441db47d8b13ebcc5fd2310f636973c77
 - name: github.com/spf13/cobra
-  version: 7b2c5ac9fc04fc5efafb60700713d4fa609b777b
+  version: b3426bbac13d7110c4d8fce456ea0012f79f3b8b
   subpackages:
   - doc
 - name: github.com/spf13/pflag

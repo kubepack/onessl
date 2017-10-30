@@ -1,7 +1,6 @@
 package cmds
 
 import (
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -25,18 +24,13 @@ func NewCmdMergeNodeConfig() *cobra.Command {
 				if err != nil {
 					Fatal(err)
 				}
-				data, err = yaml.YAMLToJSON(data)
-				if err != nil {
-					Fatal(err)
-				}
-
 				var in kubeadmapi.NodeConfiguration
-				err = json.Unmarshal(data, &in)
+				err = yaml.Unmarshal(data, &in)
 				if err != nil {
 					Fatal(err)
 				}
 
-				err = mergo.MergeWithOverwrite(cfg, &in)
+				err = mergo.Merge(cfg, in)
 				if err != nil {
 					Fatal(err)
 				}
