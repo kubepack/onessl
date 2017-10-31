@@ -19,7 +19,7 @@ func NewCmdPrivateIPs() *cobra.Command {
 		Run: func(cmd *cobra.Command, args []string) {
 			_, ips, err := net.HostIPs()
 			if err != nil {
-				Fatal(fmt.Errorf("Failed to detect host ips. Reason: %v", err))
+				Fatal(fmt.Errorf("failed to detect host ips. Reason: %v", err))
 			}
 			ipset := sets.NewString()
 			for _, ip := range ips {

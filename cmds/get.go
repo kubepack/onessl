@@ -14,5 +14,6 @@ func NewCmdGet() *cobra.Command {
 	cmd.AddCommand(NewCmdNodeIP())
 	cmd.AddCommand(NewCmdPublicIPs())
 	cmd.AddCommand(NewCmdPrivateIPs())
+	cmd.AddCommand(NewCmdLinodeHostname())
 	return cmd
 }

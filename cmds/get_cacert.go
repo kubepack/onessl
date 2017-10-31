@@ -22,11 +22,11 @@ func NewCmdGetCACert() *cobra.Command {
 			reader := bufio.NewReader(os.Stdin)
 			keyBytes, err := ioutil.ReadAll(reader)
 			if err != nil {
-				Fatal(fmt.Errorf("Failed to read private key. Reason: %v", err))
+				Fatal(fmt.Errorf("failed to read private key. Reason: %v", err))
 			}
 			key, err := cert.ParsePrivateKeyPEM(keyBytes)
 			if err != nil {
-				Fatal(fmt.Errorf("Failed to parse private key. Reason: %v", err))
+				Fatal(fmt.Errorf("failed to parse private key. Reason: %v", err))
 			}
 			rsaKey, ok := key.(*rsa.PrivateKey)
 			if !ok {
@@ -34,7 +34,7 @@ func NewCmdGetCACert() *cobra.Command {
 			}
 			crt, err := cert.NewSelfSignedCACert(cert.Config{CommonName: cn}, rsaKey)
 			if err != nil {
-				Fatal(fmt.Errorf("Failed to generate self-signed certificate. Reason: %v.", err))
+				Fatal(fmt.Errorf("failed to generate self-signed certificate. Reason: %v.", err))
 			}
 			fmt.Println(string(cert.EncodeCertPEM(crt)))
 			os.Exit(0)

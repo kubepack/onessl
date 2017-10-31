@@ -24,12 +24,12 @@ func NewCmdPublicIPs() *cobra.Command {
 			if routable {
 				ips, _, err = net.RoutableIPs()
 				if err != nil {
-					Fatal(fmt.Errorf("Failed to detect routable ips. Reason: %v", err))
+					Fatal(fmt.Errorf("failed to detect routable ips. Reason: %v", err))
 				}
 			} else {
 				ips, _, err = net.HostIPs()
 				if err != nil {
-					Fatal(fmt.Errorf("Failed to detect host ips. Reason: %v", err))
+					Fatal(fmt.Errorf("failed to detect host ips. Reason: %v", err))
 				}
 			}
 

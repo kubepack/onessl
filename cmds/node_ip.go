@@ -19,7 +19,7 @@ If no interface name is given, all interfaces are checked.`,
 		Run: func(cmd *cobra.Command, args []string) {
 			_, ip, err := net.NodeIP(ifaces...)
 			if err != nil {
-				Fatal(fmt.Errorf("Failed to detect node ip. Reason: %v", err))
+				Fatal(fmt.Errorf("failed to detect node ip. Reason: %v", err))
 			}
 			fmt.Print(ip.String())
 			os.Exit(0)
