@@ -9,12 +9,16 @@ import (
 	"github.com/appscode/mergo"
 	"github.com/ghodss/yaml"
 	"github.com/spf13/cobra"
+	"k8s.io/apimachinery/pkg/util/sets"
 	kubeadmapi "k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha1"
 	"k8s.io/kubernetes/cmd/kubeadm/app/features"
 )
 
 func NewCmdMergeMasterConfig() *cobra.Command {
-	cfg := &kubeadmapi.MasterConfiguration{}
+	var (
+		cfg  = &kubeadmapi.MasterConfiguration{}
+		sans = []string{}
+	)
 	var cfgPath string
 	var featureGatesString string
 	cmd := &cobra.Command{
@@ -27,6 +31,8 @@ func NewCmdMergeMasterConfig() *cobra.Command {
 				os.Exit(1)
 			}
 
+			sanSet := sets.NewString(sans...)
+
 			if cfgPath != "" {
 				data, err := ioutil.ReadFile(cfgPath)
 				if err != nil {
@@ -37,6 +43,7 @@ func NewCmdMergeMasterConfig() *cobra.Command {
 				if err != nil {
 					Fatal(err)
 				}
+				sanSet.Insert(in.APIServerCertSANs...)
 
 				err = mergo.Merge(cfg, in)
 				if err != nil {
@@ -46,6 +53,7 @@ func NewCmdMergeMasterConfig() *cobra.Command {
 
 			cfg.APIVersion = "kubeadm.k8s.io/v1alpha1"
 			cfg.Kind = "MasterConfiguration"
+			cfg.APIServerCertSANs = sanSet.List()
 			data, err := yaml.Marshal(cfg)
 			if err != nil {
 				Fatal(err)
@@ -84,7 +92,7 @@ func NewCmdMergeMasterConfig() *cobra.Command {
 		`The path where to save and store the certificates`,
 	)
 	cmd.Flags().StringSliceVar(
-		&cfg.APIServerCertSANs, "apiserver-cert-extra-sans", cfg.APIServerCertSANs,
+		&sans, "apiserver-cert-extra-sans", sans,
 		`Optional extra altnames to use for the API Server serving cert. Can be both IP addresses and dns names.`,
 	)
 	cmd.Flags().StringVar(
