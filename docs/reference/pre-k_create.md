@@ -1,16 +1,16 @@
-## pre-k get
+## pre-k create
 
-Get stuff
+create PKI
 
 ### Synopsis
 
 
-Get stuff
+create PKI
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for create
 ```
 
 ### Options inherited from parent commands
@@ -28,9 +28,7 @@ Get stuff
 
 ### SEE ALSO
 * [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
-* [pre-k get ca-cert](pre-k_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
-* [pre-k get linode-hostname](pre-k_get_linode-hostname.md)	 - Prints hostname based on public IP for current Linode host
-* [pre-k get node-ip](pre-k_get_node-ip.md)	 - Prints a IPv4 address for current host
-* [pre-k get private-ips](pre-k_get_private-ips.md)	 - Prints private ip(s) for current host
-* [pre-k get public-ips](pre-k_get_public-ips.md)	 - Prints public ip(s) for current host
+* [pre-k create ca-cert](pre-k_create_ca-cert.md)	 - Create CA cert/key pair
+* [pre-k create client-cert](pre-k_create_client-cert.md)	 - Generate client certificate pair
+* [pre-k create server-cert](pre-k_create_server-cert.md)	 - Generate server certificate pair
 

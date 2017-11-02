@@ -1,16 +1,21 @@
-## pre-k get
+## pre-k get ca-cert
 
-Get stuff
+Prints self-sgned CA certificate from PEM encoded RSA private key
 
 ### Synopsis
 
 
-Get stuff
+Prints self-sgned CA certificate from PEM encoded RSA private key
+
+```
+pre-k get ca-cert [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for get
+      --common-name string   Common Name used in CA certificate.
+  -h, --help                 help for ca-cert
 ```
 
 ### Options inherited from parent commands
@@ -27,10 +32,5 @@ Get stuff
 ```
 
 ### SEE ALSO
-* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
-* [pre-k get ca-cert](pre-k_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
-* [pre-k get linode-hostname](pre-k_get_linode-hostname.md)	 - Prints hostname based on public IP for current Linode host
-* [pre-k get node-ip](pre-k_get_node-ip.md)	 - Prints a IPv4 address for current host
-* [pre-k get private-ips](pre-k_get_private-ips.md)	 - Prints private ip(s) for current host
-* [pre-k get public-ips](pre-k_get_public-ips.md)	 - Prints public ip(s) for current host
+* [pre-k get](pre-k_get.md)	 - Get stuff
 

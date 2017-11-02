@@ -15,7 +15,7 @@ import (
 func NewCmdGetCACert() *cobra.Command {
 	var cn string
 	cmd := &cobra.Command{
-		Use:               "cacert",
+		Use:               "ca-cert",
 		Short:             "Prints self-sgned CA certificate from PEM encoded RSA private key",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
@@ -30,11 +30,11 @@ func NewCmdGetCACert() *cobra.Command {
 			}
 			rsaKey, ok := key.(*rsa.PrivateKey)
 			if !ok {
-				Fatal(fmt.Errorf("Only supports rsa private key. Found %v", reflect.ValueOf(key).Kind().String()))
+				Fatal(fmt.Errorf("only supports rsa private key. Found %v", reflect.ValueOf(key).Kind().String()))
 			}
 			crt, err := cert.NewSelfSignedCACert(cert.Config{CommonName: cn}, rsaKey)
 			if err != nil {
-				Fatal(fmt.Errorf("failed to generate self-signed certificate. Reason: %v.", err))
+				Fatal(fmt.Errorf("failed to generate self-signed certificate. Reason: %v", err))
 			}
 			fmt.Println(string(cert.EncodeCertPEM(crt)))
 			os.Exit(0)

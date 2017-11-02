@@ -1,5 +1,5 @@
 hash: 6ac53143dc5974b291185b94298d31e4217f76c6b57fdb4949bb4397ca6194cd
-updated: 2017-10-30T16:38:00.689267887-07:00
+updated: 2017-11-01T23:20:03.84095088-07:00
 imports:
 - name: github.com/appscode/go
   version: c01120782e8b487d1c86ab4299241edfe36a3ca2
@@ -11,6 +11,8 @@ imports:
   - net/httpclient
   - runtime
   - version
+- name: github.com/appscode/log
+  version: 68e0e42e42c01371f3950571fc87c2298a51dd8f
 - name: github.com/appscode/mergo
   version: e3000cb3d28c72b837601cac94debd91032d19fe
 - name: github.com/cenkalti/backoff
@@ -129,7 +131,7 @@ imports:
   - pkg/watch
   - third_party/forked/golang/reflect
 - name: k8s.io/apiserver
-  version: f9b476d61dbdf6474e3d42cc5e854d0d8b7f759e
+  version: 9707c008294d447053c0e2737c256ee23f99e5b4
   subpackages:
   - pkg/util/feature
 - name: k8s.io/client-go

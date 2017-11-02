@@ -1,21 +1,21 @@
-## pre-k get cacert
+## pre-k create ca-cert
 
-Prints self-sgned CA certificate from PEM encoded RSA private key
+Create CA cert/key pair
 
 ### Synopsis
 
 
-Prints self-sgned CA certificate from PEM encoded RSA private key
+Create CA cert/key pair
 
 ```
-pre-k get cacert [flags]
+pre-k create ca-cert [flags]
 ```
 
 ### Options
 
 ```
-      --common-name string   Common Name used in CA certificate.
-  -h, --help                 help for cacert
+      --cert-dir string   Path to directory where pki files are stored. (default "/etc/kubernetes/pki")
+  -h, --help              help for ca-cert
 ```
 
 ### Options inherited from parent commands
@@ -32,5 +32,5 @@ pre-k get cacert [flags]
 ```
 
 ### SEE ALSO
-* [pre-k get](pre-k_get.md)	 - Get stuff
+* [pre-k create](pre-k_create.md)	 - create PKI
 
