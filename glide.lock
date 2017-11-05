@@ -1,5 +1,5 @@
-hash: 6ac53143dc5974b291185b94298d31e4217f76c6b57fdb4949bb4397ca6194cd
-updated: 2017-11-01T23:20:03.84095088-07:00
+hash: d27c547127ad357b5dc922bea47b9db233a77560b229aba115fd14f653cdb628
+updated: 2017-11-04T17:38:22.846646559-07:00
 imports:
 - name: github.com/appscode/go
   version: c01120782e8b487d1c86ab4299241edfe36a3ca2
@@ -143,7 +143,9 @@ imports:
   subpackages:
   - pkg/common
 - name: k8s.io/kubernetes
-  version: 0b9efaeb34a2fc51ff8e4d34ad9bc6375459c4a4
+  version: bd3f06169027dbe485a1791860b3768d54b199dd
+  repo: https://github.com/appscode/kubernetes.git
+  vcs: git
   subpackages:
   - cmd/kubeadm/app/apis/kubeadm
   - cmd/kubeadm/app/apis/kubeadm/v1alpha1

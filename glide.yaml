@@ -16,4 +16,6 @@ import:
 - package: k8s.io/client-go
   version: v5.0.0
 - package: k8s.io/kubernetes
-  version: v1.8.0
+  repo: https://github.com/appscode/kubernetes.git
+  version: v1.8.3
+  vcs: git
