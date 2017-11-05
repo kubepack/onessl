@@ -1,5 +1,5 @@
-hash: d27c547127ad357b5dc922bea47b9db233a77560b229aba115fd14f653cdb628
-updated: 2017-11-04T17:38:22.846646559-07:00
+hash: 19cc1639150d629e62ce1a926989e7464e1018a0f2ee77539f51903afb68e0e1
+updated: 2017-11-04T22:58:21.944124441-07:00
 imports:
 - name: github.com/appscode/go
   version: c01120782e8b487d1c86ab4299241edfe36a3ca2
@@ -104,7 +104,7 @@ imports:
 - name: gopkg.in/yaml.v2
   version: 53feefa2559fb8dfa8d81baad31be332c97d6c77
 - name: k8s.io/api
-  version: fe29995db37613b9c5b2a647544cf627bfa8d299
+  version: 4df58c811fe2e65feb879227b2b245e4dc26e7ad
   subpackages:
   - core/v1
 - name: k8s.io/apimachinery
@@ -135,7 +135,7 @@ imports:
   subpackages:
   - pkg/util/feature
 - name: k8s.io/client-go
-  version: 35874c597fed17ca62cd197e516d7d5ff9a2958c
+  version: 60bf397d7966ab2285d3ba7701ead2cc376111d4
   subpackages:
   - util/cert
 - name: k8s.io/kube-openapi
