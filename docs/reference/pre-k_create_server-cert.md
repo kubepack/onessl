@@ -18,6 +18,7 @@ pre-k create server-cert [flags]
       --domains stringSlice   Alternative Domain names
   -h, --help                  help for server-cert
       --ips ipSlice           Alternative IP addresses (default [127.0.0.1])
+      --overwrite             Overwrite existing cert/key pair
 ```
 
 ### Options inherited from parent commands

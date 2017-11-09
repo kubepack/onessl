@@ -3,24 +3,23 @@
 # Pre-k
 Pre Kubeadm
 
-## Motivation
-Kubernetes has the concept of a [Cloud Provider](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider),
-which is a module which provides an interface for managing TCP Load Balancers, Nodes (Instances) and Networking Routes.
-This library can be used to identify cloud provider based on various instance metadata without requiring user input.
 
-## Supported Cloud Providers
-| Id          | Name                  | Technique                                                                                                          |
-|-------------|-----------------------|--------------------------------------------------------------------------------------------------------------------|
-|aws          | Amazon Web Services   | [Instance Identity Documents](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html) |
-|azure        | Microsoft Azure       | [Instance info](https://azure.microsoft.com/en-us/blog/what-just-happened-to-my-vm-in-vm-metadata-service/) |
-|digitalocean | DigitalOcan           | [Droplet metadata](https://developers.digitalocean.com/documentation/metadata/#metadata-in-json) |
-|gce          | Google Cloud Platform | [GCE Instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#endpoints) |
-|linode       | Linode                | Reverse domain name(PTR record) |
-|scaleway     | Scaleway              | [Instance user data](https://github.com/scaleway/initrd/issues/84) |
-|softlayer    | IBM Softlayer(Bluemix)| [Instance user metadata](https://github.com/bodenr/cci/wiki/SL-user-metadata) |
-|vultr        | Vultr                 | [Instance metadata](https://www.vultr.com/metadata/) |
+## Available Commands
+* [pre-k create](/docs/reference/pre-k_create.md)	 - create PKI
+  * [pre-k create ca-cert](/docs/reference/pre-k_create_ca-cert.md)	 - Create CA cert/key pair
+  * [pre-k create client-cert](/docs/reference/pre-k_create_client-cert.md)	 - Generate client certificate pair
+  * [pre-k create server-cert](/docs/reference/pre-k_create_server-cert.md)	 - Generate server certificate pair
+* [pre-k get](/docs/reference/pre-k_get.md)	 - Get stuff
+  * [pre-k get ca-cert](/docs/reference/pre-k_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
+  * [pre-k get linode-hostname](/docs/reference/pre-k_get_linode-hostname.md)	 - Prints hostname based on public IP for current Linode host
+  * [pre-k get node-ip](/docs/reference/pre-k_get_node-ip.md)	 - Prints a IPv4 address for current host
+  * [pre-k get private-ips](/docs/reference/pre-k_get_private-ips.md)	 - Prints private ip(s) for current host
+  * [pre-k get public-ips](/docs/reference/pre-k_get_public-ips.md)	 - Prints public ip(s) for current host
+* [pre-k merge](/docs/reference/pre-k_merge.md)	 - Merge Kubeadm config
+  * [pre-k merge master-config](/docs/reference/pre-k_merge_master-config.md)	 - Merge Kubeadm master configuration
+  * [pre-k merge node-config](/docs/reference/pre-k_merge_node-config.md)	 - Merge Kubeadm node configuration
+* [pre-k whoami](/docs/reference/pre-k_whoami.md)	 - Detect cloud provider
 
-Please file an issue if you would have ideas to improve detection technique or add support for additional cloud providers. Pull requests are welcome.
 
 ## Contribution guidelines
 Want to help improve Guard? Please start [here](/CONTRIBUTING.md).
