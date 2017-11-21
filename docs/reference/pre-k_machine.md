@@ -1,22 +1,16 @@
-## pre-k get public-ips
+## pre-k machine
 
-Prints public ip(s) for current host
+machine commands
 
 ### Synopsis
 
 
-Prints public ip(s) for current host
-
-```
-pre-k get public-ips [flags]
-```
+machine commands
 
 ### Options
 
 ```
-      --all        If true, returns all private ips. (default true)
-  -h, --help       help for public-ips
-      --routable   If true, uses https://ipinfo.io/ip to detect ip in case host interfaces are missing public ips.
+  -h, --help   help for machine
 ```
 
 ### Options inherited from parent commands
@@ -33,5 +27,9 @@ pre-k get public-ips [flags]
 ```
 
 ### SEE ALSO
-* [pre-k get](pre-k_get.md)	 - Get stuff
+* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
+* [pre-k machine linode-hostname](pre-k_machine_linode-hostname.md)	 - Prints hostname based on public IP for current Linode host
+* [pre-k machine node-ip](pre-k_machine_node-ip.md)	 - Prints a IPv4 address for current host
+* [pre-k machine private-ips](pre-k_machine_private-ips.md)	 - Prints private ip(s) for current host
+* [pre-k machine public-ips](pre-k_machine_public-ips.md)	 - Prints public ip(s) for current host
 

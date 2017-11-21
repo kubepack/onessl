@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/appscode/log"
+	"github.com/appscode/go/log"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/util/cert"
 	kubeadmapi "k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha1"

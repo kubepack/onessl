@@ -9,8 +9,8 @@ import (
 
 func NewCmdWhoAmI() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:               "whoami",
-		Short:             "Detect cloud provider",
+		Use:   "whoami",
+		Short: "Detect cloud provider",
 		Long: `
 Kubernetes has the concept of a [Cloud Provider](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider),
 which is a module which provides an interface for managing TCP Load Balancers, Nodes (Instances) and Networking Routes.

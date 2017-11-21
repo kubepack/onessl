@@ -1,16 +1,21 @@
-## pre-k get
+## pre-k machine private-ips
 
-Get stuff
+Prints private ip(s) for current host
 
 ### Synopsis
 
 
-Get stuff
+Prints private ip(s) for current host
+
+```
+pre-k machine private-ips [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for get
+      --all    If true, returns all private ips. (default true)
+  -h, --help   help for private-ips
 ```
 
 ### Options inherited from parent commands
@@ -27,6 +32,5 @@ Get stuff
 ```
 
 ### SEE ALSO
-* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
-* [pre-k get ca-cert](pre-k_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
+* [pre-k machine](pre-k_machine.md)	 - machine commands
 

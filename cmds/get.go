@@ -11,9 +11,5 @@ func NewCmdGet() *cobra.Command {
 		DisableAutoGenTag: true,
 	}
 	cmd.AddCommand(NewCmdGetCACert())
-	cmd.AddCommand(NewCmdNodeIP())
-	cmd.AddCommand(NewCmdPublicIPs())
-	cmd.AddCommand(NewCmdPrivateIPs())
-	cmd.AddCommand(NewCmdLinodeHostname())
 	return cmd
 }

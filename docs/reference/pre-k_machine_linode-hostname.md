@@ -1,4 +1,4 @@
-## pre-k get linode-hostname
+## pre-k machine linode-hostname
 
 Prints hostname based on public IP for current Linode host
 
@@ -8,7 +8,7 @@ Prints hostname based on public IP for current Linode host
 Prints hostname based on public IP for current Linode host
 
 ```
-pre-k get linode-hostname [flags]
+pre-k machine linode-hostname [flags]
 ```
 
 ### Options
@@ -32,5 +32,5 @@ pre-k get linode-hostname [flags]
 ```
 
 ### SEE ALSO
-* [pre-k get](pre-k_get.md)	 - Get stuff
+* [pre-k machine](pre-k_machine.md)	 - machine commands
 

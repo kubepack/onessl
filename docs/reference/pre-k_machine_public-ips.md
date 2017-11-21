@@ -1,22 +1,22 @@
-## pre-k get node-ip
+## pre-k machine public-ips
 
-Prints a IPv4 address for current host
+Prints public ip(s) for current host
 
 ### Synopsis
 
 
-Prints a IPv4 address for current host for a given set of interface names. It always prefers a private IP over a public IP.
-If no interface name is given, all interfaces are checked.
+Prints public ip(s) for current host
 
 ```
-pre-k get node-ip [flags]
+pre-k machine public-ips [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help                 help for node-ip
-      --ifaces stringSlice   Comma separated list of interface names. If empty, all interfaces are checked.
+      --all        If true, returns all private ips. (default true)
+  -h, --help       help for public-ips
+      --routable   If true, uses https://ipinfo.io/ip to detect ip in case host interfaces are missing public ips.
 ```
 
 ### Options inherited from parent commands
@@ -33,5 +33,5 @@ pre-k get node-ip [flags]
 ```
 
 ### SEE ALSO
-* [pre-k get](pre-k_get.md)	 - Get stuff
+* [pre-k machine](pre-k_machine.md)	 - machine commands
 

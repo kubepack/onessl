@@ -1,21 +1,22 @@
-## pre-k get private-ips
+## pre-k machine node-ip
 
-Prints private ip(s) for current host
+Prints a IPv4 address for current host
 
 ### Synopsis
 
 
-Prints private ip(s) for current host
+Prints a IPv4 address for current host for a given set of interface names. It always prefers a private IP over a public IP.
+If no interface name is given, all interfaces are checked.
 
 ```
-pre-k get private-ips [flags]
+pre-k machine node-ip [flags]
 ```
 
 ### Options
 
 ```
-      --all    If true, returns all private ips. (default true)
-  -h, --help   help for private-ips
+  -h, --help                 help for node-ip
+      --ifaces stringSlice   Comma separated list of interface names. If empty, all interfaces are checked.
 ```
 
 ### Options inherited from parent commands
@@ -32,5 +33,5 @@ pre-k get private-ips [flags]
 ```
 
 ### SEE ALSO
-* [pre-k get](pre-k_get.md)	 - Get stuff
+* [pre-k machine](pre-k_machine.md)	 - machine commands
 
