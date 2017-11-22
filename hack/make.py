@@ -45,7 +45,7 @@ libbuild.BIN_MATRIX = {
         'go_version': True,
         'release': True,
         'distro': {
-            'linux': ['amd64']
+            'linux': ['amd64', 'arm64']
         }
     }
 }
