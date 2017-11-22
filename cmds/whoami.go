@@ -7,9 +7,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func NewCmdWhoAmI() *cobra.Command {
+func NewCmdCloudProvider() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "whoami",
+		Use:   "cloud-provider",
 		Short: "Detect cloud provider",
 		Long: `
 Kubernetes has the concept of a [Cloud Provider](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider),

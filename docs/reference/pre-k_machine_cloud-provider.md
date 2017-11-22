@@ -1,4 +1,4 @@
-## pre-k whoami
+## pre-k machine cloud-provider
 
 Detect cloud provider
 
@@ -25,13 +25,13 @@ This library can be used to identify cloud provider based on various instance me
 
 
 ```
-pre-k whoami [flags]
+pre-k machine cloud-provider [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for whoami
+  -h, --help   help for cloud-provider
 ```
 
 ### Options inherited from parent commands
@@ -48,5 +48,5 @@ pre-k whoami [flags]
 ```
 
 ### SEE ALSO
-* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
+* [pre-k machine](pre-k_machine.md)	 - machine commands
 

@@ -29,5 +29,4 @@ Pre-k by AppsCode - Utilities for your cloud
 * [pre-k merge](pre-k_merge.md)	 - Merge Kubeadm config
 * [pre-k version](pre-k_version.md)	 - Prints binary version number.
 * [pre-k vultr](pre-k_vultr.md)	 - vultr commands
-* [pre-k whoami](pre-k_whoami.md)	 - Detect cloud provider
 

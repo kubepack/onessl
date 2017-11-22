@@ -10,6 +10,7 @@ func NewCmdMachine() *cobra.Command {
 		Short:             `machine commands`,
 		DisableAutoGenTag: true,
 	}
+	cmd.AddCommand(NewCmdCloudProvider())
 	cmd.AddCommand(NewCmdNodeIP())
 	cmd.AddCommand(NewCmdPrivateIPs())
 	cmd.AddCommand(NewCmdPublicIPs())
