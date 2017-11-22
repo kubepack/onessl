@@ -15,7 +15,7 @@ func NewCmdLinodeHostname() *cobra.Command {
 		clusterName string
 	)
 	cmd := &cobra.Command{
-		Use:               "linode-hostname",
+		Use:               "hostname",
 		Short:             "Prints hostname based on public IP for current Linode host",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {

@@ -40,11 +40,13 @@ func NewRootCmd(version string) *cobra.Command {
 	// ref: https://github.com/kubernetes/kubernetes/issues/17162#issuecomment-225596212
 	flag.CommandLine.Parse([]string{})
 
-	rootCmd.AddCommand(NewCmdWhoAmI())
 	rootCmd.AddCommand(NewCmdCreate())
 	rootCmd.AddCommand(NewCmdGet())
+	rootCmd.AddCommand(NewCmdLinode())
 	rootCmd.AddCommand(NewCmdMachine())
 	rootCmd.AddCommand(NewCmdMerge())
+	rootCmd.AddCommand(NewCmdVultr())
+	rootCmd.AddCommand(NewCmdWhoAmI())
 	rootCmd.AddCommand(v.NewCmdVersion())
 	return rootCmd
 }

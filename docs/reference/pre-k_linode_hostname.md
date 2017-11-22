@@ -1,16 +1,21 @@
-## pre-k machine
+## pre-k linode hostname
 
-machine commands
+Prints hostname based on public IP for current Linode host
 
 ### Synopsis
 
 
-machine commands
+Prints hostname based on public IP for current Linode host
+
+```
+pre-k linode hostname [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for machine
+  -k, --cluster string   Name of cluster
+  -h, --help             help for hostname
 ```
 
 ### Options inherited from parent commands
@@ -27,9 +32,5 @@ machine commands
 ```
 
 ### SEE ALSO
-* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
-* [pre-k machine node-ip](pre-k_machine_node-ip.md)	 - Prints a IPv4 address for current host
-* [pre-k machine private-ips](pre-k_machine_private-ips.md)	 - Prints private ip(s) for current host
-* [pre-k machine public-ips](pre-k_machine_public-ips.md)	 - Prints public ip(s) for current host
-* [pre-k machine swapoff](pre-k_machine_swapoff.md)	 - Permanently disabled swap disks on a machine
+* [pre-k linode](pre-k_linode.md)	 - linode commands
 

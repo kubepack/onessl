@@ -11,9 +11,8 @@ func NewCmdMachine() *cobra.Command {
 		DisableAutoGenTag: true,
 	}
 	cmd.AddCommand(NewCmdNodeIP())
-	cmd.AddCommand(NewCmdPublicIPs())
 	cmd.AddCommand(NewCmdPrivateIPs())
-	cmd.AddCommand(NewCmdLinodeHostname())
+	cmd.AddCommand(NewCmdPublicIPs())
 	cmd.AddCommand(NewCmdSwapoff())
 	return cmd
 }

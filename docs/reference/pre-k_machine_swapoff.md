@@ -1,16 +1,21 @@
-## pre-k machine
+## pre-k machine swapoff
 
-machine commands
+Permanently disabled swap disks on a machine
 
 ### Synopsis
 
 
-machine commands
+Runs "swapoff -a" and comments out all swap devices on a machine found in /etc/fstab file.
+
+```
+pre-k machine swapoff [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for machine
+      --filename string   Path to volume list file. (default "/etc/fstab")
+  -h, --help              help for swapoff
 ```
 
 ### Options inherited from parent commands
@@ -27,9 +32,5 @@ machine commands
 ```
 
 ### SEE ALSO
-* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
-* [pre-k machine node-ip](pre-k_machine_node-ip.md)	 - Prints a IPv4 address for current host
-* [pre-k machine private-ips](pre-k_machine_private-ips.md)	 - Prints private ip(s) for current host
-* [pre-k machine public-ips](pre-k_machine_public-ips.md)	 - Prints public ip(s) for current host
-* [pre-k machine swapoff](pre-k_machine_swapoff.md)	 - Permanently disabled swap disks on a machine
+* [pre-k machine](pre-k_machine.md)	 - machine commands
 

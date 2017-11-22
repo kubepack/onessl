@@ -1,16 +1,22 @@
-## pre-k machine
+## pre-k vultr private-ip
 
-machine commands
+Prints private IP of a Vultr host
 
 ### Synopsis
 
 
-machine commands
+Prints private IP of a Vultr host
+
+```
+pre-k vultr private-ip [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for machine
+  -h, --help                 help for private-ip
+      --instance-id string   Instance id of Vultr host
+      --token string         Vultr api token
 ```
 
 ### Options inherited from parent commands
@@ -27,9 +33,5 @@ machine commands
 ```
 
 ### SEE ALSO
-* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
-* [pre-k machine node-ip](pre-k_machine_node-ip.md)	 - Prints a IPv4 address for current host
-* [pre-k machine private-ips](pre-k_machine_private-ips.md)	 - Prints private ip(s) for current host
-* [pre-k machine public-ips](pre-k_machine_public-ips.md)	 - Prints public ip(s) for current host
-* [pre-k machine swapoff](pre-k_machine_swapoff.md)	 - Permanently disabled swap disks on a machine
+* [pre-k vultr](pre-k_vultr.md)	 - vultr commands
 

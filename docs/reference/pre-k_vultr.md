@@ -1,21 +1,16 @@
-## pre-k machine linode-hostname
+## pre-k vultr
 
-Prints hostname based on public IP for current Linode host
+vultr commands
 
 ### Synopsis
 
 
-Prints hostname based on public IP for current Linode host
-
-```
-pre-k machine linode-hostname [flags]
-```
+vultr commands
 
 ### Options
 
 ```
-  -k, --cluster string   Name of cluster
-  -h, --help             help for linode-hostname
+  -h, --help   help for vultr
 ```
 
 ### Options inherited from parent commands
@@ -32,5 +27,6 @@ pre-k machine linode-hostname [flags]
 ```
 
 ### SEE ALSO
-* [pre-k machine](pre-k_machine.md)	 - machine commands
+* [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
+* [pre-k vultr private-ip](pre-k_vultr_private-ip.md)	 - Prints private IP of a Vultr host
 

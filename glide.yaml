@@ -3,6 +3,8 @@ import:
 - package: github.com/appscode/go
 - package: github.com/appscode/mergo
   version: master
+- package: github.com/JamesClonk/vultr
+  version: master
 - package: github.com/jpillora/go-ogle-analytics
 - package: github.com/spf13/cobra
 - package: github.com/spf13/pflag

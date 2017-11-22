@@ -24,8 +24,10 @@ Pre-k by AppsCode - Utilities for your cloud
 ### SEE ALSO
 * [pre-k create](pre-k_create.md)	 - create PKI
 * [pre-k get](pre-k_get.md)	 - Get stuff
+* [pre-k linode](pre-k_linode.md)	 - linode commands
 * [pre-k machine](pre-k_machine.md)	 - machine commands
 * [pre-k merge](pre-k_merge.md)	 - Merge Kubeadm config
 * [pre-k version](pre-k_version.md)	 - Prints binary version number.
+* [pre-k vultr](pre-k_vultr.md)	 - vultr commands
 * [pre-k whoami](pre-k_whoami.md)	 - Detect cloud provider
 
