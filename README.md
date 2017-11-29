@@ -1,7 +1,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/appscode/pre-k)](https://goreportcard.com/report/github.com/appscode/pre-k)
 
 # Pre-k
-A set of handy commands that you run to prepare a host for `kubeadm`. This is intended to used with [Pharmer by AppsCode](https://appscode.com/products/pharmer).
+A set of handy commands that you run to prepare a host for `kubeadm`. This is intended to be used with [Pharmer by AppsCode](https://appscode.com/products/pharmer).
 
 
 ## Supported Versions
