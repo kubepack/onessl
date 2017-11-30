@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-pushd "$(go env GOPATH)/src/github.com/appscode/pre-k"
+pushd "$(go env GOPATH)/src/github.com/pharmer/pre-k"
 rm -rf dist
 ./hack/make.py build
 ./hack/make.py push

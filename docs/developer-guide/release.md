@@ -7,7 +7,7 @@ The following steps must be done from a Linux x64 bit machine.
 - Push all the changes to remote repo.
 - Build and push pre-k docker image:
 ```console
-$ cd ~/go/src/github.com/appscode/pre-k
+$ cd ~/go/src/github.com/pharmer/pre-k
 ./hack/release.sh
 ```
 

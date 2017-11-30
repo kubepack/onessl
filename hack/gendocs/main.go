@@ -5,15 +5,15 @@ import (
 	"log"
 	"os"
 
-	"github.com/appscode/pre-k/cmds"
 	"github.com/appscode/go/runtime"
+	"github.com/pharmer/pre-k/cmds"
 	"github.com/spf13/cobra/doc"
 )
 
 // ref: https://github.com/spf13/cobra/blob/master/doc/md_docs.md
 func main() {
 	rootCmd := cmds.NewRootCmd("")
-	dir := runtime.GOPath() + "/src/github.com/appscode/pre-k/docs/reference"
+	dir := runtime.GOPath() + "/src/github.com/pharmer/pre-k/docs/reference"
 	fmt.Printf("Generating cli markdown tree in: %v\n", dir)
 	err := os.RemoveAll(dir)
 	if err != nil {
