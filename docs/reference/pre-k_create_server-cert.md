@@ -4,7 +4,6 @@ Generate server certificate pair
 
 ### Synopsis
 
-
 Generate server certificate pair
 
 ```
@@ -35,5 +34,6 @@ pre-k create server-cert [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k create](pre-k_create.md)	 - create PKI
 

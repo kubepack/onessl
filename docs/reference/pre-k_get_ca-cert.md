@@ -4,7 +4,6 @@ Prints self-sgned CA certificate from PEM encoded RSA private key
 
 ### Synopsis
 
-
 Prints self-sgned CA certificate from PEM encoded RSA private key
 
 ```
@@ -32,5 +31,6 @@ pre-k get ca-cert [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k get](pre-k_get.md)	 - Get stuff
 

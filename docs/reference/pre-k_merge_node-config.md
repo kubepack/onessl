@@ -4,7 +4,6 @@ Merge Kubeadm node configuration
 
 ### Synopsis
 
-
 Merge Kubeadm node configuration
 
 ```
@@ -39,5 +38,6 @@ pre-k merge node-config [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k merge](pre-k_merge.md)	 - Merge Kubeadm config
 

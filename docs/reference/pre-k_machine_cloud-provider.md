@@ -5,7 +5,6 @@ Detect cloud provider
 ### Synopsis
 
 
-
 Kubernetes has the concept of a [Cloud Provider](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider),
 which is a module which provides an interface for managing TCP Load Balancers, Nodes (Instances) and Networking Routes.
 This library can be used to identify cloud provider based on various instance metadata without requiring user input.
@@ -48,5 +47,6 @@ pre-k machine cloud-provider [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k machine](pre-k_machine.md)	 - machine commands
 

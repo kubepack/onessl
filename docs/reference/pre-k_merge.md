@@ -4,7 +4,6 @@ Merge Kubeadm config
 
 ### Synopsis
 
-
 Merge Kubeadm config
 
 ### Options
@@ -27,6 +26,7 @@ Merge Kubeadm config
 ```
 
 ### SEE ALSO
+
 * [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
 * [pre-k merge master-config](pre-k_merge_master-config.md)	 - Merge Kubeadm master configuration
 * [pre-k merge node-config](pre-k_merge_node-config.md)	 - Merge Kubeadm node configuration

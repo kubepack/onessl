@@ -4,7 +4,6 @@ Prints a IPv4 address for current host
 
 ### Synopsis
 
-
 Prints a IPv4 address for current host for a given set of interface names. It always prefers a private IP over a public IP.
 If no interface name is given, all interfaces are checked.
 
@@ -33,5 +32,6 @@ pre-k machine node-ip [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k machine](pre-k_machine.md)	 - machine commands
 

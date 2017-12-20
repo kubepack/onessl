@@ -4,7 +4,6 @@ Merge Kubeadm master configuration
 
 ### Synopsis
 
-
 Merge Kubeadm master configuration
 
 ```
@@ -46,5 +45,6 @@ StoreCertsInSecrets=true|false (ALPHA - default=false)
 ```
 
 ### SEE ALSO
+
 * [pre-k merge](pre-k_merge.md)	 - Merge Kubeadm config
 

@@ -4,7 +4,6 @@ Create CA cert/key pair
 
 ### Synopsis
 
-
 Create CA cert/key pair
 
 ```
@@ -33,5 +32,6 @@ pre-k create ca-cert [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k create](pre-k_create.md)	 - create PKI
 

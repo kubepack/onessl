@@ -4,7 +4,6 @@ Prints public ip(s) for current host
 
 ### Synopsis
 
-
 Prints public ip(s) for current host
 
 ```
@@ -33,5 +32,6 @@ pre-k machine public-ips [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k machine](pre-k_machine.md)	 - machine commands
 

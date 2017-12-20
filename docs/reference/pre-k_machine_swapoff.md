@@ -4,7 +4,6 @@ Permanently disabled swap disks on a machine
 
 ### Synopsis
 
-
 Runs "swapoff -a" and comments out all swap devices on a machine found in /etc/fstab file.
 
 ```
@@ -32,5 +31,6 @@ pre-k machine swapoff [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k machine](pre-k_machine.md)	 - machine commands
 

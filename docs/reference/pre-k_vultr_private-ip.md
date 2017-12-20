@@ -4,7 +4,6 @@ Prints private IP of a Vultr host
 
 ### Synopsis
 
-
 Prints private IP of a Vultr host
 
 ```
@@ -33,5 +32,6 @@ pre-k vultr private-ip [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k vultr](pre-k_vultr.md)	 - vultr commands
 

@@ -4,7 +4,6 @@ Prints hostname based on public IP for current Linode host
 
 ### Synopsis
 
-
 Prints hostname based on public IP for current Linode host
 
 ```
@@ -32,5 +31,6 @@ pre-k linode hostname [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k linode](pre-k_linode.md)	 - linode commands
 

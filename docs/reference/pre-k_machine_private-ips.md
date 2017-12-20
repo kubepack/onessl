@@ -4,7 +4,6 @@ Prints private ip(s) for current host
 
 ### Synopsis
 
-
 Prints private ip(s) for current host
 
 ```
@@ -32,5 +31,6 @@ pre-k machine private-ips [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k machine](pre-k_machine.md)	 - machine commands
 

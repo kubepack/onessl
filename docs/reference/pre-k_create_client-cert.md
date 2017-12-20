@@ -4,7 +4,6 @@ Generate client certificate pair
 
 ### Synopsis
 
-
 Generate client certificate pair
 
 ```
@@ -34,5 +33,6 @@ pre-k create client-cert [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k create](pre-k_create.md)	 - create PKI
 

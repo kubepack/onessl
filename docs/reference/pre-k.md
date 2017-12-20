@@ -4,7 +4,6 @@ Pre-k by AppsCode - Utilities for your cloud
 
 ### Synopsis
 
-
 Pre-k by AppsCode - Utilities for your cloud
 
 ### Options
@@ -22,6 +21,8 @@ Pre-k by AppsCode - Utilities for your cloud
 ```
 
 ### SEE ALSO
+
+* [pre-k check](pre-k_check.md)	 - Check stuff
 * [pre-k create](pre-k_create.md)	 - create PKI
 * [pre-k get](pre-k_get.md)	 - Get stuff
 * [pre-k linode](pre-k_linode.md)	 - linode commands

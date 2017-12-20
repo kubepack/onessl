@@ -4,7 +4,6 @@ Prints binary version number.
 
 ### Synopsis
 
-
 Prints binary version number.
 
 ```
@@ -31,5 +30,6 @@ pre-k version [flags]
 ```
 
 ### SEE ALSO
+
 * [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
 

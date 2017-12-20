@@ -4,7 +4,6 @@ machine commands
 
 ### Synopsis
 
-
 machine commands
 
 ### Options
@@ -27,6 +26,7 @@ machine commands
 ```
 
 ### SEE ALSO
+
 * [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
 * [pre-k machine cloud-provider](pre-k_machine_cloud-provider.md)	 - Detect cloud provider
 * [pre-k machine node-ip](pre-k_machine_node-ip.md)	 - Prints a IPv4 address for current host

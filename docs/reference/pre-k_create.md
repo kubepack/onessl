@@ -4,7 +4,6 @@ create PKI
 
 ### Synopsis
 
-
 create PKI
 
 ### Options
@@ -27,6 +26,7 @@ create PKI
 ```
 
 ### SEE ALSO
+
 * [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
 * [pre-k create ca-cert](pre-k_create_ca-cert.md)	 - Create CA cert/key pair
 * [pre-k create client-cert](pre-k_create_client-cert.md)	 - Generate client certificate pair

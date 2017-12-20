@@ -1,23 +1,37 @@
 package: github.com/pharmer/pre-k
 import:
-- package: github.com/appscode/go
-- package: github.com/appscode/mergo
-  version: master
 - package: github.com/JamesClonk/vultr
   version: master
+- package: github.com/appscode/go
+  version: master
+- package: github.com/appscode/kutil
+  version: release-5.0
+- package: github.com/appscode/mergo
+  version: master
+- package: github.com/ghodss/yaml
+  version: v1.0.0
 - package: github.com/jpillora/go-ogle-analytics
 - package: github.com/spf13/cobra
+  version: master
 - package: github.com/spf13/pflag
   version: v1.0.0
 - package: github.com/gogo/protobuf/proto
   version: c0656edd0d9eab7c66d1eb0c568f9039345796f7
 - package: k8s.io/api
-  version: release-1.8
+  version: kubernetes-1.8.3
 - package: k8s.io/apimachinery
+  repo: https://github.com/tamalsaha/apimachinery.git
   version: release-1.8
+  vcs: git
 - package: k8s.io/client-go
-  version: kubernetes-1.8.3-beta.0
+  version: kubernetes-1.8.3
 - package: k8s.io/kubernetes
   repo: https://github.com/appscode/kubernetes.git
   version: v1.8.3
   vcs: git
+- package: github.com/juju/ratelimit
+  version: 5b9ff866471762aa2ab2dced63c9fb6f53921342
+- package: github.com/hashicorp/go-version
+  repo: https://github.com/appscode/go-version.git
+  vcs: git
+  version: master

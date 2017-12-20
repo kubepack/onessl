@@ -4,7 +4,6 @@ Get stuff
 
 ### Synopsis
 
-
 Get stuff
 
 ### Options
@@ -27,6 +26,7 @@ Get stuff
 ```
 
 ### SEE ALSO
+
 * [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
 * [pre-k get ca-cert](pre-k_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
 

@@ -4,7 +4,6 @@ vultr commands
 
 ### Synopsis
 
-
 vultr commands
 
 ### Options
@@ -27,6 +26,7 @@ vultr commands
 ```
 
 ### SEE ALSO
+
 * [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
 * [pre-k vultr private-ip](pre-k_vultr_private-ip.md)	 - Prints private IP of a Vultr host
 

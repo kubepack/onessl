@@ -4,7 +4,6 @@ linode commands
 
 ### Synopsis
 
-
 linode commands
 
 ### Options
@@ -27,6 +26,7 @@ linode commands
 ```
 
 ### SEE ALSO
+
 * [pre-k](pre-k.md)	 - Pre-k by AppsCode - Utilities for your cloud
 * [pre-k linode hostname](pre-k_linode_hostname.md)	 - Prints hostname based on public IP for current Linode host
 
