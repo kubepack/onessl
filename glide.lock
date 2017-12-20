@@ -1,5 +1,5 @@
 hash: efd141c47516fff0a5e15d4fa2785f871e4b6cfc9ec366ef4e0d4391b6d83e47
-updated: 2017-12-20T06:26:27.347726332-05:00
+updated: 2017-12-20T08:24:38.718538927-05:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -18,7 +18,7 @@ imports:
   - types
   - version
 - name: github.com/appscode/kutil
-  version: 86bd32f3377eee33e26a9f4a5124ca69518364e6
+  version: 02e786c35ddd6db375126ab23e1b4307246be21d
   subpackages:
   - core/v1
   - meta

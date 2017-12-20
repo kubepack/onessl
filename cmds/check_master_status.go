@@ -43,7 +43,7 @@ func NewCmdCheckMasterStatus() *cobra.Command {
 					return false, nil
 				}
 				for _, node := range nodes.Items {
-					if ok, _ := core_util.NodeRunningAndReady(node); !ok {
+					if !core_util.NodeReady(node) {
 						return false, nil
 					}
 				}
