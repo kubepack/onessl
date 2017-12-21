@@ -9,6 +9,7 @@ import (
 	"github.com/appscode/mergo"
 	"github.com/ghodss/yaml"
 	"github.com/spf13/cobra"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/sets"
 	kubeadmapi "k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha1"
 	"k8s.io/kubernetes/cmd/kubeadm/app/features"
@@ -16,8 +17,12 @@ import (
 
 func NewCmdMergeMasterConfig() *cobra.Command {
 	var (
-		cfg  = &kubeadmapi.MasterConfiguration{}
-		sans = []string{}
+		cfg = &kubeadmapi.MasterConfiguration{
+			TokenTTL: &metav1.Duration{
+				Duration: 0,
+			},
+		}
+		sans []string
 	)
 	var cfgPath string
 	var featureGatesString string

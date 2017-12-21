@@ -19,6 +19,8 @@ pre-k merge master-config [flags]
       --cert-dir string                         The path where to save and store the certificates
       --config string                           Path to kubeadm config file (WARNING: Usage of a configuration file is experimental)
       --feature-gates string                    A set of key=value pairs that describe feature gates for various features. Options are:
+CoreDNS=true|false (ALPHA - default=false)
+DynamicKubeletConfig=true|false (ALPHA - default=false)
 SelfHosting=true|false (ALPHA - default=false)
 StoreCertsInSecrets=true|false (ALPHA - default=false)
   -h, --help                                    help for master-config
