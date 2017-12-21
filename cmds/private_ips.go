@@ -7,7 +7,6 @@ import (
 
 	"github.com/appscode/go/net"
 	"github.com/spf13/cobra"
-	"k8s.io/apimachinery/pkg/util/sets"
 )
 
 func NewCmdPrivateIPs() *cobra.Command {
@@ -21,14 +20,10 @@ func NewCmdPrivateIPs() *cobra.Command {
 			if err != nil {
 				Fatal(fmt.Errorf("failed to detect host ips. Reason: %v", err))
 			}
-			ipset := sets.NewString()
-			for _, ip := range ips {
-				ipset.Insert(ip.String())
-			}
-			if !all && ipset.Len() > 0 {
-				fmt.Print(ipset.List()[0])
+			if !all && len(ips) > 0 {
+				fmt.Print(ips[0])
 			} else {
-				fmt.Print(strings.Join(ipset.List(), ","))
+				fmt.Print(strings.Join(ips, ","))
 			}
 			os.Exit(0)
 		},

@@ -14,7 +14,7 @@ func DetectLinode(done chan<- string) {
 		return
 	}
 	for _, ip := range externalIPs {
-		names, err := net.LookupAddr(ip.String())
+		names, err := net.LookupAddr(ip)
 		if err == nil {
 			for _, name := range names {
 				if strings.HasSuffix(name, ".members.linode.com.") {

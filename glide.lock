@@ -1,5 +1,5 @@
 hash: efd141c47516fff0a5e15d4fa2785f871e4b6cfc9ec366ef4e0d4391b6d83e47
-updated: 2017-12-20T08:24:38.718538927-05:00
+updated: 2017-12-20T20:36:05.219465916-05:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -7,7 +7,7 @@ imports:
   - compute/metadata
   - internal
 - name: github.com/appscode/go
-  version: cb650d0b1a3c04a86595cf2a31fa704dbf1bc42a
+  version: f08cee5a2aa53a1ab6d30e4ae11e381d1b265f81
   subpackages:
   - context
   - log
@@ -15,6 +15,7 @@ imports:
   - net
   - net/httpclient
   - runtime
+  - sets
   - types
   - version
 - name: github.com/appscode/kutil

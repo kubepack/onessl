@@ -7,7 +7,6 @@ import (
 
 	"github.com/appscode/go/net"
 	"github.com/spf13/cobra"
-	"k8s.io/apimachinery/pkg/util/sets"
 )
 
 func NewCmdLinodeHostname() *cobra.Command {
@@ -23,15 +22,10 @@ func NewCmdLinodeHostname() *cobra.Command {
 			if err != nil {
 				Fatal(fmt.Errorf("failed to detect host ips. Reason: %v", err))
 			}
-			ipset := sets.NewString()
-			for _, ip := range ips {
-				ipset.Insert(ip.String())
-			}
-			if ipset.Len() == 0 {
+			if len(ips) == 0 {
 				os.Exit(1)
 			}
-			ip := ipset.List()[0]
-			parts := strings.SplitN(ip, ".", 4)
+			parts := strings.SplitN(ips[0], ".", 4)
 			fmt.Printf("%s-%03s-%03s-%03s-%03s", clusterName, parts[0], parts[1], parts[2], parts[3])
 			os.Exit(0)
 		},
