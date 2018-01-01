@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/appscode/kutil/tools/certstore"
+	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
-	"k8s.io/client-go/util/cert"
 	kubeadmapi "k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha1"
 	kubeadmconsts "k8s.io/kubernetes/cmd/kubeadm/app/constants"
 )
@@ -20,11 +21,7 @@ func NewCmdCreateCA() *cobra.Command {
 		Short:             "Create CA cert/key pair",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			cfg := cert.Config{
-				CommonName: kubeadmconsts.CACertAndKeyBaseName,
-			}
-
-			store, err := NewCertStore(certDir)
+			store, err := certstore.NewCertStore(afero.NewOsFs(), certDir)
 			if err != nil {
 				fmt.Printf("Failed to create certificate store. Reason: %v.", err)
 				os.Exit(1)
@@ -34,17 +31,7 @@ func NewCmdCreateCA() *cobra.Command {
 				os.Exit(1)
 			}
 
-			key, err := cert.NewPrivateKey()
-			if err != nil {
-				fmt.Printf("Failed to generate private key. Reason: %v.", err)
-				os.Exit(1)
-			}
-			cert, err := cert.NewSelfSignedCACert(cfg, key)
-			if err != nil {
-				fmt.Printf("Failed to generate self-signed certificate. Reason: %v.", err)
-				os.Exit(1)
-			}
-			err = store.Write(store.Filename(cfg), cert, key)
+			err = store.NewCA()
 			if err != nil {
 				fmt.Printf("Failed to init ca. Reason: %v.", err)
 				os.Exit(1)

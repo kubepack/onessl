@@ -6,10 +6,11 @@ import (
 	"net"
 	"os"
 
+	"github.com/appscode/kutil/tools/certstore"
+	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/util/cert"
 	kubeadmapi "k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha1"
-	kubeadmconsts "k8s.io/kubernetes/cmd/kubeadm/app/constants"
 )
 
 func NewCmdCreateServer() *cobra.Command {
@@ -31,37 +32,27 @@ func NewCmdCreateServer() *cobra.Command {
 				Usages:     []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth},
 			}
 
-			store, err := NewCertStore(certDir)
+			store, err := certstore.NewCertStore(afero.NewOsFs(), certDir)
 			if err != nil {
 				fmt.Printf("Failed to create certificate store. Reason: %v.", err)
 				os.Exit(1)
 			}
-			if store.IsExists(store.Filename(cfg)) && !overwrite {
+			if store.IsExists(Filename(cfg)) && !overwrite {
 				fmt.Printf("Server certificate found at %s. Do you want to overwrite?", store.Location())
 				os.Exit(1)
 			}
 
-			if !store.PairExists(kubeadmconsts.CACertAndKeyBaseName) {
-				fmt.Printf("CA certificates not found in %s. Run `guard init ca`", store.Location())
-				os.Exit(1)
-			}
-			caCert, caKey, err := store.Read(kubeadmconsts.CACertAndKeyBaseName)
-			if err != nil {
-				fmt.Printf("Failed to load ca certificate. Reason: %v.", err)
+			if err = store.LoadCA(); err != nil {
+				fmt.Printf("CA certificates not found in %s. Run `init ca`", store.Location())
 				os.Exit(1)
 			}
 
-			key, err := cert.NewPrivateKey()
+			crt, key, err := store.NewServerCertPair(cfg.CommonName, cfg.AltNames)
 			if err != nil {
-				fmt.Printf("Failed to generate private key. Reason: %v.", err)
+				fmt.Printf("Failed to generate server certificate pair. Reason: %v.", err)
 				os.Exit(1)
 			}
-			cert, err := cert.NewSignedCert(cfg, key, caCert, caKey)
-			if err != nil {
-				fmt.Printf("Failed to generate server certificate. Reason: %v.", err)
-				os.Exit(1)
-			}
-			err = store.Write(store.Filename(cfg), cert, key)
+			err = store.WriteBytes(Filename(cfg), crt, key)
 			if err != nil {
 				fmt.Printf("Failed to init server certificate pair. Reason: %v.", err)
 				os.Exit(1)

@@ -6,10 +6,11 @@ import (
 	"os"
 
 	"github.com/appscode/go/log"
+	"github.com/appscode/kutil/tools/certstore"
+	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/util/cert"
 	kubeadmapi "k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha1"
-	kubeadmconsts "k8s.io/kubernetes/cmd/kubeadm/app/constants"
 )
 
 func NewCmdCreateClient() *cobra.Command {
@@ -36,37 +37,27 @@ func NewCmdCreateClient() *cobra.Command {
 				Organization: []string{org},
 			}
 
-			store, err := NewCertStore(certDir)
+			store, err := certstore.NewCertStore(afero.NewOsFs(), certDir)
 			if err != nil {
 				fmt.Printf("Failed to create certificate store. Reason: %v.", err)
 				os.Exit(1)
 			}
-			if store.IsExists(store.Filename(cfg)) && overwrite {
+			if store.IsExists(Filename(cfg)) && overwrite {
 				fmt.Printf("Client certificate found at %s. Do you want to overwrite?", store.Location())
 				os.Exit(1)
 			}
 
-			if !store.PairExists(kubeadmconsts.CACertAndKeyBaseName) {
-				fmt.Printf("CA certificates not found in %s. Run `guard init ca`", store.Location())
-				os.Exit(1)
-			}
-			caCert, caKey, err := store.Read(kubeadmconsts.CACertAndKeyBaseName)
-			if err != nil {
+			if err := store.LoadCA(); err != nil {
 				fmt.Printf("Failed to load ca certificate. Reason: %v.", err)
 				os.Exit(1)
 			}
 
-			key, err := cert.NewPrivateKey()
+			crt, key, err := store.NewClientCertPair(cfg.CommonName, cfg.Organization...)
 			if err != nil {
-				fmt.Printf("Failed to generate private key. Reason: %v.", err)
+				fmt.Printf("Failed to generate client certificate pair. Reason: %v.", err)
 				os.Exit(1)
 			}
-			cert, err := cert.NewSignedCert(cfg, key, caCert, caKey)
-			if err != nil {
-				fmt.Printf("Failed to generate server certificate. Reason: %v.", err)
-				os.Exit(1)
-			}
-			err = store.Write(store.Filename(cfg), cert, key)
+			err = store.WriteBytes(Filename(cfg), crt, key)
 			if err != nil {
 				fmt.Printf("Failed to init client certificate pair. Reason: %v.", err)
 				os.Exit(1)
@@ -77,7 +68,7 @@ func NewCmdCreateClient() *cobra.Command {
 	}
 
 	cmd.Flags().StringVar(&certDir, "cert-dir", certDir, "Path to directory where pki files are stored.")
-	cmd.Flags().StringVarP(&org, "organization", "o", org, "Name of Organization (Github or Google).")
+	cmd.Flags().StringVarP(&org, "organization", "o", org, "Name of client organizations.")
 	cmd.Flags().BoolVar(&overwrite, "overwrite", overwrite, "Overwrite existing cert/key pair")
 	return cmd
 }
