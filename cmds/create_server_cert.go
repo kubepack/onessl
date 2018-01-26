@@ -10,13 +10,11 @@ import (
 	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/util/cert"
-	kubeadmapi "k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha1"
 )
 
-func NewCmdCreateServer() *cobra.Command {
+func NewCmdCreateServer(certDir string) *cobra.Command {
 	var (
-		certDir = kubeadmapi.DefaultCertificatesDir
-		sans    = cert.AltNames{
+		sans = cert.AltNames{
 			IPs: []net.IP{net.ParseIP("127.0.0.1")},
 		}
 		overwrite bool

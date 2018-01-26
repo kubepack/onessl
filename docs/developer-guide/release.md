@@ -5,9 +5,10 @@ The following steps must be done from a Linux x64 bit machine.
 - Do a global replacement of tags so that docs point to the next release.
 - Push changes to the `release-x` branch and apply new tag.
 - Push all the changes to remote repo.
-- Build and push pre-k docker image:
+- Build and push onessl docker image:
+
 ```console
-$ cd ~/go/src/github.com/pharmer/pre-k
+$ cd ~/go/src/github.com/appscode/onessl
 ./hack/release.sh
 ```
 

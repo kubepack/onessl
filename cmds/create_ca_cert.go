@@ -7,13 +7,10 @@ import (
 	"github.com/appscode/kutil/tools/certstore"
 	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
-	kubeadmapi "k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1alpha1"
-	kubeadmconsts "k8s.io/kubernetes/cmd/kubeadm/app/constants"
 )
 
-func NewCmdCreateCA() *cobra.Command {
+func NewCmdCreateCA(certDir string) *cobra.Command {
 	var (
-		certDir   = kubeadmapi.DefaultCertificatesDir
 		overwrite bool
 	)
 	cmd := &cobra.Command{
@@ -26,7 +23,7 @@ func NewCmdCreateCA() *cobra.Command {
 				fmt.Printf("Failed to create certificate store. Reason: %v.", err)
 				os.Exit(1)
 			}
-			if store.IsExists(kubeadmconsts.CACertAndKeyBaseName) && !overwrite {
+			if store.IsExists("ca") && !overwrite {
 				fmt.Printf("CA certificate found at %s.", store.Location())
 				os.Exit(1)
 			}

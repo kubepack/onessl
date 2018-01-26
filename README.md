@@ -1,43 +1,29 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/pharmer/pre-k)](https://goreportcard.com/report/github.com/pharmer/pre-k)
+[![Go Report Card](https://goreportcard.com/badge/github.com/appscode/onessl)](https://goreportcard.com/report/github.com/appscode/onessl)
 
-# Pre-k
-A set of handy commands that you run to prepare a host for `kubeadm`. This is intended to be used with [Pharmer by AppsCode](https://appscode.com/products/pharmer).
-
-
-## Supported Versions
-Kubernetes 1.8+
+# onessl
+Simple CLI to generate SSL certificates on any platform.
 
 
 ## Available Commands
-* [pre-k create](/docs/reference/pre-k_create.md)	 - create PKI
-  * [pre-k create ca-cert](/docs/reference/pre-k_create_ca-cert.md)	 - Create CA cert/key pair
-  * [pre-k create client-cert](/docs/reference/pre-k_create_client-cert.md)	 - Generate client certificate pair
-  * [pre-k create server-cert](/docs/reference/pre-k_create_server-cert.md)	 - Generate server certificate pair
-* [pre-k get](/docs/reference/pre-k_get.md)	 - Get stuff
-  * [pre-k get ca-cert](/docs/reference/pre-k_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
-* [pre-k linode](/docs/reference/pre-k_linode.md)  - linode commands
-  * [pre-k linode hostname](/docs/reference/pre-k_linode_hostname.md)	 - Prints hostname based on public IP for current Linode host
-* [pre-k machine](/docs/reference/pre-k_machine.md)  - machine commands
-  * [pre-k machine cloud-provider](/docs/reference/pre-k_machine_cloud-provider.md)  - Detect cloud provider
-  * [pre-k machine node-ip](/docs/reference/pre-k_machine_node-ip.md)  - Prints a IPv4 address for current host
-  * [pre-k machine private-ips](/docs/reference/pre-k_machine_private-ips.md)  - Prints private ip(s) for current host
-  * [pre-k machine public-ips](/docs/reference/pre-k_machine_public-ips.md)  - Prints public ip(s) for current host
-  * [pre-k machine swapoff](/docs/reference/pre-k_machine_swapoff.md)  - Permanently disabled swap disks on a machine
-* [pre-k merge](/docs/reference/pre-k_merge.md)	 - Merge Kubeadm config
-  * [pre-k merge master-config](/docs/reference/pre-k_merge_master-config.md)	 - Merge Kubeadm master configuration
-  * [pre-k merge node-config](/docs/reference/pre-k_merge_node-config.md)	 - Merge Kubeadm node configuration
-* [pre-k vultr](/docs/reference/pre-k_vultr.md)  - vultr commands
-  * [pre-k vultr private-ip](/docs/reference/pre-k_vultr_private-ip.md)  - Prints private IP of a Vultr host
+* [onessl create](/docs/reference/onessl_create.md)	 - create PKI
+  * [onessl create ca-cert](/docs/reference/onessl_create_ca-cert.md)	 - Create CA cert/key pair
+  * [onessl create client-cert](/docs/reference/onessl_create_client-cert.md)	 - Generate client certificate pair
+  * [onessl create server-cert](/docs/reference/onessl_create_server-cert.md)	 - Generate server certificate pair
+* [onessl get](/docs/reference/onessl_get.md)	 - Get stuff
+  * [onessl get ca-cert](/docs/reference/onessl_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
 
 
 ## Contribution guidelines
-Want to help improve pre-k? Please start [here](/CONTRIBUTING.md).
+Want to help improve onessl? Please start [here](/CONTRIBUTING.md).
+
+---
+
+**onessl binary collects anonymous usage statistics to help us learn how the software is being used and how we can improve it. To disable stats collection, run the operator with the flag** `--analytics=false`.
+
+---
 
 ## Support
-If you have any questions, [file an issue](https://github.com/appscode/pharmer/issues/new) or talk to us on the [Kubernetes Slack team](http://slack.kubernetes.io/) channel `#pharmer`.
 
----
+We use Slack for public discussions. To chit chat with us or the rest of the community, join us in the [AppsCode Slack team](https://appscode.slack.com/messages/C0XQFLGRM/details/) channel `#general`. To sign up, use our [Slack inviter](https://slack.appscode.com/).
 
-**The pre-k binary collects anonymous usage statistics to help us learn how the software is being used and how we can improve it. To disable stats collection, run the operator with the flag** `--analytics=false`.
-
----
+If you have found a bug with Voyager or want to request for new features, please [file an issue](https://github.com/appscode/voyager/issues/new).

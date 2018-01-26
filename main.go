@@ -4,7 +4,7 @@ import (
 	"os"
 
 	logs "github.com/appscode/go/log/golog"
-	"github.com/pharmer/pre-k/cmds"
+	"github.com/appscode/onessl/cmds"
 )
 
 func main() {
