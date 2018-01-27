@@ -11,5 +11,6 @@ func NewCmdGet() *cobra.Command {
 		DisableAutoGenTag: true,
 	}
 	cmd.AddCommand(NewCmdGetCACert())
+	cmd.AddCommand(NewCmdGetKubeCA())
 	return cmd
 }
