@@ -1,15 +1,20 @@
-## onessl get
+## onessl base64
 
-Get stuff
+Base64 encode/decode input text
 
 ### Synopsis
 
-Get stuff
+Base64 encode/decode input text
+
+```
+onessl base64 [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for get
+      --decode   Decode input text
+  -h, --help     help for base64
 ```
 
 ### Options inherited from parent commands
@@ -28,6 +33,4 @@ Get stuff
 ### SEE ALSO
 
 * [onessl](onessl.md)	 - onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
-* [onessl get ca-cert](onessl_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
-* [onessl get kube-ca](onessl_get_kube-ca.md)	 - Prints CA certificate for Kubernetes cluster from Kubeconfig
 

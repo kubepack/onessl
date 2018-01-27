@@ -22,6 +22,7 @@ onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
 
 ### SEE ALSO
 
+* [onessl base64](onessl_base64.md)	 - Base64 encode/decode input text
 * [onessl create](onessl_create.md)	 - create PKI
 * [onessl get](onessl_get.md)	 - Get stuff
 * [onessl version](onessl_version.md)	 - Prints binary version number.
