@@ -39,6 +39,7 @@ func NewRootCmd(version string) *cobra.Command {
 	rootCmd.PersistentFlags().AddGoFlagSet(flag.CommandLine)
 	// ref: https://github.com/kubernetes/kubernetes/issues/17162#issuecomment-225596212
 	flag.CommandLine.Parse([]string{})
+	flag.Set("stderrthreshold", "ERROR")
 
 	rootCmd.AddCommand(NewCmdCreate())
 	rootCmd.AddCommand(NewCmdGet())
