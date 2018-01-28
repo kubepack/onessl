@@ -25,11 +25,11 @@ func NewCmdCreateServer(certDir string) *cobra.Command {
 		Short:             "Generate server certificate pair",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			if len(args) == 0 {
-				log.Fatalln("Missing server name.")
-			}
 			if len(args) > 1 {
 				log.Fatalln("Multiple server name found.")
+			}
+			if len(args) == 0 {
+				args = []string{"server"}
 			}
 
 			cfg := cert.Config{
