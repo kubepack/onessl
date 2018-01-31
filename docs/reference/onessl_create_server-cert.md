@@ -13,7 +13,7 @@ onessl create server-cert [flags]
 ### Options
 
 ```
-      --cert-dir string       Path to directory where pki files are stored. (default "/home/tamal/go/src/github.com/appscode/onessl/hack/gendocs")
+      --cert-dir string       Path to directory where pki files are stored. (default "$(pwd)")
       --domains stringSlice   Alternative Domain names
   -h, --help                  help for server-cert
       --ips ipSlice           Alternative IP addresses (default [127.0.0.1])

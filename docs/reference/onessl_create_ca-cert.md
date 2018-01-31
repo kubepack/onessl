@@ -13,7 +13,7 @@ onessl create ca-cert [flags]
 ### Options
 
 ```
-      --cert-dir string   Path to directory where pki files are stored. (default "/home/tamal/go/src/github.com/appscode/onessl/hack/gendocs")
+      --cert-dir string   Path to directory where pki files are stored. (default "$(pwd)")
   -h, --help              help for ca-cert
       --overwrite         Overwrite existing cert/key pair
 ```

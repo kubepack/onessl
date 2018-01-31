@@ -13,7 +13,7 @@ onessl create client-cert [flags]
 ### Options
 
 ```
-      --cert-dir string       Path to directory where pki files are stored. (default "/home/tamal/go/src/github.com/appscode/onessl/hack/gendocs")
+      --cert-dir string       Path to directory where pki files are stored. (default "$(pwd)")
   -h, --help                  help for client-cert
   -o, --organization string   Name of client organizations.
       --overwrite             Overwrite existing cert/key pair

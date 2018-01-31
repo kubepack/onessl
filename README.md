@@ -7,8 +7,8 @@ Simple CLI to generate SSL certificates on any platform.
 ## Available Commands
 * [onessl create](/docs/reference/onessl_create.md)	 - create PKI
   * [onessl create ca-cert](/docs/reference/onessl_create_ca-cert.md)	 - Create CA cert/key pair
-  * [onessl create client-cert](/docs/reference/onessl_create_client-cert.md)	 - Generate client certificate pair
   * [onessl create server-cert](/docs/reference/onessl_create_server-cert.md)	 - Generate server certificate pair
+  * [onessl create client-cert](/docs/reference/onessl_create_client-cert.md)	 - Generate client certificate pair
 * [onessl get](/docs/reference/onessl_get.md)	 - Get stuff
   * [onessl get ca-cert](/docs/reference/onessl_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
   * [onessl get kube-ca](/docs/reference/onessl_get_kube-ca.md)	 - Prints CA certificate for Kubernetes cluster from Kubeconfig
