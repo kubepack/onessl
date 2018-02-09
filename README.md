@@ -13,6 +13,8 @@ Simple CLI to generate SSL certificates on any platform.
   * [onessl get ca-cert](/docs/reference/onessl_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
   * [onessl get kube-ca](/docs/reference/onessl_get_kube-ca.md)	 - Prints CA certificate for Kubernetes cluster from Kubeconfig
 * [onessl base64](/docs/reference/onessl_base64.md)	 - Base64 encode/decode input text
+* [onessl jsonpath](/docs/reference/onessl_jsonpath.md)	 - Print value of jsonpath for input text
+* [onessl semver](/docs/reference/onessl_semver.md)	 - Print sanitized semver version
 
 
 ## Contribution guidelines
