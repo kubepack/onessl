@@ -16,8 +16,8 @@ development environment, please follow [these instructions](https://golang.org/d
 #### Download Source
 
 ```console
-$ go get github.com/appscode/onessl
-$ cd $(go env GOPATH)/src/github.com/appscode/onessl
+$ go get github.com/kubepack/onessl
+$ cd $(go env GOPATH)/src/github.com/kubepack/onessl
 ```
 
 #### Install Dev tools

@@ -8,7 +8,7 @@ The following steps must be done from a Linux x64 bit machine.
 - Build and push onessl docker image:
 
 ```console
-$ cd ~/go/src/github.com/appscode/onessl
+$ cd ~/go/src/github.com/kubepack/onessl
 ./hack/release.sh
 ```
 

@@ -1,4 +1,4 @@
-package: github.com/appscode/onessl
+package: github.com/kubepack/onessl
 import:
 - package: github.com/appscode/go
   version: master

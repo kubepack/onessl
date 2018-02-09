@@ -1,4 +1,4 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/appscode/onessl)](https://goreportcard.com/report/github.com/appscode/onessl)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kubepack/onessl)](https://goreportcard.com/report/github.com/kubepack/onessl)
 
 # onessl
 Simple CLI to generate SSL certificates on any platform.
