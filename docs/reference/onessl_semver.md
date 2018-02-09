@@ -1,17 +1,28 @@
-## onessl
+## onessl semver
 
-onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
+Print sanitized semver version
 
 ### Synopsis
 
-onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
+Print sanitized semver version
+
+```
+onessl semver [flags]
+```
 
 ### Options
 
 ```
+      --base           print major.minor.0 version
+      --check string   check constraint
+  -h, --help           help for semver
+```
+
+### Options inherited from parent commands
+
+```
       --alsologtostderr                  log to standard error as well as files
       --analytics                        Send analytical events to Google Guard (default true)
-  -h, --help                             help for onessl
       --log_backtrace_at traceLocation   when logging hits line file:N, emit a stack trace (default :0)
       --log_dir string                   If non-empty, write log files in this directory
       --logtostderr                      log to standard error instead of files
@@ -22,10 +33,5 @@ onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
 
 ### SEE ALSO
 
-* [onessl base64](onessl_base64.md)	 - Base64 encode/decode input text
-* [onessl create](onessl_create.md)	 - create PKI
-* [onessl get](onessl_get.md)	 - Get stuff
-* [onessl jsonpath](onessl_jsonpath.md)	 - Print value of jsonpath for input text
-* [onessl semver](onessl_semver.md)	 - Print sanitized semver version
-* [onessl version](onessl_version.md)	 - Prints binary version number.
+* [onessl](onessl.md)	 - onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
 

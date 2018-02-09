@@ -45,6 +45,7 @@ func NewRootCmd(version string) *cobra.Command {
 	rootCmd.AddCommand(NewCmdGet())
 	rootCmd.AddCommand(NewCmdBase64())
 	rootCmd.AddCommand(NewCmdJsonpath())
+	rootCmd.AddCommand(NewCmdSemver())
 	rootCmd.AddCommand(v.NewCmdVersion())
 	return rootCmd
 }
