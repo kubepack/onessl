@@ -13,8 +13,9 @@ onessl semver [flags]
 ### Options
 
 ```
-      --base   print major.minor.0 version
-  -h, --help   help for semver
+      --base           print major.minor.0 version
+      --check string   check constraint
+  -h, --help           help for semver
 ```
 
 ### Options inherited from parent commands
