@@ -41,9 +41,10 @@ func NewRootCmd(version string) *cobra.Command {
 	flag.CommandLine.Parse([]string{})
 	flag.Set("stderrthreshold", "ERROR")
 
-	rootCmd.AddCommand(NewCmdCreate())
-	rootCmd.AddCommand(NewCmdGet())
 	rootCmd.AddCommand(NewCmdBase64())
+	rootCmd.AddCommand(NewCmdCreate())
+	rootCmd.AddCommand(NewCmdEnvsubst())
+	rootCmd.AddCommand(NewCmdGet())
 	rootCmd.AddCommand(NewCmdJsonpath())
 	rootCmd.AddCommand(NewCmdSemver())
 	rootCmd.AddCommand(v.NewCmdVersion())

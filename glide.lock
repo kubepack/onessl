@@ -1,5 +1,5 @@
-hash: 8d74c04eba95fb12814ce1f8d5c44b2d0778fee1040f8329c4c068e38369e670
-updated: 2018-02-09T11:41:34.346962334-08:00
+hash: 8864a9d6621ada0cf62516f7bc10a2c5bbf4747debee619947b6d178e2c5c164
+updated: 2018-02-09T22:27:12.445336576-08:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -34,6 +34,10 @@ imports:
   - md2man
 - name: github.com/dgrijalva/jwt-go
   version: 01aeca54ebda6e0fbfafd0a524d234159c05ec20
+- name: github.com/drone/envsubst
+  version: f4d1a8ef8670afc9eea1fb95ee09a979fd2763a3
+  subpackages:
+  - parse
 - name: github.com/emicklei/go-restful
   version: ff4f55a206334ef123e4f79bbf348980da81ca46
   subpackages:
