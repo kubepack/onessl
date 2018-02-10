@@ -17,3 +17,5 @@ import:
   repo: https://github.com/appscode/go-version.git
   vcs: git
   version: master
+- package: github.com/drone/envsubst
+  version: master
