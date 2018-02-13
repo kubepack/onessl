@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// kubectl config view --minify=true --flatten -o json | onessl jsonpath '{.clusters[0].cluster.certificate-authority-data}'
 func NewCmdGetKubeCA() *cobra.Command {
 	var (
 		kubeconfigPath string
