@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/appscode/kutil/tools/clientcmd"
+	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
 
@@ -22,14 +23,14 @@ func NewCmdGetKubeCA() *cobra.Command {
 		Run: func(cmd *cobra.Command, args []string) {
 			cfg, err := clientcmd.BuildConfigFromContext(kubeconfigPath, contextName)
 			if err != nil {
-				Fatal(fmt.Errorf("failed to read kubeconfig. Reason: %v", err))
+				Fatal(errors.Wrap(err, "failed to read kubeconfig"))
 			}
 			if len(cfg.CAData) > 0 {
 				fmt.Println(string(cfg.CAData))
 			} else if len(cfg.CAFile) > 0 {
 				data, err := ioutil.ReadFile(cfg.CAFile)
 				if err != nil {
-					Fatal(fmt.Errorf("failed to load ca file %s. Reason: %v", cfg.CAFile, err))
+					Fatal(errors.Wrapf(err, "failed to load ca file %s", cfg.CAFile))
 				}
 				fmt.Println(string(data))
 			}

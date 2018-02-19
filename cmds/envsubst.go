@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/drone/envsubst"
+	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
 
@@ -19,11 +20,11 @@ func NewCmdEnvsubst() *cobra.Command {
 			reader := bufio.NewReader(os.Stdin)
 			data, err := ioutil.ReadAll(reader)
 			if err != nil {
-				Fatal(fmt.Errorf("failed to read input. Reason: %v", err))
+				Fatal(errors.Wrap(err, "failed to read input"))
 			}
 			out, err := envsubst.EvalEnv(string(data))
 			if err != nil {
-				Fatal(fmt.Errorf("failed to decode input. Reason: %v", err))
+				Fatal(errors.Wrap(err, "failed to decode input"))
 			}
 			fmt.Print(string(out))
 		},
