@@ -7,7 +7,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strings"
 
+	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/util/jsonpath"
 )
@@ -28,17 +30,17 @@ func NewCmdJsonpath() *cobra.Command {
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
 			if len(args) > 1 {
-				Fatal(fmt.Errorf("multiple templates found: %+v", args))
+				Fatal(errors.Errorf("multiple templates found: %v", strings.Join(args, ",")))
 			}
 			if len(args) == 0 {
-				Fatal(fmt.Errorf("missing templates"))
+				Fatal(errors.Errorf("missing templates"))
 			}
 			template = args[0]
 
 			reader := bufio.NewReader(os.Stdin)
 			data, err := ioutil.ReadAll(reader)
 			if err != nil {
-				Fatal(fmt.Errorf("failed to read input. Reason: %v", err))
+				Fatal(errors.Wrap(err, "failed to read input"))
 			}
 
 			var input interface{}
@@ -51,12 +53,12 @@ func NewCmdJsonpath() *cobra.Command {
 			j.AllowMissingKeys(allowMissingKeys)
 			err = j.Parse(template)
 			if err != nil {
-				Fatal(fmt.Errorf("in %s, parse %s error %v", name, template, err))
+				Fatal(errors.Errorf("in %s, parse %s error %v", name, template, err))
 			}
 			buf := new(bytes.Buffer)
 			err = j.Execute(buf, input)
 			if err != nil {
-				Fatal(fmt.Errorf("in %s, execute error %v", name, err))
+				Fatal(errors.Errorf("in %s, execute error %v", name, err))
 			}
 			fmt.Print(buf.String())
 		},

@@ -3,8 +3,10 @@ package cmds
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/hashicorp/go-version"
+	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
 
@@ -19,16 +21,16 @@ func NewCmdSemver() *cobra.Command {
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
 			if len(args) > 1 {
-				Fatal(fmt.Errorf("multiple version found: %+v", args))
+				Fatal(errors.Errorf("multiple version found: %v", strings.Join(args, ",")))
 			}
 			if len(args) == 0 {
-				Fatal(fmt.Errorf("missing version"))
+				Fatal(errors.Errorf("missing version"))
 			}
 			gitVersion := args[0]
 
 			gv, err := version.NewVersion(gitVersion)
 			if err != nil {
-				Fatal(fmt.Errorf("invalid version %s. reason: %s", gitVersion, err))
+				Fatal(errors.Wrapf(err, "invalid version %s", gitVersion))
 			}
 			m := gv.ToMutator().ResetMetadata().ResetPrerelease()
 			if base {
@@ -41,7 +43,7 @@ func NewCmdSemver() *cobra.Command {
 
 			c, err := version.NewConstraint(check)
 			if err != nil {
-				Fatal(fmt.Errorf("invalid constraint %s. reason: %s", gitVersion, err))
+				Fatal(errors.Wrapf(err, "invalid constraint %s", gitVersion))
 			}
 			if !c.Check(m.Done()) {
 				os.Exit(1)

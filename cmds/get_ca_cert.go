@@ -8,6 +8,7 @@ import (
 	"os"
 	"reflect"
 
+	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/util/cert"
 )
@@ -22,19 +23,19 @@ func NewCmdGetCACert() *cobra.Command {
 			reader := bufio.NewReader(os.Stdin)
 			keyBytes, err := ioutil.ReadAll(reader)
 			if err != nil {
-				Fatal(fmt.Errorf("failed to read private key. Reason: %v", err))
+				Fatal(errors.Wrap(err, "failed to read private key"))
 			}
 			key, err := cert.ParsePrivateKeyPEM(keyBytes)
 			if err != nil {
-				Fatal(fmt.Errorf("failed to parse private key. Reason: %v", err))
+				Fatal(errors.Wrap(err, "failed to parse private key"))
 			}
 			rsaKey, ok := key.(*rsa.PrivateKey)
 			if !ok {
-				Fatal(fmt.Errorf("only supports rsa private key. Found %v", reflect.ValueOf(key).Kind().String()))
+				Fatal(errors.Wrapf(err, "only supports rsa private key. Found %v", reflect.ValueOf(key).Kind()))
 			}
 			crt, err := cert.NewSelfSignedCACert(cert.Config{CommonName: cn}, rsaKey)
 			if err != nil {
-				Fatal(fmt.Errorf("failed to generate self-signed certificate. Reason: %v", err))
+				Fatal(errors.Wrap(err, "failed to generate self-signed certificate"))
 			}
 			fmt.Println(string(cert.EncodeCertPEM(crt)))
 			os.Exit(0)

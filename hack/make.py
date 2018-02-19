@@ -94,7 +94,7 @@ def lint():
 
 
 def gen():
-    call('go vet ./...')
+    return
 
 
 def build_cmd(name):
@@ -175,6 +175,7 @@ def install():
 def default():
     gen()
     fmt()
+    vet()
     die(call('GO15VENDOREXPERIMENT=1 ' + libbuild.GOC + ' install .'))
 
 
