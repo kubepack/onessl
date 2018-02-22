@@ -1,7 +1,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/kubepack/onessl)](https://goreportcard.com/report/github.com/kubepack/onessl)
 
 # onessl
-Simple CLI to generate SSL certificates on any platform.
+Simple CLI to generate SSL certificates on any platform. Just download the pre-built binaries from this project's release page and you are ready to go!
 
 
 ## Available Commands
