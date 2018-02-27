@@ -12,7 +12,7 @@ import (
 
 func NewCmdSemver() *cobra.Command {
 	var (
-		base  bool
+		minor bool
 		check string
 	)
 	cmd := &cobra.Command{
@@ -33,7 +33,7 @@ func NewCmdSemver() *cobra.Command {
 				Fatal(errors.Wrapf(err, "invalid version %s", gitVersion))
 			}
 			m := gv.ToMutator().ResetMetadata().ResetPrerelease()
-			if base {
+			if minor {
 				m = m.ResetPatch()
 			}
 			if check == "" {
@@ -51,7 +51,7 @@ func NewCmdSemver() *cobra.Command {
 		},
 	}
 
-	cmd.Flags().BoolVar(&base, "base", base, "print major.minor.0 version")
+	cmd.Flags().BoolVar(&minor, "minor", minor, "print major.minor.0 version")
 	cmd.Flags().StringVar(&check, "check", check, "check constraint")
 	return cmd
 }
