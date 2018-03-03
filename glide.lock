@@ -1,5 +1,5 @@
-hash: 8864a9d6621ada0cf62516f7bc10a2c5bbf4747debee619947b6d178e2c5c164
-updated: 2018-02-19T09:49:26.628658644-08:00
+hash: 30b057b36bc16d6d45bdd183c60a5fede82c98bb6ef3006c3934e05ca8976589
+updated: 2018-03-02T21:49:36.35114216-08:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -7,7 +7,7 @@ imports:
   - compute/metadata
   - internal
 - name: github.com/appscode/go
-  version: 8367769380cf93a12b381d957941ddf2a19d0356
+  version: c312c0a1fe0d4988480073287b8633fc5a244647
   subpackages:
   - context
   - log
@@ -17,7 +17,7 @@ imports:
   - sets
   - version
 - name: github.com/appscode/kutil
-  version: 71bf6eda11a39a1b6bd3705f65a02e4901665d32
+  version: 00a04e324e089e575b007bfa9927c2c3724d6286
   subpackages:
   - tools/certstore
   - tools/clientcmd
@@ -62,10 +62,12 @@ imports:
 - name: github.com/golang/protobuf
   version: 1643683e1b54a9e88ad26d98f81400c8c9d9f4f9
   subpackages:
+  - jsonpb
   - proto
   - ptypes
   - ptypes/any
   - ptypes/duration
+  - ptypes/struct
   - ptypes/timestamp
 - name: github.com/google/btree
   version: 7d79101e329e5a3adf994758c578dab82b90c017
@@ -117,7 +119,7 @@ imports:
 - name: github.com/peterbourgon/diskv
   version: 5f041e8faa004a95c88a202771f4cc3e991971e6
 - name: github.com/pkg/errors
-  version: 645ef00459ed84a119197bfb8d8205042c6df63d
+  version: 30136e27e2ac8d167177e8a583aa4c3fea5be833
 - name: github.com/PuerkitoBio/purell
   version: 8a290539e2e8629dbc4e6bad948158f790ec31f4
 - name: github.com/PuerkitoBio/urlesc
@@ -131,7 +133,7 @@ imports:
   subpackages:
   - mem
 - name: github.com/spf13/cobra
-  version: be77323fc05148ef091e83b3866c0d47c8e74a8b
+  version: c6c44e6fdcc30161c7f4480754da7230d01c06e3
   subpackages:
   - doc
 - name: github.com/spf13/pflag
@@ -145,10 +147,15 @@ imports:
   subpackages:
   - context
   - context/ctxhttp
+  - html
+  - html/atom
   - http2
   - http2/hpack
   - idna
+  - internal/timeseries
   - lex/httplex
+  - trace
+  - websocket
 - name: golang.org/x/oauth2
   version: a6bd8cefa1811bd24b86f8902872e4e8225f74c4
   subpackages:
@@ -192,7 +199,7 @@ imports:
 - name: gopkg.in/yaml.v2
   version: 53feefa2559fb8dfa8d81baad31be332c97d6c77
 - name: k8s.io/api
-  version: 11147472b7c934c474a2c484af3c0c5210b7a3af
+  version: af4bc157c3a209798fc897f6d4aaaaeb6c2e0d6a
   subpackages:
   - admissionregistration/v1alpha1
   - admissionregistration/v1beta1
@@ -212,7 +219,6 @@ imports:
   - core/v1
   - events/v1beta1
   - extensions/v1beta1
-  - imagepolicy/v1alpha1
   - networking/v1
   - policy/v1beta1
   - rbac/v1
@@ -223,21 +229,19 @@ imports:
   - storage/v1
   - storage/v1alpha1
   - storage/v1beta1
+- name: k8s.io/apiextensions-apiserver
+  version: 98ecf7bbd60f9f11a72000e4f05203f542136219
+  subpackages:
+  - pkg/apis/apiextensions
+  - pkg/apis/apiextensions/v1beta1
+  - pkg/client/clientset/clientset/scheme
+  - pkg/client/clientset/clientset/typed/apiextensions/v1beta1
 - name: k8s.io/apimachinery
   version: 180eddb345a5be3a157cea1c624700ad5bd27b8f
   subpackages:
-  - pkg/api/equality
   - pkg/api/errors
   - pkg/api/meta
   - pkg/api/resource
-  - pkg/api/testing
-  - pkg/api/testing/fuzzer
-  - pkg/api/testing/roundtrip
-  - pkg/apimachinery
-  - pkg/apimachinery/announced
-  - pkg/apimachinery/registered
-  - pkg/apis/meta/fuzzer
-  - pkg/apis/meta/internalversion
   - pkg/apis/meta/v1
   - pkg/apis/meta/v1/unstructured
   - pkg/apis/meta/v1alpha1
@@ -255,29 +259,20 @@ imports:
   - pkg/runtime/serializer/versioning
   - pkg/selection
   - pkg/types
-  - pkg/util/cache
   - pkg/util/clock
-  - pkg/util/diff
   - pkg/util/errors
   - pkg/util/framer
-  - pkg/util/httpstream
-  - pkg/util/httpstream/spdy
   - pkg/util/intstr
   - pkg/util/json
-  - pkg/util/mergepatch
   - pkg/util/net
-  - pkg/util/remotecommand
   - pkg/util/runtime
   - pkg/util/sets
-  - pkg/util/strategicpatch
   - pkg/util/validation
   - pkg/util/validation/field
   - pkg/util/wait
   - pkg/util/yaml
   - pkg/version
   - pkg/watch
-  - third_party/forked/golang/json
-  - third_party/forked/golang/netutil
   - third_party/forked/golang/reflect
 - name: k8s.io/client-go
   version: 78700dec6369ba22221b72770783300f143df150
@@ -335,9 +330,20 @@ imports:
   - util/homedir
   - util/integer
   - util/jsonpath
+- name: k8s.io/kube-aggregator
+  version: 23f9f59d663ea22b680310831a1b7297914b4ed3
+  subpackages:
+  - pkg/apis/apiregistration
+  - pkg/apis/apiregistration/v1beta1
+  - pkg/client/clientset_generated/clientset
+  - pkg/client/clientset_generated/clientset/scheme
+  - pkg/client/clientset_generated/clientset/typed/apiregistration/v1beta1
 - name: k8s.io/kube-openapi
   version: 39a7bf85c140f972372c2a0d1ee40adbf0c8bfe1
   subpackages:
+  - pkg/builder
   - pkg/common
+  - pkg/handler
+  - pkg/util
   - pkg/util/proto
 testImports: []

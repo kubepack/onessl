@@ -26,7 +26,9 @@ onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
 * [onessl create](onessl_create.md)	 - create PKI
 * [onessl envsubst](onessl_envsubst.md)	 - Emulates bash environment variable substitution for input text
 * [onessl get](onessl_get.md)	 - Get stuff
+* [onessl has-keys](onessl_has-keys.md)	 - Checks configmap/secret has a set of given keys
 * [onessl jsonpath](onessl_jsonpath.md)	 - Print value of jsonpath for input text
 * [onessl semver](onessl_semver.md)	 - Print sanitized semver version
 * [onessl version](onessl_version.md)	 - Prints binary version number.
+* [onessl wait-until-ready](onessl_wait-until-ready.md)	 - Wait until resource is ready
 
