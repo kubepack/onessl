@@ -4,7 +4,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/appscode/kutil/tools/clientcmd"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 	api "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
@@ -12,15 +11,13 @@ import (
 	kerr "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
+	"k8s.io/client-go/tools/clientcmd"
 )
 
-func NewCmdWaitUntilReadyCRD() *cobra.Command {
+func NewCmdWaitUntilReadyCRD(clientConfig clientcmd.ClientConfig) *cobra.Command {
 	var (
 		interval = 2 * time.Second
 		timeout  = 3 * time.Minute
-
-		kubeContext string
-		kubeConfig  string
 	)
 	cmd := &cobra.Command{
 		Use:               "crd",
@@ -34,12 +31,12 @@ func NewCmdWaitUntilReadyCRD() *cobra.Command {
 				Fatal(errors.Errorf("multiple crds found: %v", strings.Join(args, ",")))
 			}
 
-			clientConfig, err := clientcmd.BuildConfigFromContext(kubeConfig, kubeContext)
+			config, err := clientConfig.ClientConfig()
 			if err != nil {
 				Fatal(err)
 			}
 
-			client, err := cs.NewForConfig(clientConfig)
+			client, err := cs.NewForConfig(config)
 			if err != nil {
 				Fatal(err)
 			}
@@ -65,9 +62,6 @@ func NewCmdWaitUntilReadyCRD() *cobra.Command {
 			}
 		},
 	}
-
-	cmd.Flags().StringVar(&kubeConfig, "kubeconfig", "", "Path to kubeconfig file with authorization information (the master location is set by the master flag).")
-	cmd.Flags().StringVar(&kubeContext, "kube-context", "", "Name of kube context")
 	cmd.Flags().DurationVar(&interval, "interval", interval, "Interval between checks")
 	cmd.Flags().DurationVar(&timeout, "timeout", timeout, "Timeout")
 	return cmd
