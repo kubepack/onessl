@@ -1,5 +1,5 @@
 hash: 30b057b36bc16d6d45bdd183c60a5fede82c98bb6ef3006c3934e05ca8976589
-updated: 2018-03-02T21:49:36.35114216-08:00
+updated: 2018-03-04T23:51:19.347278464-08:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -9,15 +9,18 @@ imports:
 - name: github.com/appscode/go
   version: c312c0a1fe0d4988480073287b8633fc5a244647
   subpackages:
+  - analytics
   - context
+  - homedir
   - log
   - log/golog
   - net
   - runtime
   - sets
+  - types
   - version
 - name: github.com/appscode/kutil
-  version: 00a04e324e089e575b007bfa9927c2c3724d6286
+  version: 9b3dfbd1d10e0687fe518521891b23bc4f4fd9e2
   subpackages:
   - tools/certstore
   - tools/clientcmd
