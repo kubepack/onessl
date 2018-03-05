@@ -5,23 +5,19 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/appscode/kutil/tools/clientcmd"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
+	"k8s.io/client-go/tools/clientcmd"
 )
 
 // kubectl config view --minify=true --flatten -o json | onessl jsonpath '{.clusters[0].cluster.certificate-authority-data}'
-func NewCmdGetKubeCA() *cobra.Command {
-	var (
-		kubeconfigPath string
-		contextName    string
-	)
+func NewCmdGetKubeCA(clientConfig clientcmd.ClientConfig) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:               "kube-ca",
 		Short:             "Prints CA certificate for Kubernetes cluster from Kubeconfig",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			cfg, err := clientcmd.BuildConfigFromContext(kubeconfigPath, contextName)
+			cfg, err := clientConfig.ClientConfig()
 			if err != nil {
 				Fatal(errors.Wrap(err, "failed to read kubeconfig"))
 			}
@@ -37,7 +33,5 @@ func NewCmdGetKubeCA() *cobra.Command {
 			os.Exit(0)
 		},
 	}
-	cmd.Flags().StringVar(&kubeconfigPath, "kubeconfig", kubeconfigPath, "Path to kubeconfig file with authorization information (the master location is set by the master flag).")
-	cmd.Flags().StringVar(&contextName, "context", contextName, "Name of kubeconfig context to use")
 	return cmd
 }

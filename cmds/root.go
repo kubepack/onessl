@@ -7,6 +7,7 @@ import (
 
 	"github.com/appscode/go/analytics"
 	v "github.com/appscode/go/version"
+	"github.com/appscode/kutil/tools/plugin_installer"
 	"github.com/jpillora/go-ogle-analytics"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
@@ -16,7 +17,7 @@ const (
 	gaTrackingCode = "UA-62096468-20"
 )
 
-func NewRootCmd(version string) *cobra.Command {
+func NewRootCmd(version string, plugin bool) *cobra.Command {
 	var (
 		enableAnalytics = true
 	)
@@ -35,10 +36,15 @@ func NewRootCmd(version string) *cobra.Command {
 					client.Send(ga.NewEvent(parts[0], strings.Join(parts[1:], "/")).Label(version))
 				}
 			}
+			if plugin {
+				plugin_installer.LoadFlags(c.LocalFlags())
+			}
 		},
 	}
-	rootCmd.PersistentFlags().BoolVar(&enableAnalytics, "analytics", enableAnalytics, "Send analytical events to Google Guard")
-	rootCmd.PersistentFlags().AddGoFlagSet(flag.CommandLine)
+
+	flags := rootCmd.PersistentFlags()
+	clientConfig := plugin_installer.BindGlobalFlags(flags, plugin)
+	flags.BoolVar(&enableAnalytics, "analytics", enableAnalytics, "Send analytical events to Google Guard")
 	// ref: https://github.com/kubernetes/kubernetes/issues/17162#issuecomment-225596212
 	flag.CommandLine.Parse([]string{})
 	flag.Set("stderrthreshold", "ERROR")
@@ -46,11 +52,12 @@ func NewRootCmd(version string) *cobra.Command {
 	rootCmd.AddCommand(NewCmdBase64())
 	rootCmd.AddCommand(NewCmdCreate())
 	rootCmd.AddCommand(NewCmdEnvsubst())
-	rootCmd.AddCommand(NewCmdGet())
+	rootCmd.AddCommand(NewCmdGet(clientConfig))
 	rootCmd.AddCommand(NewCmdJsonpath())
 	rootCmd.AddCommand(NewCmdSemver())
-	rootCmd.AddCommand(NewCmdHasKeys())
-	rootCmd.AddCommand(NewCmdWaitUntilReady())
+	rootCmd.AddCommand(NewCmdHasKeys(clientConfig))
+	rootCmd.AddCommand(NewCmdWaitUntilReady(clientConfig))
+	rootCmd.AddCommand(plugin_installer.NewCmdInstall(rootCmd))
 	rootCmd.AddCommand(v.NewCmdVersion())
 	return rootCmd
 }
