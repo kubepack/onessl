@@ -1,5 +1,5 @@
 hash: 30b057b36bc16d6d45bdd183c60a5fede82c98bb6ef3006c3934e05ca8976589
-updated: 2018-03-05T00:25:31.702638072-08:00
+updated: 2018-03-09T23:42:16.484440896-08:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -21,10 +21,9 @@ imports:
   - types
   - version
 - name: github.com/appscode/kutil
-  version: 53ea956d44dd41e34f35254a9ed08d68fce7b8cb
+  version: e3a21009a5f4536b54e15941bb8cd081a856d9fb
   subpackages:
   - tools/certstore
-  - tools/clientcmd
   - tools/plugin_installer
 - name: github.com/aws/aws-sdk-go
   version: 760741802ad40f49ae9fc4a69ef6706d2527d62e
