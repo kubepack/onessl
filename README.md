@@ -1,4 +1,9 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/kubepack/onessl)](https://goreportcard.com/report/github.com/kubepack/onessl)
+[![Build Status](https://travis-ci.org/kubepack/onessl.svg?branch=master)](https://travis-ci.org/kubepack/onessl)
+[![codecov](https://codecov.io/gh/kubepack/onessl/branch/master/graph/badge.svg)](https://codecov.io/gh/kubepack/onessl)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kubepack/onessl.svg)](https://hub.docker.com/r/kubepack/onessl/)
+[![Slack](https://slack.appscode.com/badge.svg)](https://slack.appscode.com)
+[![Twitter](https://img.shields.io/twitter/follow/appscodehq.svg?style=social&logo=twitter&label=Follow)](https://twitter.com/intent/follow?screen_name=AppsCodeHQ)
 
 # onessl
 Simple CLI to generate SSL certificates on any platform. Just download the pre-built binaries from this project's release page and you are ready to go!
