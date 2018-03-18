@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/kubepack/onessl.svg?branch=master)](https://travis-ci.org/kubepack/onessl)
 [![codecov](https://codecov.io/gh/kubepack/onessl/branch/master/graph/badge.svg)](https://codecov.io/gh/kubepack/onessl)
 [![Slack](https://slack.appscode.com/badge.svg)](https://slack.appscode.com)
+[![mailing list](https://img.shields.io/badge/mailing_list-join-blue.svg)](https://groups.google.com/forum/#!forum/kubepack)
 [![Twitter](https://img.shields.io/twitter/follow/appscodehq.svg?style=social&logo=twitter&label=Follow)](https://twitter.com/intent/follow?screen_name=AppsCodeHQ)
 
 # onessl
