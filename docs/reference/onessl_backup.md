@@ -1,20 +1,21 @@
-## onessl has-keys configmap
+## onessl backup
 
-Check a configmap has a set of given keys
+Backup cluster objects
 
 ### Synopsis
 
-Check a configmap has a set of given keys
+Backup cluster objects
 
 ```
-onessl has-keys configmap [flags]
+onessl backup [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help           help for configmap
-      --keys strings   Keys to search for
+      --backup-dir string   Directory where yaml files will be saved
+  -h, --help                help for backup
+      --sanitize             Sanitize fields in YAML
 ```
 
 ### Options inherited from parent commands
@@ -48,5 +49,5 @@ onessl has-keys configmap [flags]
 
 ### SEE ALSO
 
-* [onessl has-keys](onessl_has-keys.md)	 - Checks configmap/secret has a set of given keys
+* [onessl](onessl.md)	 - onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
 

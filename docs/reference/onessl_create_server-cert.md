@@ -13,11 +13,11 @@ onessl create server-cert [flags]
 ### Options
 
 ```
-      --cert-dir string       Path to directory where pki files are stored. (default "/home/tamal/go/src/github.com/kubepack/onessl/hack/gendocs")
-      --domains stringSlice   Alternative Domain names
-  -h, --help                  help for server-cert
-      --ips ipSlice           Alternative IP addresses (default [127.0.0.1])
-      --overwrite             Overwrite existing cert/key pair
+      --cert-dir string   Path to directory where pki files are stored. (default "$HOME/go/src/github.com/kubepack/onessl/hack/gendocs")
+      --domains strings   Alternative Domain names
+  -h, --help              help for server-cert
+      --ips ipSlice       Alternative IP addresses (default [127.0.0.1])
+      --overwrite         Overwrite existing cert/key pair
 ```
 
 ### Options inherited from parent commands
