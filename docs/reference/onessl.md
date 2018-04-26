@@ -38,6 +38,7 @@ onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
 
 ### SEE ALSO
 
+* [onessl backup](onessl_backup.md)	 - Backup cluster objects
 * [onessl base64](onessl_base64.md)	 - Base64 encode/decode input text
 * [onessl create](onessl_create.md)	 - create PKI
 * [onessl envsubst](onessl_envsubst.md)	 - Emulates bash environment variable substitution for input text

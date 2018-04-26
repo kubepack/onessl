@@ -13,8 +13,8 @@ onessl has-keys secret [flags]
 ### Options
 
 ```
-  -h, --help               help for secret
-      --keys stringSlice   Keys to search for
+  -h, --help           help for secret
+      --keys strings   Keys to search for
 ```
 
 ### Options inherited from parent commands
