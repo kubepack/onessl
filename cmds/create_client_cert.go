@@ -14,7 +14,7 @@ import (
 
 func NewCmdCreateClient(certDir string) *cobra.Command {
 	var (
-		org       string
+		org       []string
 		overwrite bool
 	)
 	cmd := &cobra.Command{
@@ -32,7 +32,7 @@ func NewCmdCreateClient(certDir string) *cobra.Command {
 			cfg := cert.Config{
 				CommonName:   args[0],
 				Usages:       []x509.ExtKeyUsage{x509.ExtKeyUsageClientAuth},
-				Organization: []string{org},
+				Organization: org,
 			}
 
 			store, err := certstore.NewCertStore(afero.NewOsFs(), certDir)
@@ -66,7 +66,7 @@ func NewCmdCreateClient(certDir string) *cobra.Command {
 	}
 
 	cmd.Flags().StringVar(&certDir, "cert-dir", certDir, "Path to directory where pki files are stored.")
-	cmd.Flags().StringVarP(&org, "organization", "o", org, "Name of client organizations.")
+	cmd.Flags().StringSliceVarP(&org, "organization", "o", org, "Name of client organizations.")
 	cmd.Flags().BoolVar(&overwrite, "overwrite", overwrite, "Overwrite existing cert/key pair")
 	return cmd
 }
