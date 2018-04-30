@@ -1,11 +1,12 @@
 # Change Log
 
-## [Unreleased](https://github.com/kubepack/onessl/tree/HEAD)
-
-[Full Changelog](https://github.com/kubepack/onessl/compare/0.2.0...HEAD)
+## [0.3.0](https://github.com/kubepack/onessl/tree/0.3.0) (2018-04-30)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.2.0...0.3.0)
 
 **Merged pull requests:**
 
+- Error out if kube apiserver uses  insecure-skip-tls-verify : true [\#23](https://github.com/kubepack/onessl/pull/23) ([tamalsaha](https://github.com/tamalsaha))
+- Add changelog [\#22](https://github.com/kubepack/onessl/pull/22) ([tamalsaha](https://github.com/tamalsaha))
 - Support multiple orgs for client cert [\#21](https://github.com/kubepack/onessl/pull/21) ([tamalsaha](https://github.com/tamalsaha))
 - Add backup cluster command [\#20](https://github.com/kubepack/onessl/pull/20) ([tamalsaha](https://github.com/tamalsaha))
 - Add travis yaml [\#18](https://github.com/kubepack/onessl/pull/18) ([tahsinrahman](https://github.com/tahsinrahman))
