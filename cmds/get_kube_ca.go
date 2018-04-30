@@ -21,6 +21,9 @@ func NewCmdGetKubeCA(clientConfig clientcmd.ClientConfig) *cobra.Command {
 			if err != nil {
 				Fatal(errors.Wrap(err, "failed to read kubeconfig"))
 			}
+			if cfg.Insecure {
+				Fatal(errors.New(`Kube apiserver uses "insecure-skip-tls-verify: true". Kube apiserver must not be accessed without verifying the TLS certificate.`))
+			}
 			if len(cfg.CAData) > 0 {
 				fmt.Println(string(cfg.CAData))
 			} else if len(cfg.CAFile) > 0 {
