@@ -3,7 +3,7 @@ import:
 - package: github.com/appscode/go
   version: master
 - package: github.com/appscode/kutil
-  version: release-6.0
+  version: release-7.0
 - package: github.com/jpillora/go-ogle-analytics
 - package: github.com/spf13/afero
   version: master
@@ -18,12 +18,12 @@ import:
 - package: github.com/drone/envsubst
   version: master
 - package: k8s.io/api
-  version: kubernetes-1.9.0
+  version: kubernetes-1.10.0
 - package: k8s.io/apiextensions-apiserver
-  version: kubernetes-1.9.0
+  version: kubernetes-1.10.0
 - package: k8s.io/apimachinery
-  version: kubernetes-1.9.0
+  version: kubernetes-1.10.0
 - package: k8s.io/kube-aggregator
-  version: kubernetes-1.9.0
+  version: kubernetes-1.10.0
 - package: k8s.io/client-go
-  version: v6.0.0
+  version: v7.0.0
