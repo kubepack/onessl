@@ -10,7 +10,8 @@ import (
 type ClusterInfo struct {
 	Version      *VersionInfo                     `json:"version"`
 	ClientConfig RestConfig                       `json:"clientConfig"`
-	APIServers   []APIServerConfig                `json:"apiServers"`
+	Capabilities Capabilities                     `json:"capabilities"`
+	APIServers   APIServers                       `json:"apiServers"`
 	AuthConfig   ExtensionApiserverAuthentication `json:"extension-apiserver-authentication"`
 }
 
@@ -29,6 +30,16 @@ type RestConfig struct {
 	Insecure bool   `json:"insecure"`
 }
 
+type Capabilities struct {
+	APIVersion                 string `json:"apiVersion"`
+	AggregateAPIServer         bool   `json:"aggregateAPIServer"`
+	MutatingAdmissionWebhook   bool   `json:"mutatingAdmissionWebhook"`
+	ValidatingAdmissionWebhook bool   `json:"validatingAdmissionWebhook"`
+	PodSecurityPolicy          bool   `json:"podSecurityPolicy"`
+	Initializers               bool   `json:"initializers"`
+	CustomResourceSubresources string `json:"customResourceSubresources"`
+}
+
 type APIServerConfig struct {
 	PodName                   string
 	NodeName                  string
@@ -39,7 +50,30 @@ type APIServerConfig struct {
 	RequestheaderClientCAData string
 	AllowPrivileged           bool
 	AuthorizationMode         []string
+	RuntimeConfig             FeatureList
+	FeatureGates              FeatureList
 }
+
+var (
+	ErrUnknown = errors.New("unknown")
+)
+
+type FeatureList struct {
+	Enabled  []string
+	Disabled []string
+}
+
+func (f FeatureList) Status(name string) (bool, error) {
+	if sets.NewString(f.Enabled...).Has(name) {
+		return true, nil
+	}
+	if sets.NewString(f.Disabled...).Has(name) {
+		return false, nil
+	}
+	return false, ErrUnknown
+}
+
+type APIServers []APIServerConfig
 
 type ExtensionApiserverAuthentication struct {
 	ClientCA      string
@@ -123,4 +157,71 @@ func (c ClusterInfo) Validate() error {
 		}
 	}
 	return utilerrors.NewAggregate(errs)
+}
+
+func (servers APIServers) UsesAdmissionControl(name string) (bool, error) {
+	n := 0
+	for _, s := range servers {
+		adms := sets.NewString(s.AdmissionControl...)
+		if adms.Has(name) {
+			n++
+		}
+	}
+
+	switch {
+	case n == 0:
+		return false, nil
+	case n == len(servers):
+		return true, nil
+	default:
+		return false, errors.Errorf("admission control %s is enabled in %d api server, expected %d", name, n, len(servers))
+	}
+}
+
+func (servers APIServers) RuntimeConfig(name string) (string, error) {
+	nE := 0
+	nU := 0
+	for _, s := range servers {
+		enabled, err := s.RuntimeConfig.Status(name)
+		if err == ErrUnknown {
+			nU++
+		} else if enabled {
+			nE++
+		}
+	}
+
+	switch {
+	case nU == len(servers):
+		return ErrUnknown.Error(), nil
+	case nE == len(servers):
+		return "true", nil
+	case nE == 0:
+		return "false", nil
+	default:
+		return "", errors.Errorf("%s api is not enabled in all api servers (enabled: %d, unknown: %d, total: %d)", name, nE, nU, len(servers))
+	}
+}
+
+func (servers APIServers) FeatureGate(name string) (string, error) {
+	nE := 0
+	nU := 0
+	for _, s := range servers {
+		enabled, err := s.FeatureGates.Status(name)
+		if err == ErrUnknown {
+			nU++
+		} else if enabled {
+			nE++
+		}
+	}
+
+	switch {
+	case nU == len(servers):
+		return ErrUnknown.Error(), nil
+	case nE == len(servers):
+		return "true", nil
+	case nE == 0:
+		return "false", nil
+	default:
+		return "", errors.Errorf("%s api is not enabled in all api servers (enabled: %d, unknown: %d, total: %d)", name, nE, nU, len(servers))
+	}
 }

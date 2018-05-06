@@ -43,5 +43,50 @@ func (d *Doctor) GetClusterInfo() (*ClusterInfo, error) {
 		return nil, err
 	}
 
+	{
+		info.Capabilities.APIVersion = info.Version.Minor
+	}
+	{
+		info.Capabilities.AggregateAPIServer = info.AuthConfig.RequestHeader != nil
+	}
+	{
+		enabled, err := info.APIServers.UsesAdmissionControl("MutatingAdmissionWebhook")
+		if err != nil {
+			return nil, err
+		}
+		info.Capabilities.MutatingAdmissionWebhook = !info.ClientConfig.Insecure && enabled
+	}
+	{
+		enabled, err := info.APIServers.UsesAdmissionControl("ValidatingAdmissionWebhook")
+		if err != nil {
+			return nil, err
+		}
+		info.Capabilities.ValidatingAdmissionWebhook = !info.ClientConfig.Insecure && enabled
+
+	}
+	{
+		enabled, err := info.APIServers.UsesAdmissionControl("PodSecurityPolicy")
+		if err != nil {
+			return nil, err
+		}
+		info.Capabilities.PodSecurityPolicy = !info.ClientConfig.Insecure && enabled
+
+	}
+	{
+		enabled, err := info.APIServers.UsesAdmissionControl("Initializers")
+		if err != nil {
+			return nil, err
+		}
+		info.Capabilities.Initializers = !info.ClientConfig.Insecure && enabled
+
+	}
+	{
+		status, err := info.APIServers.FeatureGate("CustomResourceSubresources")
+		if err != nil {
+			return nil, err
+		}
+		info.Capabilities.CustomResourceSubresources = status
+	}
+
 	return &info, nil
 }
