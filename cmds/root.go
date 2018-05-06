@@ -59,6 +59,7 @@ func NewRootCmd(version string, plugin bool) *cobra.Command {
 	rootCmd.AddCommand(NewCmdHasKeys(clientConfig))
 	rootCmd.AddCommand(NewCmdWaitUntilReady(clientConfig))
 	rootCmd.AddCommand(NewCmdBackup(clientConfig))
+	rootCmd.AddCommand(NewCmdDoctor(clientConfig))
 	rootCmd.AddCommand(plugin_installer.NewCmdInstall(rootCmd))
 	rootCmd.AddCommand(v.NewCmdVersion())
 	return rootCmd
