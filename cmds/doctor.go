@@ -5,12 +5,12 @@ import (
 	"os"
 
 	"github.com/appscode/kutil/tools/doctor"
+	"github.com/golang/glog"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/tools/clientcmd"
 )
 
-// kubectl config view --minify=true --flatten -o json | onessl jsonpath '{.clusters[0].cluster.certificate-authority-data}'
 func NewCmdDoctor(clientConfig clientcmd.ClientConfig) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:               "doctor",
@@ -32,9 +32,12 @@ func NewCmdDoctor(clientConfig clientcmd.ClientConfig) *cobra.Command {
 			}
 			err = info.Validate()
 			if err != nil {
+				Fatal(errors.Wrapf(err, "cluster info is not valid.\n%s", info))
+			} else if glog.V(10) {
+				fmt.Println("cluster info:")
 				fmt.Println(info)
-				Fatal(errors.Wrap(err, "cluster info is not valid"))
 			}
+
 			os.Exit(0)
 		},
 	}
