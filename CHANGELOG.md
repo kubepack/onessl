@@ -1,10 +1,20 @@
 # Change Log
 
-## [0.3.0](https://github.com/kubepack/onessl/tree/0.3.0) (2018-04-30)
+## [0.3.0](https://github.com/kubepack/onessl/tree/0.3.0) (2018-05-06)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.2.0...0.3.0)
+
+**Closed issues:**
+
+- Check multi-master setup [\#19](https://github.com/kubepack/onessl/issues/19)
+- Webhook Admission controller is enabled [\#14](https://github.com/kubepack/onessl/issues/14)
 
 **Merged pull requests:**
 
+- Fix doctor command for GKE [\#28](https://github.com/kubepack/onessl/pull/28) ([tamalsaha](https://github.com/tamalsaha))
+- Update doctor command [\#27](https://github.com/kubepack/onessl/pull/27) ([tamalsaha](https://github.com/tamalsaha))
+- Print cluster info at glog level 10 [\#26](https://github.com/kubepack/onessl/pull/26) ([tamalsaha](https://github.com/tamalsaha))
+- Add doctor command [\#25](https://github.com/kubepack/onessl/pull/25) ([tamalsaha](https://github.com/tamalsaha))
+- Update client-go to 7.0.0 [\#24](https://github.com/kubepack/onessl/pull/24) ([tamalsaha](https://github.com/tamalsaha))
 - Error out if kube apiserver uses  insecure-skip-tls-verify : true [\#23](https://github.com/kubepack/onessl/pull/23) ([tamalsaha](https://github.com/tamalsaha))
 - Add changelog [\#22](https://github.com/kubepack/onessl/pull/22) ([tamalsaha](https://github.com/tamalsaha))
 - Support multiple orgs for client cert [\#21](https://github.com/kubepack/onessl/pull/21) ([tamalsaha](https://github.com/tamalsaha))
