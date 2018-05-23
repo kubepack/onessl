@@ -44,6 +44,6 @@ Get stuff
 ### SEE ALSO
 
 * [onessl](onessl.md)	 - onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
-* [onessl get ca-cert](onessl_get_ca-cert.md)	 - Prints self-sgned CA certificate from PEM encoded RSA private key
+* [onessl get ca-cert](onessl_get_ca-cert.md)	 - Prints self-signed CA certificate from PEM encoded RSA private key
 * [onessl get kube-ca](onessl_get_kube-ca.md)	 - Prints CA certificate for Kubernetes cluster from Kubeconfig
 
