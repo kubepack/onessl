@@ -6,6 +6,7 @@ import (
 
 	core_util "github.com/appscode/kutil/core/v1"
 	"github.com/appscode/kutil/meta"
+	"github.com/appscode/kutil/tools/exec"
 	"github.com/pkg/errors"
 	core "k8s.io/api/core/v1"
 )
@@ -25,10 +26,28 @@ func (d *Doctor) processPod(pod core.Pod) (*APIServerConfig, error) {
 	container := pod.Spec.Containers[0]
 	args := map[string]string{}
 	if len(container.Command) > 1 {
-		if container.Command[0] != "kube-apiserver" {
-			return nil, errors.Errorf(`pod %s is using command %s, expected "kube-apiserver"`, pod.Name, container.Command[0])
+		if container.Command[0] == "kube-apiserver" {
+			args = meta.ParseArgumentListToMap(container.Command)
+		} else {
+			var cmd string
+			for _, c := range container.Command {
+				if strings.Contains(c, "kube-apiserver") {
+					cmd = c
+					break
+				}
+			}
+			if cmd == "" {
+				return nil, errors.Errorf(`pod %s is using command %s, expected "kube-apiserver"`, pod.Name, container.Command[0])
+			}
+
+			fields := strings.Fields(cmd)
+			for i, w := range fields {
+				if strings.HasSuffix(w, "kube-apiserver") {
+					args = meta.ParseArgumentListToMap(fields[i:])
+					break
+				}
+			}
 		}
-		args = meta.ParseArgumentListToMap(container.Command)
 	} else if len(container.Args) > 0 {
 		args = meta.ParseArgumentListToMap(container.Args)
 	}
@@ -48,7 +67,7 @@ func (d *Doctor) processPod(pod core.Pod) (*APIServerConfig, error) {
 	}
 
 	if v, ok := args["client-ca-file"]; ok && v != "" {
-		data, err := core_util.ExecIntoPod(d.config, &pod, "cat", v)
+		data, err := exec.ExecIntoPod(d.config, &pod, "cat", v)
 		if err != nil {
 			return nil, err
 		}
@@ -56,7 +75,7 @@ func (d *Doctor) processPod(pod core.Pod) (*APIServerConfig, error) {
 	}
 
 	if v, ok := args["requestheader-client-ca-file"]; ok && v != "" {
-		data, err := core_util.ExecIntoPod(d.config, &pod, "cat", v)
+		data, err := exec.ExecIntoPod(d.config, &pod, "cat", v)
 		if err != nil {
 			return nil, err
 		}
