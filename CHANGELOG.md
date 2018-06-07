@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/kubepack/onessl/tree/HEAD)
+
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.4.0...HEAD)
+
+**Closed issues:**
+
+- Check if cert issued by ca.crt [\#30](https://github.com/kubepack/onessl/issues/30)
+
 ## [0.4.0](https://github.com/kubepack/onessl/tree/0.4.0) (2018-06-07)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.3.0...0.4.0)
 
@@ -11,6 +19,7 @@
 
 **Merged pull requests:**
 
+- Check if cert issued by ca.crt [\#39](https://github.com/kubepack/onessl/pull/39) ([tamalsaha](https://github.com/tamalsaha))
 - Fix kube-apiserver detection for kops cluster [\#38](https://github.com/kubepack/onessl/pull/38) ([tamalsaha](https://github.com/tamalsaha))
 - Check tls-cert-file for apiserver pods [\#37](https://github.com/kubepack/onessl/pull/37) ([tamalsaha](https://github.com/tamalsaha))
 - Improve doctor command [\#36](https://github.com/kubepack/onessl/pull/36) ([tamalsaha](https://github.com/tamalsaha))
