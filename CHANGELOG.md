@@ -1,13 +1,5 @@
 # Change Log
 
-## [Unreleased](https://github.com/kubepack/onessl/tree/HEAD)
-
-[Full Changelog](https://github.com/kubepack/onessl/compare/0.4.0...HEAD)
-
-**Closed issues:**
-
-- Check if cert issued by ca.crt [\#30](https://github.com/kubepack/onessl/issues/30)
-
 ## [0.4.0](https://github.com/kubepack/onessl/tree/0.4.0) (2018-06-07)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.3.0...0.4.0)
 
@@ -16,9 +8,11 @@
 - doctor for kops cluster [\#35](https://github.com/kubepack/onessl/issues/35)
 - Check kube-proxy running on master [\#33](https://github.com/kubepack/onessl/issues/33)
 - check that SANS include `localhost` [\#32](https://github.com/kubepack/onessl/issues/32)
+- Check if cert issued by ca.crt [\#30](https://github.com/kubepack/onessl/issues/30)
 
 **Merged pull requests:**
 
+- Capture proxy settings for kube-apiserver pods [\#40](https://github.com/kubepack/onessl/pull/40) ([tamalsaha](https://github.com/tamalsaha))
 - Check if cert issued by ca.crt [\#39](https://github.com/kubepack/onessl/pull/39) ([tamalsaha](https://github.com/tamalsaha))
 - Fix kube-apiserver detection for kops cluster [\#38](https://github.com/kubepack/onessl/pull/38) ([tamalsaha](https://github.com/tamalsaha))
 - Check tls-cert-file for apiserver pods [\#37](https://github.com/kubepack/onessl/pull/37) ([tamalsaha](https://github.com/tamalsaha))
