@@ -1,6 +1,6 @@
 # Change Log
 
-## [0.4.0](https://github.com/kubepack/onessl/tree/0.4.0) (2018-06-06)
+## [0.4.0](https://github.com/kubepack/onessl/tree/0.4.0) (2018-06-07)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.3.0...0.4.0)
 
 **Closed issues:**
@@ -11,6 +11,7 @@
 
 **Merged pull requests:**
 
+- Fix kube-apiserver detection for kops cluster [\#38](https://github.com/kubepack/onessl/pull/38) ([tamalsaha](https://github.com/tamalsaha))
 - Check tls-cert-file for apiserver pods [\#37](https://github.com/kubepack/onessl/pull/37) ([tamalsaha](https://github.com/tamalsaha))
 - Improve doctor command [\#36](https://github.com/kubepack/onessl/pull/36) ([tamalsaha](https://github.com/tamalsaha))
 - Fix typo [\#31](https://github.com/kubepack/onessl/pull/31) ([tamalsaha](https://github.com/tamalsaha))
