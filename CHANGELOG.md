@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.5.0](https://github.com/kubepack/onessl/tree/0.5.0) (2018-06-12)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.4.0...0.5.0)
+
+**Merged pull requests:**
+
+- Add support for hyperkube in doctor command [\#41](https://github.com/kubepack/onessl/pull/41) ([tamalsaha](https://github.com/tamalsaha))
+
 ## [0.4.0](https://github.com/kubepack/onessl/tree/0.4.0) (2018-06-07)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.3.0...0.4.0)
 
