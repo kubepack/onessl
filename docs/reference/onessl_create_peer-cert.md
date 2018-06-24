@@ -1,20 +1,22 @@
-## onessl create client-cert
+## onessl create peer-cert
 
-Generate client certificate pair
+Generate peer certificate pair
 
 ### Synopsis
 
-Generate client certificate pair
+Generate peer certificate pair
 
 ```
-onessl create client-cert [flags]
+onessl create peer-cert [flags]
 ```
 
 ### Options
 
 ```
       --cert-dir string        Path to directory where pki files are stored. (default "$HOME/go/src/github.com/kubepack/onessl/hack/gendocs")
-  -h, --help                   help for client-cert
+      --domains strings        Alternative Domain names
+  -h, --help                   help for peer-cert
+      --ips ipSlice            Alternative IP addresses (default [127.0.0.1])
   -o, --organization strings   Name of client organizations.
       --overwrite              Overwrite existing cert/key pair
       --prefix string          Prefix added to certificate files

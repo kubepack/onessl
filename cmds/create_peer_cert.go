@@ -12,7 +12,7 @@ import (
 	"k8s.io/client-go/util/cert"
 )
 
-func NewCmdCreateServer(certDir string) *cobra.Command {
+func NewCmdCreatePeer(certDir string) *cobra.Command {
 	var (
 		org    []string
 		prefix string
@@ -22,15 +22,15 @@ func NewCmdCreateServer(certDir string) *cobra.Command {
 		overwrite bool
 	)
 	cmd := &cobra.Command{
-		Use:               "server-cert",
-		Short:             "Generate server certificate pair",
+		Use:               "peer-cert",
+		Short:             "Generate peer certificate pair",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
 			if len(args) > 1 {
-				log.Fatalln("Multiple server name found.")
+				log.Fatalln("Multiple peer name found.")
 			}
 			if len(args) == 0 {
-				args = []string{"server"}
+				args = []string{"peer"}
 			}
 
 			cfg := cert.Config{
@@ -44,7 +44,7 @@ func NewCmdCreateServer(certDir string) *cobra.Command {
 				os.Exit(1)
 			}
 			if store.IsExists(Filename(cfg)) && !overwrite {
-				fmt.Printf("Server certificate found at %s. Do you want to overwrite?", store.Location())
+				fmt.Printf("Peer certificate found at %s. Do you want to overwrite?", store.Location())
 				os.Exit(1)
 			}
 
@@ -57,17 +57,17 @@ func NewCmdCreateServer(certDir string) *cobra.Command {
 				os.Exit(1)
 			}
 
-			crt, key, err := store.NewServerCertPair(cfg.CommonName, cfg.AltNames)
+			crt, key, err := store.NewPeerCertPair(cfg.CommonName, cfg.AltNames)
 			if err != nil {
-				fmt.Printf("Failed to generate server certificate pair. Reason: %v.", err)
+				fmt.Printf("Failed to generate peer certificate pair. Reason: %v.", err)
 				os.Exit(1)
 			}
 			err = store.WriteBytes(Filename(cfg), crt, key)
 			if err != nil {
-				fmt.Printf("Failed to init server certificate pair. Reason: %v.", err)
+				fmt.Printf("Failed to init peer certificate pair. Reason: %v.", err)
 				os.Exit(1)
 			}
-			fmt.Println("Wrote server certificates in ", store.Location())
+			fmt.Println("Wrote peer certificates in ", store.Location())
 			os.Exit(0)
 		},
 	}
