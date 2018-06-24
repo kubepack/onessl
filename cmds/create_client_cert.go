@@ -70,7 +70,7 @@ func NewCmdCreateClient(certDir string) *cobra.Command {
 
 	cmd.Flags().StringVar(&certDir, "cert-dir", certDir, "Path to directory where pki files are stored.")
 	cmd.Flags().StringSliceVarP(&org, "organization", "o", org, "Name of client organizations.")
-	cmd.Flags().StringVar(&prefix, "prefix", prefix, "Prefix added to certificate files")
+	cmd.Flags().StringVarP(&prefix, "prefix", "p", prefix, "Prefix added to certificate files")
 	cmd.Flags().BoolVar(&overwrite, "overwrite", overwrite, "Overwrite existing cert/key pair")
 	return cmd
 }

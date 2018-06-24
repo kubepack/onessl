@@ -19,7 +19,7 @@ onessl create server-cert [flags]
       --ips ipSlice            Alternative IP addresses (default [127.0.0.1])
   -o, --organization strings   Name of client organizations.
       --overwrite              Overwrite existing cert/key pair
-      --prefix string          Prefix added to certificate files
+  -p, --prefix string          Prefix added to certificate files
 ```
 
 ### Options inherited from parent commands

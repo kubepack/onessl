@@ -76,7 +76,7 @@ func NewCmdCreatePeer(certDir string) *cobra.Command {
 	cmd.Flags().IPSliceVar(&sans.IPs, "ips", sans.IPs, "Alternative IP addresses")
 	cmd.Flags().StringSliceVar(&sans.DNSNames, "domains", sans.DNSNames, "Alternative Domain names")
 	cmd.Flags().StringSliceVarP(&org, "organization", "o", org, "Name of client organizations.")
-	cmd.Flags().StringVar(&prefix, "prefix", prefix, "Prefix added to certificate files")
+	cmd.Flags().StringVarP(&prefix, "prefix", "p", prefix, "Prefix added to certificate files")
 	cmd.Flags().BoolVar(&overwrite, "overwrite", overwrite, "Overwrite existing cert/key pair")
 	return cmd
 }

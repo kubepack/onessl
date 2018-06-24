@@ -17,7 +17,7 @@ onessl create ca-cert [flags]
   -h, --help                   help for ca-cert
   -o, --organization strings   Name of client organizations.
       --overwrite              Overwrite existing cert/key pair
-      --prefix string          Prefix added to certificate files
+  -p, --prefix string          Prefix added to certificate files
 ```
 
 ### Options inherited from parent commands
