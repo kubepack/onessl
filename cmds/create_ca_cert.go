@@ -25,15 +25,16 @@ func NewCmdCreateCA(certDir string) *cobra.Command {
 				fmt.Printf("Failed to create certificate store. Reason: %v.", err)
 				os.Exit(1)
 			}
-			if store.IsExists("ca") && !overwrite {
-				fmt.Printf("CA certificate found at %s.", store.Location())
-				os.Exit(1)
-			}
 
 			var p []string
 			if prefix != "" {
 				p = append(p, prefix)
 			}
+			if store.IsExists("ca", p...) && !overwrite {
+				fmt.Printf("CA certificate found at %s.", store.Location())
+				os.Exit(1)
+			}
+
 			err = store.NewCA(p...)
 			if err != nil {
 				fmt.Printf("Failed to init ca. Reason: %v.", err)
