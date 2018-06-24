@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.6.0](https://github.com/kubepack/onessl/tree/0.6.0) (2018-06-24)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.5.0...0.6.0)
+
+**Merged pull requests:**
+
+- Fix prefix check for cert commands [\#43](https://github.com/kubepack/onessl/pull/43) ([tamalsaha](https://github.com/tamalsaha))
+- Add peer-cert command [\#42](https://github.com/kubepack/onessl/pull/42) ([tamalsaha](https://github.com/tamalsaha))
+
 ## [0.5.0](https://github.com/kubepack/onessl/tree/0.5.0) (2018-06-12)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.4.0...0.5.0)
 
