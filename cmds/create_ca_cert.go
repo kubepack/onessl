@@ -11,6 +11,8 @@ import (
 
 func NewCmdCreateCA(certDir string) *cobra.Command {
 	var (
+		org       []string
+		prefix    string
 		overwrite bool
 	)
 	cmd := &cobra.Command{
@@ -18,7 +20,7 @@ func NewCmdCreateCA(certDir string) *cobra.Command {
 		Short:             "Create CA cert/key pair",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			store, err := certstore.NewCertStore(afero.NewOsFs(), certDir)
+			store, err := certstore.NewCertStore(afero.NewOsFs(), certDir, org...)
 			if err != nil {
 				fmt.Printf("Failed to create certificate store. Reason: %v.", err)
 				os.Exit(1)
@@ -28,7 +30,11 @@ func NewCmdCreateCA(certDir string) *cobra.Command {
 				os.Exit(1)
 			}
 
-			err = store.NewCA()
+			var p []string
+			if prefix != "" {
+				p = append(p, prefix)
+			}
+			err = store.NewCA(p...)
 			if err != nil {
 				fmt.Printf("Failed to init ca. Reason: %v.", err)
 				os.Exit(1)
@@ -39,6 +45,8 @@ func NewCmdCreateCA(certDir string) *cobra.Command {
 	}
 
 	cmd.Flags().StringVar(&certDir, "cert-dir", certDir, "Path to directory where pki files are stored.")
+	cmd.Flags().StringSliceVarP(&org, "organization", "o", org, "Name of client organizations.")
+	cmd.Flags().StringVar(&prefix, "prefix", prefix, "Prefix added to certificate files")
 	cmd.Flags().BoolVar(&overwrite, "overwrite", overwrite, "Overwrite existing cert/key pair")
 	return cmd
 }

@@ -46,5 +46,6 @@ create PKI
 * [onessl](onessl.md)	 - onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
 * [onessl create ca-cert](onessl_create_ca-cert.md)	 - Create CA cert/key pair
 * [onessl create client-cert](onessl_create_client-cert.md)	 - Generate client certificate pair
+* [onessl create peer-cert](onessl_create_peer-cert.md)	 - Generate peer certificate pair
 * [onessl create server-cert](onessl_create_server-cert.md)	 - Generate server certificate pair
 
