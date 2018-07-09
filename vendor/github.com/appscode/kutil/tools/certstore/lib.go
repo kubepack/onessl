@@ -46,7 +46,7 @@ func (s *CertStore) LoadCA(prefix ...string) error {
 		return err
 	}
 
-	if s.PairExists(s.ca, prefix...) {
+	if s.PairExists(s.ca) {
 		var err error
 		s.caCert, s.caKey, err = s.Read(s.ca)
 		return err

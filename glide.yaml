@@ -2,14 +2,10 @@ package: github.com/kubepack/onessl
 import:
 - package: github.com/appscode/go
   version: master
-- package: github.com/appscode/kutil
-  version: release-7.0
+- package: github.com/hashicorp/go-version
+  version: master
 - package: github.com/drone/envsubst
 - package: github.com/golang/glog
-- package: github.com/hashicorp/go-version
-  repo: https://github.com/appscode/go-version.git
-  vcs: git
-  version: master
 - package: github.com/jpillora/go-ogle-analytics
 - package: github.com/pkg/errors
   version: v0.8.0
@@ -20,14 +16,16 @@ import:
 - package: github.com/spf13/pflag
   version: v1.0.1
 - package: k8s.io/apiextensions-apiserver
-  version: kubernetes-1.10.0
+  version: kubernetes-1.11.0
 - package: k8s.io/apimachinery
   repo: https://github.com/pharmer/apimachinery.git
   vcs: git
-  version: release-1.10
+  version: release-1.11
 - package: k8s.io/client-go
-  version: v7.0.0
+  version: v8.0.0
 - package: k8s.io/kube-aggregator
-  version: kubernetes-1.10.0
+  version: kubernetes-1.11.0
 - package: k8s.io/kubernetes
-  version: v1.10.0
+  version: v1.11.0
+- package: github.com/appscode/kutil
+  version: release-8.0
