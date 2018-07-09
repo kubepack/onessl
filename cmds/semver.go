@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/hashicorp/go-version"
+	"github.com/appscode/go-version"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
