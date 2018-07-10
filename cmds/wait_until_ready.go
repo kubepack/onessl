@@ -2,17 +2,17 @@ package cmds
 
 import (
 	"github.com/spf13/cobra"
-	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdWaitUntilReady(clientConfig clientcmd.ClientConfig) *cobra.Command {
+func NewCmdWaitUntilReady(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:               "wait-until-ready",
 		Short:             "Wait until resource is ready",
 		DisableAutoGenTag: true,
 	}
-	cmd.AddCommand(NewCmdWaitUntilReadyCRD(clientConfig))
-	cmd.AddCommand(NewCmdWaitUntilReadyAPIService(clientConfig))
-	cmd.AddCommand(NewCmdWaitUntilReadyDeployment(clientConfig))
+	cmd.AddCommand(NewCmdWaitUntilReadyCRD(clientGetter))
+	cmd.AddCommand(NewCmdWaitUntilReadyAPIService(clientGetter))
+	cmd.AddCommand(NewCmdWaitUntilReadyDeployment(clientGetter))
 	return cmd
 }

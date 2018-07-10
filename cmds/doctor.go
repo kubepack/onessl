@@ -8,16 +8,16 @@ import (
 	"github.com/golang/glog"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
-	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdDoctor(clientConfig clientcmd.ClientConfig) *cobra.Command {
+func NewCmdDoctor(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:               "doctor",
 		Short:             "Diagnoses Kubernetes Cluster Setup issues",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			cfg, err := clientConfig.ClientConfig()
+			cfg, err := clientGetter.ToRESTConfig()
 			if err != nil {
 				Fatal(errors.Wrap(err, "failed to read kubeconfig"))
 			}

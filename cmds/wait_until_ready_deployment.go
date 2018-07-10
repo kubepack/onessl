@@ -10,10 +10,10 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdWaitUntilReadyDeployment(clientConfig clientcmd.ClientConfig) *cobra.Command {
+func NewCmdWaitUntilReadyDeployment(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	var (
 		interval = 2 * time.Second
 		timeout  = 3 * time.Minute
@@ -30,12 +30,12 @@ func NewCmdWaitUntilReadyDeployment(clientConfig clientcmd.ClientConfig) *cobra.
 				Fatal(errors.Errorf("multiple crds found: %v", strings.Join(args, ",")))
 			}
 
-			namespace, _, err := clientConfig.Namespace()
+			namespace, _, err := clientGetter.ToRawKubeConfigLoader().Namespace()
 			if err != nil {
 				Fatal(err)
 			}
 
-			config, err := clientConfig.ClientConfig()
+			config, err := clientGetter.ToRESTConfig()
 			if err != nil {
 				Fatal(err)
 			}
