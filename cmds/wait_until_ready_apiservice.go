@@ -9,12 +9,12 @@ import (
 	kerr "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
-	"k8s.io/client-go/tools/clientcmd"
 	api "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1"
 	cs "k8s.io/kube-aggregator/pkg/client/clientset_generated/clientset"
+	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdWaitUntilReadyAPIService(clientConfig clientcmd.ClientConfig) *cobra.Command {
+func NewCmdWaitUntilReadyAPIService(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	var (
 		interval = 2 * time.Second
 		timeout  = 3 * time.Minute
@@ -31,7 +31,7 @@ func NewCmdWaitUntilReadyAPIService(clientConfig clientcmd.ClientConfig) *cobra.
 				Fatal(errors.Errorf("multiple crds found: %v", strings.Join(args, ",")))
 			}
 
-			config, err := clientConfig.ClientConfig()
+			config, err := clientGetter.ToRESTConfig()
 			if err != nil {
 				Fatal(err)
 			}

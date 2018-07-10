@@ -2,16 +2,16 @@ package cmds
 
 import (
 	"github.com/spf13/cobra"
-	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdGet(clientConfig clientcmd.ClientConfig) *cobra.Command {
+func NewCmdGet(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:               "get",
 		Short:             `Get stuff`,
 		DisableAutoGenTag: true,
 	}
 	cmd.AddCommand(NewCmdGetCACert())
-	cmd.AddCommand(NewCmdGetKubeCA(clientConfig))
+	cmd.AddCommand(NewCmdGetKubeCA(clientGetter))
 	return cmd
 }

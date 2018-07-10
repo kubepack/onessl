@@ -6,10 +6,10 @@ import (
 
 	"github.com/appscode/kutil/tools/backup"
 	"github.com/spf13/cobra"
-	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdBackup(clientConfig clientcmd.ClientConfig) *cobra.Command {
+func NewCmdBackup(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	var (
 		ClusterName string
 		BackupDir   string
@@ -20,7 +20,7 @@ func NewCmdBackup(clientConfig clientcmd.ClientConfig) *cobra.Command {
 		Short:             "Backup cluster objects",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			restConfig, err := clientConfig.ClientConfig()
+			restConfig, err := clientGetter.ToRESTConfig()
 			if err != nil {
 				Fatal(err)
 			}

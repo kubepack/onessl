@@ -8,10 +8,10 @@ import (
 	"github.com/spf13/cobra"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdHasysConfigMap(clientConfig clientcmd.ClientConfig) *cobra.Command {
+func NewCmdHasysConfigMap(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	var (
 		keys []string
 	)
@@ -27,12 +27,12 @@ func NewCmdHasysConfigMap(clientConfig clientcmd.ClientConfig) *cobra.Command {
 				Fatal(errors.Errorf("multiple names found: %v", strings.Join(args, ",")))
 			}
 
-			namespace, _, err := clientConfig.Namespace()
+			namespace, _, err := clientGetter.ToRawKubeConfigLoader().Namespace()
 			if err != nil {
 				Fatal(err)
 			}
 
-			config, err := clientConfig.ClientConfig()
+			config, err := clientGetter.ToRESTConfig()
 			if err != nil {
 				Fatal(err)
 			}
