@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.7.0](https://github.com/kubepack/onessl/tree/0.7.0) (2018-07-18)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.6.0...0.7.0)
+
+**Merged pull requests:**
+
+- Fix nil pointer panic [\#48](https://github.com/kubepack/onessl/pull/48) ([tamalsaha](https://github.com/tamalsaha))
+- Use RESTClientGetter from plugin installer [\#46](https://github.com/kubepack/onessl/pull/46) ([tamalsaha](https://github.com/tamalsaha))
+- Update dependencies to Kubernetes 1.11 release [\#45](https://github.com/kubepack/onessl/pull/45) ([tamalsaha](https://github.com/tamalsaha))
+- Format shell scripts [\#44](https://github.com/kubepack/onessl/pull/44) ([tamalsaha](https://github.com/tamalsaha))
+
 ## [0.6.0](https://github.com/kubepack/onessl/tree/0.6.0) (2018-06-24)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.5.0...0.6.0)
 
