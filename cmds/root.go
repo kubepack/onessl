@@ -45,7 +45,7 @@ func NewRootCmd(version string, plugin bool) *cobra.Command {
 
 	flags := rootCmd.PersistentFlags()
 	clientConfig := plugin_installer.BindGlobalFlags(flags, plugin)
-	flags.BoolVar(&enableAnalytics, "analytics", enableAnalytics, "Send analytical events to Google Guard")
+	flags.BoolVar(&enableAnalytics, "analytics", enableAnalytics, "Send analytical events to Google Analytics")
 	// ref: https://github.com/kubernetes/kubernetes/issues/17162#issuecomment-225596212
 	flag.CommandLine.Parse([]string{})
 	flag.Set("stderrthreshold", "ERROR")
