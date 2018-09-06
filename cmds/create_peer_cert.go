@@ -63,7 +63,7 @@ func NewCmdCreatePeer(certDir string) *cobra.Command {
 				fmt.Printf("Failed to generate peer certificate pair. Reason: %v.", err)
 				os.Exit(1)
 			}
-			err = store.WriteBytes(Filename(cfg), crt, key)
+			err = store.Write(Filename(cfg), crt, key)
 			if err != nil {
 				fmt.Printf("Failed to init peer certificate pair. Reason: %v.", err)
 				os.Exit(1)

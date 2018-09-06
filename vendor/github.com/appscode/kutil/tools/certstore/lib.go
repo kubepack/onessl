@@ -41,6 +41,22 @@ func (s *CertStore) InitCA(prefix ...string) error {
 	return s.NewCA(prefix...)
 }
 
+func (s *CertStore) SetCA(crtBytes, keyBytes []byte) error {
+	crt, err := cert.ParseCertsPEM(crtBytes)
+	if err != nil {
+		return errors.Wrap(err, "failed to parse ca certificate")
+	}
+
+	key, err := cert.ParsePrivateKeyPEM(keyBytes)
+	if err != nil {
+		return errors.Wrap(err, "failed to parse ca private key")
+	}
+
+	s.caCert = crt[0]
+	s.caKey = key.(*rsa.PrivateKey)
+	return s.Write(s.ca, s.caCert, s.caKey)
+}
+
 func (s *CertStore) LoadCA(prefix ...string) error {
 	if err := s.prep(prefix...); err != nil {
 		return err
@@ -128,15 +144,23 @@ func (s *CertStore) CAName() string {
 	return s.ca
 }
 
-func (s *CertStore) CACert() []byte {
+func (s *CertStore) CACert() *x509.Certificate {
+	return s.caCert
+}
+
+func (s *CertStore) CACertBytes() []byte {
 	return cert.EncodeCertPEM(s.caCert)
 }
 
-func (s *CertStore) CAKey() []byte {
+func (s *CertStore) CAKey() *rsa.PrivateKey {
+	return s.caKey
+}
+
+func (s *CertStore) CAKeyBytes() []byte {
 	return cert.EncodePrivateKeyPEM(s.caKey)
 }
 
-func (s *CertStore) NewHostCertPair() ([]byte, []byte, error) {
+func (s *CertStore) NewHostCertPair() (*x509.Certificate, *rsa.PrivateKey, error) {
 	var sans cert.AltNames
 	publicIPs, privateIPs, _ := netz.HostIPs()
 	for _, ip := range publicIPs {
@@ -148,7 +172,19 @@ func (s *CertStore) NewHostCertPair() ([]byte, []byte, error) {
 	return s.NewServerCertPair("127.0.0.1", sans)
 }
 
-func (s *CertStore) NewServerCertPair(cn string, sans cert.AltNames) ([]byte, []byte, error) {
+func (s *CertStore) NewHostCertPairBytes() ([]byte, []byte, error) {
+	var sans cert.AltNames
+	publicIPs, privateIPs, _ := netz.HostIPs()
+	for _, ip := range publicIPs {
+		sans.IPs = append(sans.IPs, net.ParseIP(ip))
+	}
+	for _, ip := range privateIPs {
+		sans.IPs = append(sans.IPs, net.ParseIP(ip))
+	}
+	return s.NewServerCertPairBytes("127.0.0.1", sans)
+}
+
+func (s *CertStore) NewServerCertPair(cn string, sans cert.AltNames) (*x509.Certificate, *rsa.PrivateKey, error) {
 	cfg := cert.Config{
 		CommonName:   cn,
 		Organization: s.organization,
@@ -163,12 +199,20 @@ func (s *CertStore) NewServerCertPair(cn string, sans cert.AltNames) ([]byte, []
 	if err != nil {
 		return nil, nil, errors.Wrap(err, "failed to generate server certificate")
 	}
+	return crt, key, nil
+}
+
+func (s *CertStore) NewServerCertPairBytes(cn string, sans cert.AltNames) ([]byte, []byte, error) {
+	crt, key, err := s.NewServerCertPair(cn, sans)
+	if err != nil {
+		return nil, nil, err
+	}
 	return cert.EncodeCertPEM(crt), cert.EncodePrivateKeyPEM(key), nil
 }
 
 // NewPeerCertPair is used to create cert pair that can serve as both server and client.
 // This is used to issue peer certificates for etcd.
-func (s *CertStore) NewPeerCertPair(cn string, sans cert.AltNames) ([]byte, []byte, error) {
+func (s *CertStore) NewPeerCertPair(cn string, sans cert.AltNames) (*x509.Certificate, *rsa.PrivateKey, error) {
 	cfg := cert.Config{
 		CommonName:   cn,
 		Organization: s.organization,
@@ -183,10 +227,18 @@ func (s *CertStore) NewPeerCertPair(cn string, sans cert.AltNames) ([]byte, []by
 	if err != nil {
 		return nil, nil, errors.Wrap(err, "failed to generate peer certificate")
 	}
+	return crt, key, nil
+}
+
+func (s *CertStore) NewPeerCertPairBytes(cn string, sans cert.AltNames) ([]byte, []byte, error) {
+	crt, key, err := s.NewPeerCertPair(cn, sans)
+	if err != nil {
+		return nil, nil, err
+	}
 	return cert.EncodeCertPEM(crt), cert.EncodePrivateKeyPEM(key), nil
 }
 
-func (s *CertStore) NewClientCertPair(cn string, organization ...string) ([]byte, []byte, error) {
+func (s *CertStore) NewClientCertPair(cn string, organization ...string) (*x509.Certificate, *rsa.PrivateKey, error) {
 	cfg := cert.Config{
 		CommonName:   cn,
 		Organization: organization,
@@ -199,6 +251,14 @@ func (s *CertStore) NewClientCertPair(cn string, organization ...string) ([]byte
 	crt, err := cert.NewSignedCert(cfg, key, s.caCert, s.caKey)
 	if err != nil {
 		return nil, nil, errors.Wrap(err, "failed to generate client certificate")
+	}
+	return crt, key, nil
+}
+
+func (s *CertStore) NewClientCertPairBytes(cn string, organization ...string) ([]byte, []byte, error) {
+	crt, key, err := s.NewClientCertPair(cn, organization...)
+	if err != nil {
+		return nil, nil, err
 	}
 	return cert.EncodeCertPEM(crt), cert.EncodePrivateKeyPEM(key), nil
 }
