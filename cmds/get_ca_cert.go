@@ -33,7 +33,12 @@ func NewCmdGetCACert() *cobra.Command {
 			if !ok {
 				Fatal(errors.Wrapf(err, "only supports rsa private key. Found %v", reflect.ValueOf(key).Kind()))
 			}
-			crt, err := cert.NewSelfSignedCACert(cert.Config{CommonName: cn}, rsaKey)
+			crt, err := cert.NewSelfSignedCACert(cert.Config{
+				CommonName: cn,
+				AltNames: cert.AltNames{
+					DNSNames: []string{cn},
+				},
+			}, rsaKey)
 			if err != nil {
 				Fatal(errors.Wrap(err, "failed to generate self-signed certificate"))
 			}

@@ -30,7 +30,9 @@ func NewCmdCreateClient(certDir string) *cobra.Command {
 			}
 
 			cfg := cert.Config{
-				CommonName:   args[0],
+				AltNames: cert.AltNames{
+					DNSNames: []string{args[0]},
+				},
 				Organization: org,
 			}
 
@@ -54,7 +56,7 @@ func NewCmdCreateClient(certDir string) *cobra.Command {
 				os.Exit(1)
 			}
 
-			crt, key, err := store.NewClientCertPair(cfg.CommonName, cfg.Organization...)
+			crt, key, err := store.NewClientCertPair(cfg.AltNames, cfg.Organization...)
 			if err != nil {
 				fmt.Printf("Failed to generate client certificate pair. Reason: %v.", err)
 				os.Exit(1)
