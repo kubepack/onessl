@@ -30,12 +30,13 @@ func NewCmdCreateServer(certDir string) *cobra.Command {
 				log.Fatalln("Multiple server name found.")
 			}
 			if len(args) == 0 {
-				args = []string{"server"}
+				sans.DNSNames = merge("server", sans.DNSNames)
+			} else if len(args) == 1 {
+				sans.DNSNames = merge(args[0], sans.DNSNames)
 			}
 
 			cfg := cert.Config{
-				CommonName: args[0],
-				AltNames:   sans,
+				AltNames: sans,
 			}
 
 			store, err := certstore.NewCertStore(afero.NewOsFs(), certDir, org...)
@@ -58,7 +59,7 @@ func NewCmdCreateServer(certDir string) *cobra.Command {
 				os.Exit(1)
 			}
 
-			crt, key, err := store.NewServerCertPair(cfg.CommonName, cfg.AltNames)
+			crt, key, err := store.NewServerCertPair(cfg.AltNames)
 			if err != nil {
 				fmt.Printf("Failed to generate server certificate pair. Reason: %v.", err)
 				os.Exit(1)
