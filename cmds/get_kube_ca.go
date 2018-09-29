@@ -2,11 +2,11 @@ package cmds
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
+	"k8s.io/client-go/rest"
 	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
@@ -21,18 +21,14 @@ func NewCmdGetKubeCA(clientGetter genericclioptions.RESTClientGetter) *cobra.Com
 			if err != nil {
 				Fatal(errors.Wrap(err, "failed to read kubeconfig"))
 			}
+			err = rest.LoadTLSFiles(cfg)
+			if err != nil {
+				Fatal(errors.Wrap(err, "failed to load tls files"))
+			}
 			if cfg.Insecure {
 				Fatal(errors.New(`Kube apiserver uses "insecure-skip-tls-verify: true". Kube apiserver must not be accessed without verifying the TLS certificate.`))
 			}
-			if len(cfg.CAData) > 0 {
-				fmt.Println(string(cfg.CAData))
-			} else if len(cfg.CAFile) > 0 {
-				data, err := ioutil.ReadFile(cfg.CAFile)
-				if err != nil {
-					Fatal(errors.Wrapf(err, "failed to load ca file %s", cfg.CAFile))
-				}
-				fmt.Println(string(data))
-			}
+			fmt.Println(string(cfg.CAData))
 			os.Exit(0)
 		},
 	}
