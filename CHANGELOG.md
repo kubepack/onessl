@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.8.0](https://github.com/kubepack/onessl/tree/v0.8.0) (2018-10-09)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.7.0...v0.8.0)
+
+**Merged pull requests:**
+
+- Add has-label and has-annotation commands [\#55](https://github.com/kubepack/onessl/pull/55) ([tamalsaha](https://github.com/tamalsaha))
+- Check presence of ca cert in kubeconfig [\#54](https://github.com/kubepack/onessl/pull/54) ([tamalsaha](https://github.com/tamalsaha))
+- Use rest.LoadTLSFiles [\#52](https://github.com/kubepack/onessl/pull/52) ([tamalsaha](https://github.com/tamalsaha))
+- Use kubernetes-1.11.3 [\#51](https://github.com/kubepack/onessl/pull/51) ([tamalsaha](https://github.com/tamalsaha))
+- Replace CommonName with SANs [\#50](https://github.com/kubepack/onessl/pull/50) ([tamalsaha](https://github.com/tamalsaha))
+- Update CertStore [\#49](https://github.com/kubepack/onessl/pull/49) ([tamalsaha](https://github.com/tamalsaha))
+
 ## [0.7.0](https://github.com/kubepack/onessl/tree/0.7.0) (2018-07-18)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.6.0...0.7.0)
 
