@@ -11,7 +11,7 @@ import (
 	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdWaitUntilHasLabel(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
+func NewCmdWaitUntilHasAnnotation(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	var (
 		apiVersion string
 		kind       string
@@ -21,8 +21,8 @@ func NewCmdWaitUntilHasLabel(clientGetter genericclioptions.RESTClientGetter) *c
 		timeout    time.Duration
 	)
 	cmd := &cobra.Command{
-		Use:               "label",
-		Short:             "Wait until an object has a label optionally with a given value",
+		Use:               "annotation",
+		Short:             "Wait until an object has an annotation optionally with a given value",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
 			config, err := clientGetter.ToRESTConfig()
@@ -42,11 +42,11 @@ func NewCmdWaitUntilHasLabel(clientGetter genericclioptions.RESTClientGetter) *c
 				v = &value
 			}
 
-			out, err := dynamic_util.UntilHasLabel(config, schema.FromAPIVersionAndKind(apiVersion, kind), namespace, name, key, v, timeout)
+			out, err := dynamic_util.UntilHasAnnotation(config, schema.FromAPIVersionAndKind(apiVersion, kind), namespace, name, key, v, timeout)
 			if err != nil {
 				Fatal(err)
 			}
-			fmt.Println(out)
+			fmt.Print(out)
 			os.Exit(0)
 		},
 	}
@@ -54,7 +54,7 @@ func NewCmdWaitUntilHasLabel(clientGetter genericclioptions.RESTClientGetter) *c
 	cmd.Flags().StringVar(&kind, "kind", kind, "Kind of object")
 	cmd.Flags().StringVar(&name, "name", name, "Name of object")
 	cmd.Flags().StringVar(&key, "key", key, "Key to check for value in object")
-	cmd.Flags().StringVar(&value, "value", value, "Value of label of object")
-	cmd.Flags().DurationVar(&timeout, "timeout", timeout, "Timeout for detecting label")
+	cmd.Flags().StringVar(&value, "value", value, "Value of annotation of object")
+	cmd.Flags().DurationVar(&timeout, "timeout", timeout, "Timeout for detecting annotation")
 	return cmd
 }
