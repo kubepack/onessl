@@ -1,6 +1,8 @@
 package cmds
 
 import (
+	"fmt"
+	"os"
 	"time"
 
 	dynamic_util "github.com/appscode/kutil/dynamic"
@@ -38,10 +40,12 @@ func NewCmdHasAnnotation(clientGetter genericclioptions.RESTClientGetter) *cobra
 			if f.Changed {
 				v = &value
 			}
-			_, err = dynamic_util.HasAnnotation(config, schema.FromAPIVersionAndKind(apiVersion, kind), namespace, name, key, v, timeout)
+			out, err := dynamic_util.HasAnnotation(config, schema.FromAPIVersionAndKind(apiVersion, kind), namespace, name, key, v, timeout)
 			if err != nil {
 				Fatal(err)
 			}
+			fmt.Println(out)
+			os.Exit(0)
 		},
 	}
 	cmd.Flags().StringVar(&apiVersion, "apiVersion", apiVersion, "api version of object")
