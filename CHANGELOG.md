@@ -1,10 +1,11 @@
 # Change Log
 
-## [v0.8.0](https://github.com/kubepack/onessl/tree/v0.8.0) (2018-10-09)
-[Full Changelog](https://github.com/kubepack/onessl/compare/0.7.0...v0.8.0)
+## [0.8.0](https://github.com/kubepack/onessl/tree/0.8.0) (2018-10-09)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.7.0...0.8.0)
 
 **Merged pull requests:**
 
+- Print label/annotation for key [\#58](https://github.com/kubepack/onessl/pull/58) ([tamalsaha](https://github.com/tamalsaha))
 - Detect namespace directly from flag for has-label|has-annotation [\#57](https://github.com/kubepack/onessl/pull/57) ([tamalsaha](https://github.com/tamalsaha))
 - Print label or annotation key value [\#56](https://github.com/kubepack/onessl/pull/56) ([tamalsaha](https://github.com/tamalsaha))
 - Add has-label and has-annotation commands [\#55](https://github.com/kubepack/onessl/pull/55) ([tamalsaha](https://github.com/tamalsaha))
