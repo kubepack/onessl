@@ -25,7 +25,7 @@ func NewCmdGetKubeCA(clientGetter genericclioptions.RESTClientGetter) *cobra.Com
 			if err != nil {
 				Fatal(errors.Wrap(err, "failed to load tls files"))
 			}
-			if cfg.Insecure {
+			if cfg.Insecure || len(cfg.CAData) == 0 {
 				Fatal(errors.New(`Kube apiserver uses "insecure-skip-tls-verify: true". Kube apiserver must not be accessed without verifying the TLS certificate.`))
 			}
 			fmt.Println(string(cfg.CAData))
