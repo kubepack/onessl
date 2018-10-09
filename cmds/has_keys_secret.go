@@ -11,7 +11,7 @@ import (
 	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdHasysSecret(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
+func NewCmdHasKeysSecret(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	var (
 		keys []string
 	)
