@@ -1,5 +1,5 @@
 hash: ea15dc053556aba953500e243930e6bf4bbe82f11120bf299451ca73ce56faaf
-updated: 2018-10-08T23:07:06.253775876-07:00
+updated: 2018-10-09T00:00:45.987199928-07:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -26,7 +26,7 @@ imports:
 - name: github.com/appscode/jsonpatch
   version: 5af499cf01c842bfdd7761a433fc90525ccd6836
 - name: github.com/appscode/kutil
-  version: 394a7a5fcc711ae291feeb45a5872ed504592a83
+  version: de5ab3ae04c92ee64528ab65f0dd305027f0b7da
   subpackages:
   - core/v1
   - discovery
