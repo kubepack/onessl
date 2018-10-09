@@ -11,7 +11,7 @@ import (
 	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdHasLabel(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
+func NewCmdWaitUntilHasLabel(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	var (
 		apiVersion string
 		kind       string
@@ -21,8 +21,8 @@ func NewCmdHasLabel(clientGetter genericclioptions.RESTClientGetter) *cobra.Comm
 		timeout    time.Duration
 	)
 	cmd := &cobra.Command{
-		Use:               "has-label",
-		Short:             "Check an object has a label Optionally with a given value",
+		Use:               "label",
+		Short:             "Wait until an object has a label optionally with a given value",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
 			config, err := clientGetter.ToRESTConfig()
@@ -42,7 +42,7 @@ func NewCmdHasLabel(clientGetter genericclioptions.RESTClientGetter) *cobra.Comm
 				v = &value
 			}
 
-			out, err := dynamic_util.HasLabel(config, schema.FromAPIVersionAndKind(apiVersion, kind), namespace, name, key, v, timeout)
+			out, err := dynamic_util.UntilHasLabel(config, schema.FromAPIVersionAndKind(apiVersion, kind), namespace, name, key, v, timeout)
 			if err != nil {
 				Fatal(err)
 			}

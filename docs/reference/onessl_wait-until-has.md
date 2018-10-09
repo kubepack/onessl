@@ -1,25 +1,15 @@
-## onessl has-annotation
+## onessl wait-until-has
 
-Check an object has a annotation Optionally with a given value
+Wait until has some attribute
 
 ### Synopsis
 
-Check an object has a annotation Optionally with a given value
-
-```
-onessl has-annotation [flags]
-```
+Wait until has some attribute
 
 ### Options
 
 ```
-      --apiVersion string   api version of object
-  -h, --help                help for has-annotation
-      --key string          Key to check for value in object
-      --kind string         Kind of object
-      --name string         Name of object
-      --timeout duration    Timeout for detecting annotation
-      --value string        Value of annotation of object
+  -h, --help   help for wait-until-has
 ```
 
 ### Options inherited from parent commands
@@ -54,4 +44,6 @@ onessl has-annotation [flags]
 ### SEE ALSO
 
 * [onessl](onessl.md)	 - onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
+* [onessl wait-until-has annotation](onessl_wait-until-has_annotation.md)	 - Wait until an object has an annotation optionally with a given value
+* [onessl wait-until-has label](onessl_wait-until-has_label.md)	 - Wait until an object has a label optionally with a given value
 

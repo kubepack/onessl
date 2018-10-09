@@ -11,7 +11,7 @@ import (
 	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
-func NewCmdHasAnnotation(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
+func NewCmdWaitUntilHasAnnotation(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
 	var (
 		apiVersion string
 		kind       string
@@ -21,8 +21,8 @@ func NewCmdHasAnnotation(clientGetter genericclioptions.RESTClientGetter) *cobra
 		timeout    time.Duration
 	)
 	cmd := &cobra.Command{
-		Use:               "has-annotation",
-		Short:             "Check an object has a annotation Optionally with a given value",
+		Use:               "annotation",
+		Short:             "Wait until an object has an annotation optionally with a given value",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
 			config, err := clientGetter.ToRESTConfig()
@@ -42,7 +42,7 @@ func NewCmdHasAnnotation(clientGetter genericclioptions.RESTClientGetter) *cobra
 				v = &value
 			}
 
-			out, err := dynamic_util.HasAnnotation(config, schema.FromAPIVersionAndKind(apiVersion, kind), namespace, name, key, v, timeout)
+			out, err := dynamic_util.UntilHasAnnotation(config, schema.FromAPIVersionAndKind(apiVersion, kind), namespace, name, key, v, timeout)
 			if err != nil {
 				Fatal(err)
 			}

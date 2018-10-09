@@ -1,20 +1,20 @@
-## onessl has-label
+## onessl wait-until-has label
 
-Check an object has a label Optionally with a given value
+Wait until an object has a label optionally with a given value
 
 ### Synopsis
 
-Check an object has a label Optionally with a given value
+Wait until an object has a label optionally with a given value
 
 ```
-onessl has-label [flags]
+onessl wait-until-has label [flags]
 ```
 
 ### Options
 
 ```
       --apiVersion string   api version of object
-  -h, --help                help for has-label
+  -h, --help                help for label
       --key string          Key to check for value in object
       --kind string         Kind of object
       --name string         Name of object
@@ -53,5 +53,5 @@ onessl has-label [flags]
 
 ### SEE ALSO
 
-* [onessl](onessl.md)	 - onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
+* [onessl wait-until-has](onessl_wait-until-has.md)	 - Wait until has some attribute
 
