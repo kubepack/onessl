@@ -5,6 +5,8 @@
 
 **Merged pull requests:**
 
+- Detect namespace directly from flag for has-label|has-annotation [\#57](https://github.com/kubepack/onessl/pull/57) ([tamalsaha](https://github.com/tamalsaha))
+- Print label or annotation key value [\#56](https://github.com/kubepack/onessl/pull/56) ([tamalsaha](https://github.com/tamalsaha))
 - Add has-label and has-annotation commands [\#55](https://github.com/kubepack/onessl/pull/55) ([tamalsaha](https://github.com/tamalsaha))
 - Check presence of ca cert in kubeconfig [\#54](https://github.com/kubepack/onessl/pull/54) ([tamalsaha](https://github.com/tamalsaha))
 - Use rest.LoadTLSFiles [\#52](https://github.com/kubepack/onessl/pull/52) ([tamalsaha](https://github.com/tamalsaha))
