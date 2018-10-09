@@ -25,21 +25,23 @@ func NewCmdHasAnnotation(clientGetter genericclioptions.RESTClientGetter) *cobra
 		Short:             "Check an object has a annotation Optionally with a given value",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			namespace, _, err := clientGetter.ToRawKubeConfigLoader().Namespace()
-			if err != nil {
-				Fatal(err)
-			}
-
 			config, err := clientGetter.ToRESTConfig()
 			if err != nil {
 				Fatal(err)
 			}
 
+			var namespace string
+			f := cmd.Flags().Lookup("namespace")
+			if f != nil {
+				namespace = f.Value.String()
+			}
+
 			var v *string
-			f := cmd.Flags().Lookup("value")
-			if f.Changed {
+			f = cmd.Flags().Lookup("value")
+			if f != nil && f.Changed {
 				v = &value
 			}
+
 			out, err := dynamic_util.HasAnnotation(config, schema.FromAPIVersionAndKind(apiVersion, kind), namespace, name, key, v, timeout)
 			if err != nil {
 				Fatal(err)
