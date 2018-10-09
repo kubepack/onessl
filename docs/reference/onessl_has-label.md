@@ -1,12 +1,28 @@
-## onessl
+## onessl has-label
 
-onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
+Check an object has a label Optionally with a given value
 
 ### Synopsis
 
-onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
+Check an object has a label Optionally with a given value
+
+```
+onessl has-label [flags]
+```
 
 ### Options
+
+```
+      --apiVersion string   api version of object
+  -h, --help                help for has-label
+      --key string          Key to check for value in object
+      --kind string         Kind of object
+      --name string         Name of object
+      --timeout duration    Timeout for detecting label
+      --value string        Value of label of object
+```
+
+### Options inherited from parent commands
 
 ```
       --alsologtostderr                  log to standard error as well as files
@@ -19,7 +35,6 @@ onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
       --client-key string                Path to a client key file for TLS
       --cluster string                   The name of the kubeconfig cluster to use
       --context string                   The name of the kubeconfig context to use
-  -h, --help                             help for onessl
       --insecure-skip-tls-verify         If true, the server's certificate will not be checked for validity. This will make your HTTPS connections insecure
       --kubeconfig string                Path to the kubeconfig file to use for CLI requests.
       --log-backtrace-at traceLocation   when logging hits line file:N, emit a stack trace (default :0)
@@ -38,18 +53,5 @@ onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
 
 ### SEE ALSO
 
-* [onessl backup](onessl_backup.md)	 - Backup cluster objects
-* [onessl base64](onessl_base64.md)	 - Base64 encode/decode input text
-* [onessl create](onessl_create.md)	 - create PKI
-* [onessl doctor](onessl_doctor.md)	 - Diagnoses Kubernetes Cluster Setup issues
-* [onessl envsubst](onessl_envsubst.md)	 - Emulates bash environment variable substitution for input text
-* [onessl get](onessl_get.md)	 - Get stuff
-* [onessl has-annotation](onessl_has-annotation.md)	 - Check an object has a annotation Optionally with a given value
-* [onessl has-keys](onessl_has-keys.md)	 - Checks configmap/secret has a set of given keys
-* [onessl has-label](onessl_has-label.md)	 - Check an object has a label Optionally with a given value
-* [onessl install](onessl_install.md)	 - Install as kubectl plugin
-* [onessl jsonpath](onessl_jsonpath.md)	 - Print value of jsonpath for input text
-* [onessl semver](onessl_semver.md)	 - Print sanitized semver version
-* [onessl version](onessl_version.md)	 - Prints binary version number.
-* [onessl wait-until-ready](onessl_wait-until-ready.md)	 - Wait until resource is ready
+* [onessl](onessl.md)	 - onessl by AppsCode - Simple CLI to generate SSL certificates on any platform
 

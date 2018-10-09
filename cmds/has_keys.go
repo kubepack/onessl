@@ -11,7 +11,7 @@ func NewCmdHasKeys(clientGetter genericclioptions.RESTClientGetter) *cobra.Comma
 		Short:             "Checks configmap/secret has a set of given keys",
 		DisableAutoGenTag: true,
 	}
-	cmd.AddCommand(NewCmdHasysConfigMap(clientGetter))
-	cmd.AddCommand(NewCmdHasysSecret(clientGetter))
+	cmd.AddCommand(NewCmdHasKeysConfigMap(clientGetter))
+	cmd.AddCommand(NewCmdHasKeysSecret(clientGetter))
 	return cmd
 }

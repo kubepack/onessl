@@ -57,6 +57,8 @@ func NewRootCmd(version string, plugin bool) *cobra.Command {
 	rootCmd.AddCommand(NewCmdJsonpath())
 	rootCmd.AddCommand(NewCmdSemver())
 	rootCmd.AddCommand(NewCmdHasKeys(clientConfig))
+	rootCmd.AddCommand(NewCmdHasAnnotation(clientConfig))
+	rootCmd.AddCommand(NewCmdHasLabel(clientConfig))
 	rootCmd.AddCommand(NewCmdWaitUntilReady(clientConfig))
 	rootCmd.AddCommand(NewCmdBackup(clientConfig))
 	rootCmd.AddCommand(NewCmdDoctor(clientConfig))
