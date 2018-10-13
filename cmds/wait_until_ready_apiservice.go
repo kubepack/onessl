@@ -9,9 +9,9 @@ import (
 	kerr "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
+	"k8s.io/cli-runtime/pkg/genericclioptions"
 	api "k8s.io/kube-aggregator/pkg/apis/apiregistration/v1beta1"
 	cs "k8s.io/kube-aggregator/pkg/client/clientset_generated/clientset"
-	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
 func NewCmdWaitUntilReadyAPIService(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {

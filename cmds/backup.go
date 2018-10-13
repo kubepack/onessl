@@ -6,7 +6,7 @@ import (
 
 	"github.com/appscode/kutil/tools/backup"
 	"github.com/spf13/cobra"
-	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
+	"k8s.io/cli-runtime/pkg/genericclioptions"
 )
 
 func NewCmdBackup(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {

@@ -9,8 +9,8 @@ import (
 	"github.com/spf13/cobra"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
+	"k8s.io/cli-runtime/pkg/genericclioptions"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
 )
 
 func NewCmdWaitUntilReadyDeployment(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {

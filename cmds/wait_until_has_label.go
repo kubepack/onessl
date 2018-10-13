@@ -8,7 +8,7 @@ import (
 	dynamic_util "github.com/appscode/kutil/dynamic"
 	"github.com/spf13/cobra"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	"k8s.io/kubernetes/pkg/kubectl/genericclioptions"
+	"k8s.io/cli-runtime/pkg/genericclioptions"
 )
 
 func NewCmdWaitUntilHasLabel(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
