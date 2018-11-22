@@ -1,6 +1,14 @@
 # Change Log
 
-## [0.8.0](https://github.com/kubepack/onessl/tree/0.8.0) (2018-10-09)
+## [0.9.0](https://github.com/kubepack/onessl/tree/0.9.0) (2018-11-22)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.8.0...0.9.0)
+
+**Merged pull requests:**
+
+- Update kubernetes client libraries to 1.12.0 [\#59](https://github.com/kubepack/onessl/pull/59) ([tamalsaha](https://github.com/tamalsaha))
+- Update Kubernetes client libraries to 1.12 release [\#53](https://github.com/kubepack/onessl/pull/53) ([tamalsaha](https://github.com/tamalsaha))
+
+## [0.8.0](https://github.com/kubepack/onessl/tree/0.8.0) (2018-10-10)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.7.0...0.8.0)
 
 **Merged pull requests:**
