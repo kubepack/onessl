@@ -14,23 +14,23 @@ import:
 - package: github.com/spf13/pflag
   version: v1.0.3
 - package: k8s.io/api
-  version: kubernetes-1.12.0
+  version: kubernetes-1.13.0
 - package: k8s.io/apiextensions-apiserver
-  version: kubernetes-1.12.0
+  version: kubernetes-1.13.0
 - package: k8s.io/apimachinery
   repo: https://github.com/kmodules/apimachinery.git
   vcs: git
-  version: ac-1.12.0
+  version: ac-1.13.0
 - package: k8s.io/client-go
-  version: v9.0.0
+  version: v10.0.0
 - package: k8s.io/cli-runtime
-  version: kubernetes-1.12.0
+  version: kubernetes-1.13.0
 - package: k8s.io/kube-aggregator
-  version: kubernetes-1.12.0
+  version: kubernetes-1.13.0
 - package: k8s.io/kubernetes
-  version: v1.12.0
+  version: v1.13.0
 - package: github.com/appscode/kutil
-  version: release-9.0
+  version: k-1.13.0
 - package: github.com/cpuguy83/go-md2man
   version: v1.0.8
 - package: github.com/json-iterator/go
