@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/appscode/kutil/tools/certstore"
 	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
+	"kmodules.xyz/client-go/tools/certstore"
 )
 
 func NewCmdCreateCA(certDir string) *cobra.Command {

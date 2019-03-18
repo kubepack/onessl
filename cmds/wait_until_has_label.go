@@ -5,10 +5,10 @@ import (
 	"os"
 	"time"
 
-	dynamic_util "github.com/appscode/kutil/dynamic"
 	"github.com/spf13/cobra"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
+	dynamic_util "kmodules.xyz/client-go/dynamic"
 )
 
 func NewCmdWaitUntilHasLabel(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
