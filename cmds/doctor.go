@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/appscode/kutil/tools/doctor"
 	"github.com/golang/glog"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
+	"kmodules.xyz/client-go/tools/doctor"
 )
 
 func NewCmdDoctor(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {

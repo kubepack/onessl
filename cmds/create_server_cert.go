@@ -6,10 +6,10 @@ import (
 	"os"
 
 	"github.com/appscode/go/log"
-	"github.com/appscode/kutil/tools/certstore"
 	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/util/cert"
+	"kmodules.xyz/client-go/tools/certstore"
 )
 
 func NewCmdCreateServer(certDir string) *cobra.Command {

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/appscode/kutil/tools/backup"
 	"github.com/spf13/cobra"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
+	"kmodules.xyz/client-go/tools/backup"
 )
 
 func NewCmdBackup(clientGetter genericclioptions.RESTClientGetter) *cobra.Command {
