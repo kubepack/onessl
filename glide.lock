@@ -1,5 +1,5 @@
-hash: 30b73736ecb62687563e7cd12c8025f694874f24cba55c16d6be72586405d7bb
-updated: 2019-03-18T05:01:12.880778247-07:00
+hash: 099d2ed2958b7d706de4e578df0adcc47ac93af0eef92bc5a01082bdf6011293
+updated: 2019-04-24T16:52:30.003125137-07:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
@@ -7,7 +7,7 @@ imports:
   - compute/metadata
   - internal
 - name: github.com/appscode/go
-  version: 52eaa8008e2e5fe8df77ac6fb2fd45e3ea2ae47c
+  version: 60025f1135c977fecd189c12dbfa259d837d7a18
   subpackages:
   - context
   - encoding/json/types
@@ -175,6 +175,8 @@ imports:
   - diffmatchpatch
 - name: github.com/sirupsen/logrus
   version: 89742aefa4b206dcf400792f3bd35b542998eb3b
+- name: github.com/soheilhy/cmux
+  version: 8a8ea3c53959009183d7914522833c1ed8835020
 - name: github.com/spf13/afero
   version: d40851caa0d747393da1ffb28f7f9d8b4eeffebd
   subpackages:
@@ -260,7 +262,7 @@ imports:
 - name: gopkg.in/yaml.v2
   version: 5420a8b6744d3b0345ab293f6fcba19c978f1183
 - name: k8s.io/api
-  version: 89a74a8d264df0e993299876a8cde88379b940ee
+  version: 5cb15d34447165a97c76ed5a60e4e99c8a01ecfe
   subpackages:
   - admission/v1beta1
   - admissionregistration/v1alpha1
@@ -297,14 +299,14 @@ imports:
   - storage/v1alpha1
   - storage/v1beta1
 - name: k8s.io/apiextensions-apiserver
-  version: 20c909e7c8c3fec1a0e345b1d4e57f1c1623c368
+  version: 475668423e9f8feb5e3cc53f37bfeb1ce37f2ce5
   subpackages:
   - pkg/apis/apiextensions
   - pkg/apis/apiextensions/v1beta1
   - pkg/client/clientset/clientset/scheme
   - pkg/client/clientset/clientset/typed/apiextensions/v1beta1
 - name: k8s.io/apimachinery
-  version: 32ccef23274063254360a5c9c0ec4126487e1754
+  version: a3cbe62563e67ed2cb39fe907396990fac4280a5
   repo: https://github.com/kmodules/apimachinery.git
   vcs: git
   subpackages:
@@ -361,13 +363,13 @@ imports:
   subpackages:
   - pkg/util/flag
 - name: k8s.io/cli-runtime
-  version: a04da5c88c0796c1dc5ff976a9c91999779ac0e4
+  version: f2b4781c3ae1e55b0657ab4fa0c8b702282d018f
   subpackages:
   - pkg/genericclioptions
   - pkg/genericclioptions/printers
   - pkg/genericclioptions/resource
 - name: k8s.io/client-go
-  version: e64494209f554a6723674bd494d69445fb76a1d4
+  version: 7621a5ebb88b1e49ce7e7837ae8e99ca030a3c13
   subpackages:
   - deprecated-dynamic
   - discovery
@@ -453,7 +455,7 @@ imports:
 - name: k8s.io/klog
   version: 8139d8cb77af419532b33dfa7dd09fbc5f1d344f
 - name: k8s.io/kube-aggregator
-  version: 71ff10f5febb8733ad25fc112736ff5f8cd97beb
+  version: 5268a8efdb65d805d4ba7fab84c47291ef797fe6
   subpackages:
   - pkg/apis/apiregistration
   - pkg/apis/apiregistration/v1
@@ -468,7 +470,7 @@ imports:
   - pkg/util/proto
   - pkg/util/proto/validation
 - name: k8s.io/kubernetes
-  version: ddf47ac13c1a9483ea035a79cd7c10005ff21a6d
+  version: 2166946f41b36dea2c4626f90a77706f426cdea2
   subpackages:
   - pkg/kubectl/cmd/util
   - pkg/kubectl/cmd/util/openapi
@@ -484,7 +486,7 @@ imports:
   subpackages:
   - exec
 - name: kmodules.xyz/client-go
-  version: fd7cc05edf46bb8d630fa6a84b875162f321e778
+  version: 5dcc4cecf4c96d58e0624cd41311f3a4663db7d7
   subpackages:
   - core/v1
   - discovery
