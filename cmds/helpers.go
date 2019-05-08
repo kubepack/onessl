@@ -1,7 +1,7 @@
 package cmds
 
 import (
-	"k8s.io/client-go/util/cert"
+	"gomodules.xyz/cert"
 )
 
 func Filename(cfg cert.Config) string {

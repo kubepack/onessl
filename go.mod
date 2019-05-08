@@ -3,84 +3,50 @@ module github.com/kubepack/onessl
 go 1.12
 
 require (
-	cloud.google.com/go v0.0.0-20160913182117-3b1ae45394a2
-	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78
-	github.com/Azure/go-autorest v11.1.0+incompatible
-	github.com/MakeNowJust/heredoc v0.0.0-20170808103936-bb23615498cd
-	github.com/PuerkitoBio/purell v1.1.0
-	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578
+	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 // indirect
+	github.com/MakeNowJust/heredoc v0.0.0-20170808103936-bb23615498cd // indirect
 	github.com/appscode/go v0.0.0-20190424183524-60025f1135c9
-	github.com/appscode/jsonpatch v0.0.0-20190108182946-7c0e3b262f30
-	github.com/cpuguy83/go-md2man v1.0.8
-	github.com/davecgh/go-spew v1.1.1
-	github.com/dgrijalva/jwt-go v0.0.0-20160705203006-01aeca54ebda
-	github.com/docker/docker v0.0.0-20180612054059-a9fbbdc8dd87
-	github.com/docker/spdystream v0.0.0-20160310174837-449fdfce4d96
+	github.com/cpuguy83/go-md2man v1.0.10 // indirect
+	github.com/docker/docker v0.7.3-0.20190327010347-be7ac8be2ae0 // indirect
 	github.com/drone/envsubst v1.0.2
-	github.com/evanphx/json-patch v4.2.0+incompatible
-	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d
-	github.com/fatih/structs v0.0.0-20181010231757-878a968ab225
-	github.com/go-ini/ini v1.40.0
-	github.com/go-openapi/jsonpointer v0.19.0
-	github.com/go-openapi/jsonreference v0.19.0
-	github.com/go-openapi/spec v0.17.2
-	github.com/go-openapi/swag v0.17.2
-	github.com/gogo/protobuf v0.0.0-20171007142547-342cbe0a0415
+	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d // indirect
+	github.com/go-openapi/jsonpointer v0.19.0 // indirect
+	github.com/go-openapi/jsonreference v0.19.0 // indirect
+	github.com/go-openapi/swag v0.19.0 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
-	github.com/golang/protobuf v1.3.1
-	github.com/google/btree v0.0.0-20160524151835-7d79101e329e
-	github.com/google/go-cmp v0.3.0
-	github.com/google/gofuzz v0.0.0-20170612174753-24818f796faf
-	github.com/google/uuid v1.1.1
-	github.com/googleapis/gnostic v0.0.0-20170729233727-0c5108395e2d
-	github.com/gophercloud/gophercloud v0.0.0-20180330165814-781450b3c4fc
-	github.com/gorilla/websocket v1.4.0
-	github.com/gregjones/httpcache v0.0.0-20170728041850-787624de3eb7
-	github.com/hashicorp/golang-lru v0.5.0
-	github.com/imdario/mergo v0.3.5
-	github.com/inconshreveable/mousetrap v1.0.0
-	github.com/jpillora/go-ogle-analytics v0.0.0-20161213085824-14b04e0594ef
-	github.com/json-iterator/go v1.1.6
-	github.com/mailru/easyjson v0.0.0-20180823135443-60711f1a8329
-	github.com/mitchellh/go-wordwrap v0.0.0-20150314170334-ad45545899c7
-	github.com/mitchellh/mapstructure v1.1.2
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
-	github.com/modern-go/reflect2 v1.0.1
-	github.com/peterbourgon/diskv v2.0.1+incompatible
+	github.com/imdario/mergo v0.3.7 // indirect
+	github.com/mailru/easyjson v0.0.0-20190403194419-1ea4449da983 // indirect
+	github.com/mitchellh/go-wordwrap v0.0.0-20150314170334-ad45545899c7 // indirect
 	github.com/pkg/errors v0.8.1
-	github.com/prometheus/client_golang v0.9.2
-	github.com/russross/blackfriday v1.5.2
-	github.com/sergi/go-diff v0.0.0-20170118131230-24e2351369ec
-	github.com/sirupsen/logrus v0.0.0-20170822132746-89742aefa4b2
-	github.com/soheilhy/cmux v0.0.0-20181025144106-8a8ea3c53959
-	github.com/spf13/afero v1.1.2
+	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/spf13/afero v1.2.2
 	github.com/spf13/cobra v0.0.3
-	github.com/spf13/pflag v1.0.3
-	github.com/yudai/gojsondiff v0.0.0-20180504020246-0525c875b75c
-	github.com/yudai/golcs v0.0.0-20150405163532-d1c525dea8ce
-	golang.org/x/crypto v0.0.0-20190422183909-d864b10871cd
-	golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3
-	golang.org/x/oauth2 v0.0.0-20170412232759-a6bd8cefa181
-	golang.org/x/sys v0.0.0-20190412213103-97732733099d
-	golang.org/x/text v0.3.1-0.20181227161524-e6919f6577db
-	golang.org/x/time v0.0.0-20161028155119-f51c12702a4d
+	golang.org/x/crypto v0.0.0-20190506204251-e1dfcc566284 // indirect
+	golang.org/x/net v0.0.0-20190503192946-f4e77d36d62c // indirect
+	golang.org/x/sys v0.0.0-20190508100423-12bbe5a7a520 // indirect
+	gomodules.xyz/cert v1.0.0
 	gomodules.xyz/version v0.0.0-20190507203204-7cec7ee542d3
-	google.golang.org/appengine v1.5.0
-	gopkg.in/inf.v0 v0.9.0
-	gopkg.in/ini.v1 v1.40.0
-	gopkg.in/square/go-jose.v2 v2.2.1
-	gopkg.in/yaml.v2 v2.2.2
-	k8s.io/api v0.0.0-20190222213804-5cb15d344471
-	k8s.io/apiextensions-apiserver v0.0.0-20190325193600-475668423e9f
-	k8s.io/apimachinery v0.0.0-20190508063446-a3da69d3723c
-	k8s.io/apiserver v0.0.0-20190319190228-a4358799e4fe
-	k8s.io/cli-runtime v0.0.0-20190325194458-f2b4781c3ae1
-	k8s.io/client-go v0.0.0-20190307161346-7621a5ebb88b
-	k8s.io/klog v0.3.0
-	k8s.io/kube-aggregator v0.0.0-20190325191802-5268a8efdb65
-	k8s.io/kube-openapi v0.0.0-20190228160746-b3a7cee44a30
-	k8s.io/kubernetes v1.13.5
-	k8s.io/utils v0.0.0-20180726175726-66066c83e385
-	kmodules.xyz/client-go v0.0.0-20190507204740-e4690d8026e7
-	sigs.k8s.io/yaml v1.1.0
+	k8s.io/apiextensions-apiserver v0.0.0-20190315093550-53c4693659ed
+	k8s.io/apimachinery v0.0.0-20190424052434-11f1676e3da4
+	k8s.io/cli-runtime v0.0.0-20190314001948-2899ed30580f
+	k8s.io/client-go v11.0.0+incompatible
+	k8s.io/component-base v0.0.0-20190424053038-9fe063da3132
+	k8s.io/kube-aggregator v0.0.0-20190314000639-da8327669ac5
+	k8s.io/kubernetes v1.14.0
+	kmodules.xyz/client-go v0.0.0-20190508091620-0d215c04352f
+)
+
+replace (
+	github.com/graymeta/stow => github.com/appscode/stow v0.0.0-20190506085026-ca5baa008ea3
+	k8s.io/api => k8s.io/api v0.0.0-20190313235455-40a48860b5ab
+	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.0.0-20190315093550-53c4693659ed
+	k8s.io/apimachinery => github.com/kmodules/apimachinery v0.0.0-20190508045248-a52a97a7a2bf
+	k8s.io/apiserver => github.com/kmodules/apiserver v0.0.0-20190508082252-8397d761d4b5
+	k8s.io/cli-runtime => k8s.io/cli-runtime v0.0.0-20190314001948-2899ed30580f
+	k8s.io/cloud-provider => k8s.io/cloud-provider v0.0.0-20190314002645-c892ea32361a
+	k8s.io/klog => k8s.io/klog v0.3.0
+	k8s.io/kube-aggregator => k8s.io/kube-aggregator v0.0.0-20190314000639-da8327669ac5
+	k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20190228160746-b3a7cee44a30
+	k8s.io/metrics => k8s.io/metrics v0.0.0-20190314001731-1bd6a4002213
+	k8s.io/utils => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
 )

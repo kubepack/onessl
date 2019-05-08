@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
-	"kmodules.xyz/client-go/tools/certstore"
+	"gomodules.xyz/cert/certstore"
 )
 
 func NewCmdCreateCA(certDir string) *cobra.Command {

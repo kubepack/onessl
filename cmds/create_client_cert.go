@@ -7,8 +7,8 @@ import (
 	"github.com/appscode/go/log"
 	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
-	"k8s.io/client-go/util/cert"
-	"kmodules.xyz/client-go/tools/certstore"
+	"gomodules.xyz/cert"
+	"gomodules.xyz/cert/certstore"
 )
 
 func NewCmdCreateClient(certDir string) *cobra.Command {

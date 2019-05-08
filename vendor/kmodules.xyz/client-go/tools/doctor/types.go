@@ -5,9 +5,9 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
+	"gomodules.xyz/cert"
 	utilerrors "k8s.io/apimachinery/pkg/util/errors"
 	"k8s.io/apimachinery/pkg/util/sets"
-	"k8s.io/client-go/util/cert"
 	"sigs.k8s.io/yaml"
 )
 
