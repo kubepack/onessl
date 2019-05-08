@@ -5,9 +5,9 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
+	"gomodules.xyz/cert"
 	utilerrors "k8s.io/apimachinery/pkg/util/errors"
 	"k8s.io/apimachinery/pkg/util/sets"
-	"k8s.io/client-go/util/cert"
 	"sigs.k8s.io/yaml"
 )
 
@@ -132,7 +132,7 @@ func (c ClusterInfo) Validate() error {
 	}
 	{
 		if len(c.APIServers) == 0 && !strings.Contains(c.Version.GitVersion, "-gke.") {
-			errs = append(errs, errors.New(`failed to detect kube apiservers. Please file a bug at: https://kmodules.xyz/client-go/issues/new .`))
+			errs = append(errs, errors.New(`failed to detect kube apiservers. Please file a bug at: https://github.com/kmodules/client-go/issues/new .`))
 		}
 	}
 	{

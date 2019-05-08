@@ -10,7 +10,7 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
-	"k8s.io/client-go/util/cert"
+	"gomodules.xyz/cert"
 )
 
 func NewCmdGetCACert() *cobra.Command {

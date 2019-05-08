@@ -5,9 +5,9 @@ import (
 	"os"
 	"strings"
 
-	version "github.com/appscode/go-version"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
+	version "gomodules.xyz/version"
 )
 
 func NewCmdSemver() *cobra.Command {
