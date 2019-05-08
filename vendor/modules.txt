@@ -130,12 +130,10 @@ github.com/modern-go/reflect2
 github.com/peterbourgon/diskv
 # github.com/pkg/errors v0.8.1
 github.com/pkg/errors
-# github.com/russross/blackfriday v2.0.0+incompatible
+# github.com/russross/blackfriday v1.5.2
 github.com/russross/blackfriday
 # github.com/sergi/go-diff v1.0.0
 github.com/sergi/go-diff/diffmatchpatch
-# github.com/shurcooL/sanitized_anchor_name v1.0.0
-github.com/shurcooL/sanitized_anchor_name
 # github.com/sirupsen/logrus v1.4.1
 github.com/sirupsen/logrus
 # github.com/spf13/afero v1.2.2
@@ -184,8 +182,8 @@ golang.org/x/text/width
 # golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
 golang.org/x/time/rate
 # gomodules.xyz/cert v1.0.0
-gomodules.xyz/cert/certstore
 gomodules.xyz/cert
+gomodules.xyz/cert/certstore
 # gomodules.xyz/version v0.0.0-20190507203204-7cec7ee542d3
 gomodules.xyz/version
 # google.golang.org/appengine v1.5.0
@@ -315,7 +313,6 @@ k8s.io/cli-runtime/pkg/kustomize/k8sdeps/kv
 # k8s.io/client-go v11.0.0+incompatible
 k8s.io/client-go/kubernetes
 k8s.io/client-go/rest
-gomodules.xyz/cert
 k8s.io/client-go/util/homedir
 k8s.io/client-go/util/jsonpath
 k8s.io/client-go/discovery
@@ -365,7 +362,7 @@ k8s.io/client-go/plugin/pkg/client/auth/exec
 k8s.io/client-go/rest/watch
 k8s.io/client-go/tools/metrics
 k8s.io/client-go/transport
-k8s.io/client-go/util/keyutil
+k8s.io/client-go/util/cert
 k8s.io/client-go/third_party/forked/golang/template
 k8s.io/client-go/dynamic
 k8s.io/client-go/scale
@@ -382,6 +379,7 @@ k8s.io/client-go/pkg/apis/clientauthentication
 k8s.io/client-go/pkg/apis/clientauthentication/v1alpha1
 k8s.io/client-go/pkg/apis/clientauthentication/v1beta1
 k8s.io/client-go/util/connrotation
+k8s.io/client-go/util/keyutil
 k8s.io/client-go/scale/scheme
 k8s.io/client-go/scale/scheme/appsint
 k8s.io/client-go/scale/scheme/appsv1beta1
@@ -398,6 +396,8 @@ k8s.io/client-go/tools/remotecommand
 k8s.io/client-go/tools/clientcmd/api/v1
 k8s.io/client-go/transport/spdy
 k8s.io/client-go/util/exec
+# k8s.io/component-base v0.0.0-20190424053038-9fe063da3132 => k8s.io/component-base v0.0.0-20190314000054-4a91899592f4
+k8s.io/component-base/cli/flag
 # k8s.io/klog v0.3.0 => k8s.io/klog v0.3.0
 k8s.io/klog
 # k8s.io/kube-aggregator v0.0.0-20190314000639-da8327669ac5 => k8s.io/kube-aggregator v0.0.0-20190314000639-da8327669ac5
@@ -422,7 +422,7 @@ k8s.io/kubernetes/pkg/kubectl/validation
 k8s.io/kubernetes/pkg/version
 k8s.io/kubernetes/pkg/kubectl/util/term
 k8s.io/kubernetes/pkg/util/interrupt
-# k8s.io/utils v0.0.0-20190221042446-c2654d5206da => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
+# k8s.io/utils v0.0.0-00010101000000-000000000000 => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
 k8s.io/utils/exec
 k8s.io/utils/integer
 k8s.io/utils/buffer

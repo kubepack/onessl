@@ -18,7 +18,6 @@ require (
 	github.com/mailru/easyjson v0.0.0-20190403194419-1ea4449da983 // indirect
 	github.com/mitchellh/go-wordwrap v0.0.0-20150314170334-ad45545899c7 // indirect
 	github.com/pkg/errors v0.8.1
-	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/spf13/afero v1.2.2
 	github.com/spf13/cobra v0.0.3
 	golang.org/x/crypto v0.0.0-20190506204251-e1dfcc566284 // indirect
@@ -33,6 +32,7 @@ require (
 	k8s.io/component-base v0.0.0-20190424053038-9fe063da3132
 	k8s.io/kube-aggregator v0.0.0-20190314000639-da8327669ac5
 	k8s.io/kubernetes v1.14.0
+	k8s.io/utils v0.0.0-00010101000000-000000000000 // indirect
 	kmodules.xyz/client-go v0.0.0-20190508091620-0d215c04352f
 )
 
@@ -44,6 +44,7 @@ replace (
 	k8s.io/apiserver => github.com/kmodules/apiserver v0.0.0-20190508082252-8397d761d4b5
 	k8s.io/cli-runtime => k8s.io/cli-runtime v0.0.0-20190314001948-2899ed30580f
 	k8s.io/cloud-provider => k8s.io/cloud-provider v0.0.0-20190314002645-c892ea32361a
+	k8s.io/component-base => k8s.io/component-base v0.0.0-20190314000054-4a91899592f4
 	k8s.io/klog => k8s.io/klog v0.3.0
 	k8s.io/kube-aggregator => k8s.io/kube-aggregator v0.0.0-20190314000639-da8327669ac5
 	k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20190228160746-b3a7cee44a30
