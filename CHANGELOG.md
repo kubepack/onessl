@@ -1,5 +1,30 @@
 # Change Log
 
+## [0.12.0](https://github.com/kubepack/onessl/tree/0.12.0) (2019-05-19)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.11.0...0.12.0)
+
+**Merged pull requests:**
+
+- Add has-api command [\#68](https://github.com/kubepack/onessl/pull/68) ([tamalsaha](https://github.com/tamalsaha))
+- Update to k8s 1.14.0 client libraries using go.mod [\#67](https://github.com/kubepack/onessl/pull/67) ([tamalsaha](https://github.com/tamalsaha))
+- Update Kubernetes client libraries to 1.13.5 [\#66](https://github.com/kubepack/onessl/pull/66) ([tamalsaha](https://github.com/tamalsaha))
+
+## [0.11.0](https://github.com/kubepack/onessl/tree/0.11.0) (2019-03-18)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.10.0...0.11.0)
+
+**Merged pull requests:**
+
+- Update Kubernetes client libraries to 1.13.0 [\#64](https://github.com/kubepack/onessl/pull/64) ([tamalsaha](https://github.com/tamalsaha))
+- Update Kubernetes client libraries to 1.13.0 [\#63](https://github.com/kubepack/onessl/pull/63) ([tamalsaha](https://github.com/tamalsaha))
+
+## [0.10.0](https://github.com/kubepack/onessl/tree/0.10.0) (2019-02-19)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.9.0...0.10.0)
+
+**Merged pull requests:**
+
+- Stop sending analytics for onessl [\#62](https://github.com/kubepack/onessl/pull/62) ([tamalsaha](https://github.com/tamalsaha))
+- Send analytics using helper from kutil [\#61](https://github.com/kubepack/onessl/pull/61) ([tamalsaha](https://github.com/tamalsaha))
+
 ## [0.9.0](https://github.com/kubepack/onessl/tree/0.9.0) (2018-11-22)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.8.0...0.9.0)
 
