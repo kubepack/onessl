@@ -39,6 +39,7 @@ func NewRootCmd() *cobra.Command {
 	rootCmd.AddCommand(NewCmdGet(matchVersionKubeConfigFlags))
 	rootCmd.AddCommand(NewCmdJsonpath())
 	rootCmd.AddCommand(NewCmdSemver())
+	rootCmd.AddCommand(NewCmdHasAPI(matchVersionKubeConfigFlags))
 	rootCmd.AddCommand(NewCmdHasKeys(matchVersionKubeConfigFlags))
 	rootCmd.AddCommand(NewCmdWaitUntilHas(matchVersionKubeConfigFlags))
 	rootCmd.AddCommand(NewCmdWaitUntilReady(matchVersionKubeConfigFlags))
