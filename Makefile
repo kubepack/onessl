@@ -130,7 +130,19 @@ $(OUTBIN): .go/$(OUTBIN).stamp
 	    "
 	@if [ $(COMPRESS) = yes ] && [ $(OS) != windows ]; then \
 		echo "compressing $(OUTBIN)";                       \
-		upx --brute .go/$(OUTBIN);                          \
+		docker run                                                  \
+		    -i                                                      \
+		    --rm                                                    \
+		    -u $$(id -u):$$(id -g)                                  \
+		    -v $$(pwd):/src                                         \
+		    -w /src                                                 \
+		    -v $$(pwd)/.go/bin/$(OS)_$(ARCH):/go/bin                \
+		    -v $$(pwd)/.go/bin/$(OS)_$(ARCH):/go/bin/$(OS)_$(ARCH)  \
+		    -v $$(pwd)/.go/cache:/.cache                            \
+		    --env HTTP_PROXY=$(HTTP_PROXY)                          \
+		    --env HTTPS_PROXY=$(HTTPS_PROXY)                        \
+		    $(BUILD_IMAGE)                                          \
+		    upx --brute /go/$(OUTBIN);                              \
 	fi
 	@if ! cmp -s .go/$(OUTBIN) $(OUTBIN); then \
 	    mv .go/$(OUTBIN) $(OUTBIN);            \
