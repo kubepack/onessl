@@ -1,10 +1,12 @@
 # Change Log
 
-## [0.12.0](https://github.com/kubepack/onessl/tree/0.12.0) (2019-05-19)
+## [0.12.0](https://github.com/kubepack/onessl/tree/0.12.0) (2019-06-21)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.11.0...0.12.0)
 
 **Merged pull requests:**
 
+- Delete unused build scripts. [\#70](https://github.com/kubepack/onessl/pull/70) ([tamalsaha](https://github.com/tamalsaha))
+- Add Makefile [\#69](https://github.com/kubepack/onessl/pull/69) ([tamalsaha](https://github.com/tamalsaha))
 - Add has-api command [\#68](https://github.com/kubepack/onessl/pull/68) ([tamalsaha](https://github.com/tamalsaha))
 - Update to k8s 1.14.0 client libraries using go.mod [\#67](https://github.com/kubepack/onessl/pull/67) ([tamalsaha](https://github.com/tamalsaha))
 - Update Kubernetes client libraries to 1.13.5 [\#66](https://github.com/kubepack/onessl/pull/66) ([tamalsaha](https://github.com/tamalsaha))
