@@ -128,8 +128,8 @@ $(OUTBIN): .go/$(OUTBIN).stamp
 	        commit_timestamp=$(commit_timestamp)                \
 	        ./hack/build.sh                                     \
 	    "
-	@if [ $(COMPRESS) = yes ] && [ $(OS) != windows ]; then \
-		echo "compressing $(OUTBIN)";                       \
+	@if [ $(COMPRESS) = yes ] && [ $(OS) != windows ]; then         \
+		echo "compressing $(OUTBIN)";                               \
 		docker run                                                  \
 		    -i                                                      \
 		    --rm                                                    \
@@ -206,7 +206,7 @@ qa:
 		echo "Nothing to do in prod env. Are you trying to 'release' binaries to prod?"; \
 		exit 1;                                                                          \
 	fi
-	@if [ "$(version_strategy)" = "git_tag" ]; then           \
+	@if [ "$(version_strategy)" = "tag" ]; then               \
 		echo "Are you trying to 'release' binaries to prod?"; \
 		exit 1;                                               \
 	fi
@@ -218,9 +218,9 @@ release:
 		echo "'release' only works in PROD env."; \
 		exit 1;                                   \
 	fi
-	@if [ "$(version_strategy)" != "git_tag" ]; then                  \
-		echo "'apply_tag' to release binaries and/or docker images."; \
-		exit 1;                                                       \
+	@if [ "$(version_strategy)" != "tag" ]; then                    \
+		echo "apply tag to release binaries and/or docker images."; \
+		exit 1;                                                     \
 	fi
 	@$(MAKE) clean all-build --no-print-directory
 
