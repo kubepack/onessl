@@ -201,7 +201,7 @@ dev: gen fmt build
 ci: lint test build #cover
 
 .PHONY: qa
-qa: docker-manifest
+qa:
 	@if [ "$$APPSCODE_ENV" = "prod" ]; then                                              \
 		echo "Nothing to do in prod env. Are you trying to 'release' binaries to prod?"; \
 		exit 1;                                                                          \
@@ -213,7 +213,7 @@ qa: docker-manifest
 	@$(MAKE) clean all-build --no-print-directory
 
 .PHONY: release
-release: docker-manifest
+release:
 	@if [ "$$APPSCODE_ENV" != "prod" ]; then      \
 		echo "'release' only works in PROD env."; \
 		exit 1;                                   \
