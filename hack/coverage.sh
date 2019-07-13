@@ -2,7 +2,7 @@
 set -eou pipefail
 
 GOPATH=$(go env GOPATH)
-REPO_ROOT="$GOPATH/src/github.com/kubepack/onessl"
+REPO_ROOT="$GOPATH/src/kubepack.dev/onessl"
 
 pushd $REPO_ROOT
 

@@ -13,7 +13,7 @@ onessl create peer-cert [flags]
 ### Options
 
 ```
-      --cert-dir string        Path to directory where pki files are stored. (default "$HOME/go/src/github.com/kubepack/onessl/hack/gendocs")
+      --cert-dir string        Path to directory where pki files are stored. (default "$HOME/go/src/kubepack.dev/onessl/hack/gendocs")
       --domains strings        Alternative Domain names
   -h, --help                   help for peer-cert
       --ips ipSlice            Alternative IP addresses (default [127.0.0.1])
