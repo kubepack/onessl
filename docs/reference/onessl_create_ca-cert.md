@@ -13,7 +13,7 @@ onessl create ca-cert [flags]
 ### Options
 
 ```
-      --cert-dir string        Path to directory where pki files are stored. (default "$HOME/go/src/github.com/kubepack/onessl/hack/gendocs")
+      --cert-dir string        Path to directory where pki files are stored. (default "$HOME/go/src/kubepack.dev/onessl/hack/gendocs")
   -h, --help                   help for ca-cert
   -o, --organization strings   Name of client organizations.
       --overwrite              Overwrite existing cert/key pair
