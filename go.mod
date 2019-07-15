@@ -4,6 +4,7 @@ go 1.12
 
 require (
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 // indirect
+	github.com/Azure/go-autorest/autorest/mocks v0.2.0 // indirect
 	github.com/MakeNowJust/heredoc v0.0.0-20170808103936-bb23615498cd // indirect
 	github.com/appscode/go v0.0.0-20190621064509-6b292c9166e3
 	github.com/docker/docker v0.7.3-0.20190327010347-be7ac8be2ae0 // indirect
@@ -18,27 +19,23 @@ require (
 	github.com/mattn/go-colorable v0.1.2 // indirect
 	github.com/mitchellh/go-wordwrap v0.0.0-20150314170334-ad45545899c7 // indirect
 	github.com/pkg/errors v0.8.1
-	github.com/prometheus/client_golang v0.9.3-0.20190127221311-3c4408c8b829 // indirect
 	github.com/spf13/afero v1.2.2
 	github.com/spf13/cobra v0.0.5
-	golang.org/x/crypto v0.0.0-20190506204251-e1dfcc566284 // indirect
-	golang.org/x/net v0.0.0-20190503192946-f4e77d36d62c // indirect
-	golang.org/x/sys v0.0.0-20190508100423-12bbe5a7a520 // indirect
 	gomodules.xyz/cert v1.0.0
 	gomodules.xyz/version v0.0.0-20190507203204-7cec7ee542d3
-	k8s.io/apiextensions-apiserver v0.0.0-20190315093550-53c4693659ed
+	k8s.io/apiextensions-apiserver v0.0.0-20190516231611-bf6753f2aa24
 	k8s.io/apimachinery v0.0.0-20190424052434-11f1676e3da4
-	k8s.io/cli-runtime v0.0.0-20190314001948-2899ed30580f
+	k8s.io/cli-runtime v0.0.0-20190516231937-17bc0b7fcef5
 	k8s.io/client-go v11.0.0+incompatible
 	k8s.io/component-base v0.0.0-20190424053038-9fe063da3132
 	k8s.io/kube-aggregator v0.0.0-20190314000639-da8327669ac5
 	k8s.io/kubernetes v1.14.0
 	k8s.io/utils v0.0.0-00010101000000-000000000000 // indirect
-	kmodules.xyz/client-go v0.0.0-20190508091620-0d215c04352f
+	kmodules.xyz/client-go v0.0.0-20190715080709-7162a6c90b04
 )
 
 replace (
-	github.com/graymeta/stow => github.com/appscode/stow v0.0.0-20190506085026-ca5baa008ea3
+	github.com/Azure/go-autorest => github.com/Azure/go-autorest/autorest v0.5.0
 	k8s.io/api => k8s.io/api v0.0.0-20190313235455-40a48860b5ab
 	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.0.0-20190315093550-53c4693659ed
 	k8s.io/apimachinery => github.com/kmodules/apimachinery v0.0.0-20190508045248-a52a97a7a2bf
