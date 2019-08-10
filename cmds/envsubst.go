@@ -6,9 +6,9 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/drone/envsubst"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
+	"gomodules.xyz/envsubst"
 )
 
 func NewCmdEnvsubst() *cobra.Command {

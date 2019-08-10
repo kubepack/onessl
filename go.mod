@@ -4,38 +4,45 @@ go 1.12
 
 require (
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 // indirect
-	github.com/Azure/go-autorest/autorest/mocks v0.2.0 // indirect
-	github.com/MakeNowJust/heredoc v0.0.0-20170808103936-bb23615498cd // indirect
-	github.com/appscode/go v0.0.0-20190621064509-6b292c9166e3
-	github.com/docker/docker v0.7.3-0.20190327010347-be7ac8be2ae0 // indirect
-	github.com/drone/envsubst v1.0.2
+	github.com/MakeNowJust/heredoc v0.0.0-20171113091838-e9091a26100e // indirect
+	github.com/appscode/go v0.0.0-20190808133642-1d4ef1f1c1e0
+	github.com/census-instrumentation/opencensus-proto v0.1.0 // indirect
 	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d // indirect
 	github.com/go-openapi/jsonpointer v0.19.0 // indirect
 	github.com/go-openapi/jsonreference v0.19.0 // indirect
-	github.com/go-openapi/swag v0.19.0 // indirect
+	github.com/go-openapi/swag v0.17.2 // indirect
+	github.com/gogo/protobuf v1.2.1 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
-	github.com/imdario/mergo v0.3.7 // indirect
-	github.com/mailru/easyjson v0.0.0-20190403194419-1ea4449da983 // indirect
-	github.com/mattn/go-colorable v0.1.2 // indirect
-	github.com/mitchellh/go-wordwrap v0.0.0-20150314170334-ad45545899c7 // indirect
+	github.com/hashicorp/golang-lru v0.5.1 // indirect
+	github.com/mitchellh/go-wordwrap v1.0.0 // indirect
+	github.com/onsi/ginkgo v1.8.0 // indirect
+	github.com/onsi/gomega v1.5.0 // indirect
 	github.com/pkg/errors v0.8.1
 	github.com/spf13/afero v1.2.2
 	github.com/spf13/cobra v0.0.5
+	golang.org/x/crypto v0.0.0-20190424203555-c05e17bb3b2d // indirect
+	golang.org/x/net v0.0.0-20190424112056-4829fb13d2c6 // indirect
+	golang.org/x/oauth2 v0.0.0-20190402181905-9f3314589c9a // indirect
+	golang.org/x/sys v0.0.0-20190425145619-16072639606e // indirect
+	golang.org/x/text v0.3.1 // indirect
 	gomodules.xyz/cert v1.0.0
+	gomodules.xyz/envsubst v0.1.0
 	gomodules.xyz/version v0.0.0-20190507203204-7cec7ee542d3
+	k8s.io/api v0.0.0-20190503110853-61630f889b3c // indirect
 	k8s.io/apiextensions-apiserver v0.0.0-20190516231611-bf6753f2aa24
-	k8s.io/apimachinery v0.0.0-20190424052434-11f1676e3da4
-	k8s.io/cli-runtime v0.0.0-20190516231937-17bc0b7fcef5
+	k8s.io/apimachinery v0.0.0-20190508063446-a3da69d3723c
+	k8s.io/cli-runtime v0.0.0-20190314001948-2899ed30580f
 	k8s.io/client-go v11.0.0+incompatible
-	k8s.io/component-base v0.0.0-20190424053038-9fe063da3132
+	k8s.io/component-base v0.0.0-20190314000054-4a91899592f4
 	k8s.io/kube-aggregator v0.0.0-20190314000639-da8327669ac5
+	k8s.io/kube-openapi v0.0.0-20190502190224-411b2483e503 // indirect
 	k8s.io/kubernetes v1.14.0
-	k8s.io/utils v0.0.0-00010101000000-000000000000 // indirect
-	kmodules.xyz/client-go v0.0.0-20190715080709-7162a6c90b04
+	k8s.io/utils v0.0.0-20190506122338-8fab8cb257d5 // indirect
+	kmodules.xyz/client-go v0.0.0-20190808141354-bbb9e14f60ab
 )
 
 replace (
-	github.com/Azure/go-autorest => github.com/Azure/go-autorest/autorest v0.5.0
+	github.com/Azure/go-autorest => github.com/Azure/go-autorest v12.4.2+incompatible
 	k8s.io/api => k8s.io/api v0.0.0-20190313235455-40a48860b5ab
 	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.0.0-20190315093550-53c4693659ed
 	k8s.io/apimachinery => github.com/kmodules/apimachinery v0.0.0-20190508045248-a52a97a7a2bf
@@ -48,4 +55,5 @@ replace (
 	k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20190228160746-b3a7cee44a30
 	k8s.io/metrics => k8s.io/metrics v0.0.0-20190314001731-1bd6a4002213
 	k8s.io/utils => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
+	sigs.k8s.io/structured-merge-diff => sigs.k8s.io/structured-merge-diff v0.0.0-20190302045857-e85c7b244fd2
 )
