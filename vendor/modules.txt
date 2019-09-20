@@ -1,4 +1,4 @@
-# cloud.google.com/go v0.34.0
+# cloud.google.com/go v0.34.0 => cloud.google.com/go v0.34.0
 cloud.google.com/go/compute/metadata
 # contrib.go.opencensus.io/exporter/ocagent v0.4.6
 contrib.go.opencensus.io/exporter/ocagent
@@ -16,7 +16,7 @@ github.com/Azure/go-autorest/autorest/date
 github.com/Azure/go-autorest/logger
 # github.com/Azure/go-autorest/tracing v0.4.0
 github.com/Azure/go-autorest/tracing
-# github.com/MakeNowJust/heredoc v0.0.0-20171113091838-e9091a26100e
+# github.com/MakeNowJust/heredoc v1.0.0
 github.com/MakeNowJust/heredoc
 # github.com/PuerkitoBio/purell v1.1.0
 github.com/PuerkitoBio/purell

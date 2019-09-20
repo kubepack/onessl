@@ -47,7 +47,7 @@ func NewCmdWaitUntilReadyDeployment(clientGetter genericclioptions.RESTClientGet
 			name := args[0]
 
 			err = wait.PollImmediate(interval, timeout, func() (bool, error) {
-				if obj, err := client.AppsV1beta1().Deployments(namespace).Get(name, metav1.GetOptions{}); err == nil {
+				if obj, err := client.AppsV1().Deployments(namespace).Get(name, metav1.GetOptions{}); err == nil {
 					return types.Int32(obj.Spec.Replicas) == obj.Status.ReadyReplicas, nil
 				}
 				return false, nil
