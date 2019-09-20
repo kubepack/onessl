@@ -5,7 +5,7 @@ go 1.12
 require (
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 // indirect
 	github.com/MakeNowJust/heredoc v1.0.0 // indirect
-	github.com/appscode/go v0.0.0-20190808133642-1d4ef1f1c1e0
+	github.com/appscode/go v0.0.0-20190920081029-7b75ec783e2e
 	github.com/census-instrumentation/opencensus-proto v0.1.0 // indirect
 	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d // indirect
 	github.com/go-openapi/jsonpointer v0.19.0 // indirect
@@ -27,7 +27,7 @@ require (
 	golang.org/x/text v0.3.1 // indirect
 	gomodules.xyz/cert v1.0.0
 	gomodules.xyz/envsubst v0.1.0
-	gomodules.xyz/version v0.0.0-20190507203204-7cec7ee542d3
+	gomodules.xyz/version v0.1.0
 	k8s.io/api v0.0.0-20190503110853-61630f889b3c // indirect
 	k8s.io/apiextensions-apiserver v0.0.0-20190516231611-bf6753f2aa24
 	k8s.io/apimachinery v0.0.0-20190508063446-a3da69d3723c
