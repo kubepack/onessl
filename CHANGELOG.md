@@ -1,6 +1,20 @@
 # Change Log
 
-## [0.12.0](https://github.com/kubepack/onessl/tree/0.12.0) (2019-06-21)
+## [v0.13.1](https://github.com/kubepack/onessl/tree/v0.13.1) (2019-09-20)
+[Full Changelog](https://github.com/kubepack/onessl/compare/v0.13.0...v0.13.1)
+
+**Merged pull requests:**
+
+- Use apps/v1 apiVersion for Kubernetes 1.16 [\#72](https://github.com/kubepack/onessl/pull/72) ([tamalsaha](https://github.com/tamalsaha))
+
+## [v0.13.0](https://github.com/kubepack/onessl/tree/v0.13.0) (2019-08-10)
+[Full Changelog](https://github.com/kubepack/onessl/compare/0.12.0...v0.13.0)
+
+**Merged pull requests:**
+
+- Change package path to kubepack.dev/onessl [\#71](https://github.com/kubepack/onessl/pull/71) ([tamalsaha](https://github.com/tamalsaha))
+
+## [0.12.0](https://github.com/kubepack/onessl/tree/0.12.0) (2019-06-28)
 [Full Changelog](https://github.com/kubepack/onessl/compare/0.11.0...0.12.0)
 
 **Merged pull requests:**
