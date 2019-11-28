@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
-
-# Copyright The Kubepack Authors.
+# Copyright 2019 AppsCode Inc.
+# Copyright 2016 The Kubernetes Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,15 +12,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-set -eou pipefail
-
-export CGO_ENABLED=1
-export GO111MODULE=on
-export GOFLAGS="-mod=vendor"
-
-TARGETS=$(for d in "$@"; do echo ./$d/...; done)
-
-echo "Running tests:"
-go test -race -installsuffix "static" ${TARGETS}
-echo
