@@ -7,7 +7,8 @@ import (
 	"github.com/spf13/cobra"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
 	cliflag "k8s.io/component-base/cli/flag"
-	cmdutil "k8s.io/kubernetes/pkg/kubectl/cmd/util"
+	cmdutil "k8s.io/kubectl/pkg/cmd/util"
+	"kmodules.xyz/client-go/logs"
 )
 
 func NewRootCmd() *cobra.Command {
@@ -28,10 +29,7 @@ func NewRootCmd() *cobra.Command {
 	matchVersionKubeConfigFlags.AddFlags(flags)
 
 	flags.AddGoFlagSet(flag.CommandLine)
-	// ref: https://github.com/kubernetes/kubernetes/issues/17162#issuecomment-225596212
-	flag.CommandLine.Parse([]string{})
-
-	flag.Set("stderrthreshold", "ERROR")
+	logs.ParseFlags()
 
 	rootCmd.AddCommand(NewCmdBase64())
 	rootCmd.AddCommand(NewCmdCreate())
