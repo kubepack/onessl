@@ -9,6 +9,7 @@
 # onessl
 Swiss army knife for installing Kubernetes applications. Just download the pre-built binaries from this project's release page and you are ready to go!
 
+> Onessl project is in maintainance mode. It does all the things we wanted it to do. For new projects, we are using Helm 3.
 
 ## Available Commands
 Please find the available commands [here](/docs/reference/onessl.md).
